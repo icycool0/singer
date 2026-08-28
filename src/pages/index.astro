@@ -2,248 +2,200 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead
-			title="Singer Roushan | Live Singer & Event Performer"
-			description="Book Singer Roushan for weddings, birthdays, private parties, corporate events and live music performances in Patna and beyond."
-		/>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 
 	<body>
 		<Header />
 
 		<main>
+
 			<!-- HERO -->
 			<section class="hero">
+				<img
+					src="/images/hero live 3.jpg"
+					alt="Roushan performing live on stage"
+					class="hero-image"
+				/>
+
+				<div class="hero-overlay"></div>
+
 				<div class="hero-content">
-					<p class="eyebrow">LIVE SINGER • EVENT PERFORMER</p>
+					<p class="eyebrow">SINGER • LIVE PERFORMER • ENTERTAINMENT</p>
 
-					<h1>
-						Make Your Event
-						<span>Sound Unforgettable.</span>
-					</h1>
+					<h1>ROUSHAN</h1>
 
-					<p class="hero-text">
-						Live music for weddings, birthdays, private parties,
-						corporate events and special celebrations.
+					<p class="hero-subtitle">
+						Live music for weddings, celebrations & special events.
 					</p>
 
-					<div class="hero-actions">
-						<a href="#booking" class="button primary">Book Roushan</a>
-						<a href="#performances" class="button secondary">Watch Performance</a>
-					</div>
+					<div class="hero-buttons">
+						<a href="#booking" class="button primary">
+							BOOK ROUSHAN
+						</a>
 
-					<p class="location">📍 Patna, Bihar • Available for Events</p>
-				</div>
-
-				<div class="hero-card">
-					<div class="artist-placeholder">
-						<div class="music-icon">♪</div>
-						<p>ROUSHAN</p>
-						<span>LIVE PERFORMANCE</span>
+						<a href="#about" class="button secondary">
+							EXPLORE
+						</a>
 					</div>
 				</div>
 			</section>
+
+
+			<!-- INTRO -->
+			<section class="intro" id="about">
+				<div>
+					<p class="section-label">THE ARTIST</p>
+					<h2>Music that makes the moment.</h2>
+				</div>
+
+				<p class="intro-text">
+					Roushan is a singer and live performer based in Patna,
+					bringing music, energy and a personal touch to weddings,
+					events, celebrations and private occasions.
+				</p>
+			</section>
+
 
 			<!-- SERVICES -->
-			<section class="section" id="services">
-				<div class="section-heading">
-					<p class="eyebrow">WHAT I DO</p>
-					<h2>Live Music for Every Occasion</h2>
-					<p>
-						Choose the performance that fits your event.
-						Custom arrangements are available for larger events.
-					</p>
-				</div>
+			<section class="services">
+				<p class="section-label">PERFORMANCES</p>
+
+				<h2>Available for your special moments.</h2>
 
 				<div class="service-grid">
-					<article class="service-card">
-						<div class="icon">💍</div>
-						<h3>Wedding Events</h3>
-						<p>
-							Live singing to create the right atmosphere
-							for wedding celebrations and special moments.
-						</p>
-					</article>
 
-					<article class="service-card">
-						<div class="icon">🎂</div>
-						<h3>Birthday Parties</h3>
+					<div class="service-card">
+						<span>01</span>
+						<h3>Weddings</h3>
 						<p>
-							Make birthdays more memorable with a live
-							music performance for your guests.
+							Live music for wedding celebrations,
+							sangeet and special moments.
 						</p>
-					</article>
+					</div>
 
-					<article class="service-card">
-						<div class="icon">🎉</div>
-						<h3>Private Events</h3>
+					<div class="service-card">
+						<span>02</span>
+						<h3>Events</h3>
 						<p>
-							Entertainment for parties, family functions
-							and private celebrations.
+							Live performances for social and private events.
 						</p>
-					</article>
+					</div>
 
-					<article class="service-card">
-						<div class="icon">🏢</div>
-						<h3>Corporate Events</h3>
+					<div class="service-card">
+						<span>03</span>
+						<h3>Birthdays</h3>
+						<p>
+							Make birthdays and celebrations more memorable
+							with live music.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<span>04</span>
+						<h3>Corporate</h3>
 						<p>
 							Professional live entertainment for corporate
-							gatherings and special occasions.
+							events and gatherings.
 						</p>
-					</article>
+					</div>
 
-					<article class="service-card">
-						<div class="icon">🎤</div>
-						<h3>Live Performances</h3>
-						<p>
-							Solo singing and customised live performance
-							options based on your event.
-						</p>
-					</article>
-
-					<article class="service-card">
-						<div class="icon">🎶</div>
-						<h3>Special Events</h3>
-						<p>
-							Talk to us about your event and we'll suggest
-							the most suitable performance setup.
-						</p>
-					</article>
 				</div>
 			</section>
 
-			<!-- ABOUT -->
-			<section class="about section">
-				<div class="about-content">
-					<p class="eyebrow">MEET ROUSHAN</p>
-					<h2>Music That Connects With People</h2>
 
-					<p>
-						Singer Roushan is a performer and digital creator
-						based in Patna, Bihar, offering live singing and
-						event entertainment for different types of occasions.
-					</p>
+			<!-- PHOTO FEATURE -->
+			<section class="photo-feature">
 
-					<p>
-						Whether you're planning an intimate celebration or
-						a larger event, the performance can be discussed
-						according to your venue, audience and requirements.
-					</p>
-
-					<a href="#booking" class="text-link">Plan Your Event →</a>
+				<div class="photo-large">
+					<img
+						src="/images/hero live2.jpg"
+						alt="Roushan performing at an event"
+					/>
 				</div>
 
-				<div class="about-stat">
-					<strong>ROUSHAN</strong>
-					<span>SINGER & PERFORMER</span>
+				<div class="photo-text">
+					<p class="section-label">LIVE EXPERIENCE</p>
+					<h2>Every event deserves its own soundtrack.</h2>
+					<p>
+						From intimate celebrations to energetic live events,
+						Roushan brings a versatile performance experience
+						to every occasion.
+					</p>
+
+					<a href="#booking" class="text-link">
+						Plan your event →
+					</a>
 				</div>
+
 			</section>
 
-			<!-- PERFORMANCE -->
-			<section class="section dark-section" id="performances">
-				<div class="section-heading">
-					<p class="eyebrow">PERFORMANCES</p>
-					<h2>Hear the Artist</h2>
-					<p>
-						Watch performances and discover Roushan's music.
-					</p>
+
+			<!-- GALLERY -->
+			<section class="gallery">
+
+				<div class="gallery-heading">
+					<div>
+						<p class="section-label">GALLERY</p>
+						<h2>Moments on stage & beyond.</h2>
+					</div>
 				</div>
 
-				<div class="video-placeholder">
-					<div class="play">▶</div>
-					<h3>Performance Videos</h3>
-					<p>
-						YouTube and social media performances will appear here.
-					</p>
+				<div class="gallery-grid">
+
+					<img
+						src="/images/hero event.jpeg"
+						alt="Roushan performing at an event"
+					/>
+
+					<img
+						src="/images/hero live2.jpg"
+						alt="Roushan live performance"
+					/>
+
+					<img
+						src="/images/hero sitting sofa.jpg"
+						alt="Roushan portrait"
+					/>
+
+					<img
+						src="/images/hero standinf close.jpg"
+						alt="Roushan portrait"
+					/>
+
 				</div>
+
 			</section>
 
-			<!-- PACKAGES -->
-			<section class="section" id="packages">
-				<div class="section-heading">
-					<p class="eyebrow">BOOKING</p>
-					<h2>Performance Packages</h2>
-					<p>
-						Every event is different. Tell us what you're planning
-						and we'll help determine the right setup.
-					</p>
-				</div>
-
-				<div class="package-grid">
-					<article class="package-card">
-						<p class="package-label">STARTING FROM</p>
-						<h3>₹10,000</h3>
-						<p>
-							Solo singer performance. Final pricing depends
-							on event requirements, location and duration.
-						</p>
-						<a href="#booking" class="button primary">Enquire Now</a>
-					</article>
-
-					<article class="package-card featured">
-						<p class="package-label">CUSTOM EVENT</p>
-						<h3>Need a Bigger Setup?</h3>
-						<p>
-							For weddings, large celebrations and full
-							music setups, discuss your requirements directly.
-						</p>
-						<a href="#booking" class="button secondary">Get a Quote</a>
-					</article>
-				</div>
-			</section>
-
-			<!-- AI ADVISOR PLACEHOLDER -->
-			<section class="advisor-section">
-				<div>
-					<p class="eyebrow">SMART BOOKING</p>
-					<h2>Not Sure What You Need?</h2>
-					<p>
-						Our AI Booking Advisor can help you plan the right
-						performance for your event.
-					</p>
-				</div>
-
-				<button class="advisor-button" type="button">
-					🤖 Ask the Booking Advisor
-				</button>
-			</section>
 
 			<!-- BOOKING -->
-			<section class="booking section" id="booking">
-				<div class="section-heading">
-					<p class="eyebrow">LET'S TALK</p>
-					<h2>Planning an Event?</h2>
-					<p>
-						Tell us about your event and we'll get back to you
-						with the best performance option.
-					</p>
-				</div>
+			<section class="booking" id="booking">
+				<p class="section-label">BOOKING</p>
 
-				<div class="booking-actions">
-					<a href="tel:+91955275669" class="button primary">
-						📞 Call Roushan
-					</a>
+				<h2>Planning an event?</h2>
 
-					<a
-						href="https://wa.me/91955275669"
-						class="button whatsapp"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						💬 WhatsApp
-					</a>
-				</div>
+				<p>
+					Tell us about your event and we'll help you plan
+					the right performance.
+				</p>
+
+				<a href="tel:+91955275669" class="button primary">
+					CONTACT ROUSHAN
+				</a>
 			</section>
+
 		</main>
 
 		<Footer />
 	</body>
 </html>
+
 
 <style>
 	:global(*) {
@@ -252,430 +204,281 @@ import Footer from '../components/Footer.astro';
 
 	:global(body) {
 		margin: 0;
-		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system,
-			BlinkMacSystemFont, "Segoe UI", sans-serif;
-		color: #171717;
-		background: #faf9f7;
-	}
-
-	main {
-		overflow: hidden;
+		background: #0b0b0d;
+		color: #f5f3ef;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	}
 
 	.hero {
-		min-height: 720px;
-		padding: 90px 7vw;
-		display: grid;
-		grid-template-columns: 1.05fr 0.95fr;
-		gap: 60px;
-		align-items: center;
+		position: relative;
+		height: min(820px, 90vh);
+		min-height: 600px;
+		overflow: hidden;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.hero-image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
 		background:
-			radial-gradient(circle at 80% 30%, #f4d6b8 0, transparent 30%),
-			linear-gradient(135deg, #fffaf5, #f4eee7);
+			linear-gradient(
+				90deg,
+				rgba(0,0,0,.82) 0%,
+				rgba(0,0,0,.48) 45%,
+				rgba(0,0,0,.12) 100%
+			),
+			linear-gradient(
+				0deg,
+				rgba(0,0,0,.65),
+				transparent 55%
+			);
 	}
 
 	.hero-content {
-		max-width: 700px;
+		position: relative;
+		z-index: 2;
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 80px 32px;
 	}
 
-	.eyebrow {
-		margin: 0 0 18px;
-		font-size: 13px;
-		font-weight: 800;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: #9a5a32;
+	.eyebrow,
+	.section-label {
+		font-size: 12px;
+		letter-spacing: .22em;
+		font-weight: 700;
+		color: #d6b477;
 	}
 
 	h1 {
-		margin: 0;
-		font-size: clamp(48px, 7vw, 88px);
-		line-height: 0.98;
-		letter-spacing: -0.055em;
+		font-size: clamp(72px, 12vw, 170px);
+		line-height: .85;
+		margin: 18px 0 28px;
+		letter-spacing: -.05em;
+		font-weight: 800;
 	}
 
-	h1 span {
-		display: block;
-		color: #9a5a32;
+	.hero-subtitle {
+		font-size: clamp(18px, 2vw, 25px);
+		max-width: 560px;
+		line-height: 1.5;
+		color: #e4e1dc;
 	}
 
-	.hero-text {
-		max-width: 600px;
-		margin: 28px 0;
-		font-size: 20px;
-		line-height: 1.6;
-		color: #555;
-	}
-
-	.location {
-		margin-top: 25px;
-		color: #666;
-		font-size: 14px;
-	}
-
-	.hero-actions,
-	.booking-actions {
+	.hero-buttons {
 		display: flex;
-		flex-wrap: wrap;
 		gap: 14px;
+		margin-top: 32px;
 	}
 
 	.button {
 		display: inline-block;
-		padding: 15px 23px;
-		border-radius: 999px;
+		padding: 15px 25px;
 		text-decoration: none;
-		font-weight: 750;
-		transition: transform 0.2s ease;
-	}
-
-	.button:hover {
-		transform: translateY(-2px);
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: .08em;
+		transition: .25s ease;
 	}
 
 	.primary {
-		background: #171717;
-		color: white;
+		background: #d6b477;
+		color: #111;
+	}
+
+	.primary:hover {
+		background: #f0d49d;
+		transform: translateY(-2px);
 	}
 
 	.secondary {
-		border: 1px solid #bbb;
-		color: #171717;
+		border: 1px solid rgba(255,255,255,.5);
+		color: white;
+	}
+
+	.secondary:hover {
 		background: white;
+		color: #111;
 	}
 
-	.whatsapp {
-		background: #1f9d55;
-		color: white;
+	.intro,
+	.services,
+	.gallery,
+	.booking {
+		max-width: 1200px;
+		margin: auto;
+		padding: 110px 32px;
 	}
 
-	.hero-card {
-		min-height: 570px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.artist-placeholder {
-		width: min(440px, 90%);
-		aspect-ratio: 4 / 5;
-		border-radius: 28px;
-		background:
-			linear-gradient(145deg, #242424, #080808);
-		color: white;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
-	}
-
-	.music-icon {
-		font-size: 90px;
-		line-height: 1;
-		margin-bottom: 20px;
-	}
-
-	.artist-placeholder p {
-		margin: 0;
-		font-size: 34px;
-		font-weight: 900;
-		letter-spacing: 0.08em;
-	}
-
-	.artist-placeholder span {
-		margin-top: 8px;
-		font-size: 12px;
-		letter-spacing: 0.2em;
-		color: #ccc;
-	}
-
-	.section {
-		padding: 110px 7vw;
-	}
-
-	.section-heading {
-		max-width: 720px;
-		margin-bottom: 55px;
+	.intro {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 80px;
 	}
 
 	h2 {
-		margin: 0 0 18px;
-		font-size: clamp(36px, 5vw, 60px);
+		font-size: clamp(38px, 5vw, 68px);
 		line-height: 1;
-		letter-spacing: -0.04em;
+		letter-spacing: -.035em;
+		margin: 15px 0 25px;
 	}
 
-	.section-heading > p:last-child {
-		color: #666;
+	.intro-text,
+	.photo-text p,
+	.booking p {
 		font-size: 18px;
-		line-height: 1.6;
+		line-height: 1.7;
+		color: #aaa7a1;
 	}
 
 	.service-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 18px;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1px;
+		background: #29292c;
+		margin-top: 55px;
 	}
 
 	.service-card {
-		padding: 32px;
-		background: white;
-		border: 1px solid #e8e4df;
-		border-radius: 20px;
+		background: #101012;
+		padding: 35px;
+		min-height: 240px;
 	}
 
-	.service-card .icon {
-		font-size: 30px;
-		margin-bottom: 25px;
+	.service-card span {
+		color: #d6b477;
+		font-size: 12px;
 	}
 
 	.service-card h3 {
-		margin: 0 0 12px;
-		font-size: 21px;
+		font-size: 25px;
+		margin-top: 65px;
 	}
 
 	.service-card p {
-		margin: 0;
-		color: #666;
+		color: #999;
 		line-height: 1.6;
 	}
 
-	.about {
+	.photo-feature {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 80px;
-		align-items: center;
-		background: #eee9e3;
+		grid-template-columns: 1.2fr .8fr;
+		min-height: 650px;
 	}
 
-	.about-content {
-		max-width: 650px;
+	.photo-large img {
+		width: 100%;
+		height: 100%;
+		min-height: 600px;
+		object-fit: cover;
 	}
 
-	.about-content p:not(.eyebrow) {
-		color: #555;
-		line-height: 1.75;
-		font-size: 17px;
+	.photo-text {
+		background: #151518;
+		padding: 80px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.text-link {
-		display: inline-block;
-		margin-top: 15px;
-		color: #9a5a32;
-		font-weight: 800;
+		color: #d6b477;
 		text-decoration: none;
+		font-weight: 700;
+		margin-top: 20px;
 	}
 
-	.about-stat {
-		min-height: 350px;
-		border-radius: 30px;
-		background: #171717;
-		color: white;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.about-stat strong {
-		font-size: clamp(50px, 7vw, 90px);
-		letter-spacing: -0.05em;
-	}
-
-	.about-stat span {
-		margin-top: 10px;
-		letter-spacing: 0.2em;
-		color: #aaa;
-		font-size: 12px;
-	}
-
-	.dark-section {
-		background: #111;
-		color: white;
-	}
-
-	.dark-section .section-heading > p:last-child {
-		color: #aaa;
-	}
-
-	.video-placeholder {
-		min-height: 420px;
-		border-radius: 28px;
-		border: 1px solid #333;
-		background: #1c1c1c;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-	}
-
-	.video-placeholder .play {
-		width: 75px;
-		height: 75px;
+	.gallery-grid {
 		display: grid;
-		place-items: center;
-		border-radius: 50%;
-		background: white;
-		color: #111;
-		margin-bottom: 20px;
+		grid-template-columns: 2fr 1fr 1fr;
+		grid-template-rows: 280px 280px;
+		gap: 12px;
+		margin-top: 50px;
 	}
 
-	.video-placeholder h3 {
-		font-size: 25px;
-		margin: 0 0 8px;
+	.gallery-grid img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
-	.video-placeholder p {
-		color: #aaa;
-	}
-
-	.package-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
-	}
-
-	.package-card {
-		padding: 42px;
-		border: 1px solid #ded9d2;
-		border-radius: 24px;
-		background: white;
-	}
-
-	.package-card.featured {
-		background: #171717;
-		color: white;
-		border-color: #171717;
-	}
-
-	.package-label {
-		font-size: 12px;
-		font-weight: 800;
-		letter-spacing: 0.15em;
-		color: #9a5a32;
-	}
-
-	.package-card h3 {
-		font-size: 40px;
-		margin: 15px 0;
-	}
-
-	.package-card > p:not(.package-label) {
-		line-height: 1.7;
-		color: #666;
-		margin-bottom: 30px;
-	}
-
-	.featured > p:not(.package-label) {
-		color: #bbb;
-	}
-
-	.advisor-section {
-		padding: 70px 7vw;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 40px;
-		background: #9a5a32;
-		color: white;
-	}
-
-	.advisor-section .eyebrow {
-		color: #f5d7c1;
-	}
-
-	.advisor-section h2 {
-		margin-bottom: 12px;
-	}
-
-	.advisor-section p:last-child {
-		margin: 0;
-		color: #f4dfd0;
-		font-size: 17px;
-	}
-
-	.advisor-button {
-		border: 0;
-		border-radius: 999px;
-		padding: 17px 25px;
-		font: inherit;
-		font-weight: 800;
-		background: white;
-		color: #171717;
-		cursor: pointer;
-		white-space: nowrap;
+	.gallery-grid img:first-child {
+		grid-row: span 2;
 	}
 
 	.booking {
 		text-align: center;
+		padding-bottom: 150px;
 	}
 
-	.booking .section-heading {
-		margin-left: auto;
-		margin-right: auto;
+	.booking p {
+		max-width: 600px;
+		margin: 0 auto 35px;
 	}
 
-	.booking-actions {
-		justify-content: center;
-	}
+	@media (max-width: 800px) {
+		.hero {
+			min-height: 650px;
+		}
 
-	@media (max-width: 850px) {
-		.hero,
-		.about {
+		.hero-content {
+			padding: 50px 22px;
+		}
+
+		.intro,
+		.photo-feature {
 			grid-template-columns: 1fr;
 		}
 
-		.hero {
-			padding-top: 60px;
-		}
-
-		.hero-card {
-			min-height: auto;
+		.intro,
+		.services,
+		.gallery,
+		.booking {
+			padding: 75px 22px;
 		}
 
 		.service-grid {
 			grid-template-columns: 1fr 1fr;
 		}
 
-		.package-grid {
-			grid-template-columns: 1fr;
+		.photo-text {
+			padding: 50px 25px;
 		}
 
-		.advisor-section {
-			flex-direction: column;
-			align-items: flex-start;
+		.gallery-grid {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 250px 250px 250px;
+		}
+
+		.gallery-grid img:first-child {
+			grid-row: span 1;
 		}
 	}
 
-	@media (max-width: 550px) {
-		.section,
-		.hero {
-			padding-left: 22px;
-			padding-right: 22px;
-		}
-
+	@media (max-width: 500px) {
 		.service-grid {
 			grid-template-columns: 1fr;
 		}
 
-		.hero {
-			min-height: auto;
+		.gallery-grid {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(4, 300px);
 		}
 
-		.hero-card {
-			display: none;
-		}
-
-		.hero-text {
-			font-size: 17px;
-		}
-
-		.button {
-			width: 100%;
-			text-align: center;
+		.hero-buttons {
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 </style>
