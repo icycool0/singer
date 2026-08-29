@@ -13,14 +13,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	<style>
 		/* =========================================================
-		   RESET
+		   ROOT / RESET
 		========================================================= */
 
 		:root {
 			--black: #080809;
-			--black-soft: #101012;
-			--white: #f5f3ee;
-			--muted: #969493;
+			--black-2: #0e0e10;
+			--black-3: #141416;
+			--white: #f4f1eb;
+			--muted: #999792;
 			--gold: #d6b477;
 			--line: rgba(255,255,255,.10);
 		}
@@ -32,15 +33,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		html {
-			scroll-behavior: smooth;
+			margin: 0;
+			padding: 0;
 			background: var(--black);
+			scroll-behavior: smooth;
 		}
 
 		body {
 			margin: 0 !important;
 			padding: 0 !important;
+
 			background: var(--black) !important;
 			color: var(--white);
+
 			font-family:
 				Inter,
 				-apple-system,
@@ -49,11 +54,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				Roboto,
 				Arial,
 				sans-serif;
+
 			overflow-x: hidden;
 		}
 
-		/* IMPORTANT:
-		   Override Astro starter CSS */
 		main {
 			width: 100% !important;
 			max-width: none !important;
@@ -80,19 +84,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			top: 0;
 			left: 0;
 			right: 0;
+
 			z-index: 50;
 
-			border-bottom: 1px solid rgba(255,255,255,.10);
-			background: linear-gradient(
-				to bottom,
-				rgba(0,0,0,.45),
-				transparent
-			);
+			background:
+				linear-gradient(
+					to bottom,
+					rgba(0,0,0,.55),
+					transparent
+				);
+
+			border-bottom: 1px solid rgba(255,255,255,.08);
 		}
 
 		.nav-inner {
 			width: min(1380px, calc(100% - 70px));
-			height: 86px;
+			height: 82px;
+
 			margin: auto;
 
 			display: flex;
@@ -102,9 +110,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		.logo {
 			text-decoration: none;
-			font-size: 21px;
+
+			font-size: 20px;
 			font-weight: 800;
-			letter-spacing: .08em;
+			letter-spacing: .10em;
 		}
 
 		.logo span {
@@ -114,15 +123,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.nav-links {
 			display: flex;
 			align-items: center;
-			gap: 34px;
+			gap: 32px;
 		}
 
 		.nav-links a {
 			text-decoration: none;
-			font-size: 11px;
-			font-weight: 600;
-			letter-spacing: .14em;
-			color: rgba(255,255,255,.78);
+
+			font-size: 10px;
+			font-weight: 700;
+			letter-spacing: .15em;
+
+			color: rgba(255,255,255,.75);
+
 			transition: color .25s ease;
 		}
 
@@ -131,8 +143,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		.nav-book {
-			padding: 13px 19px;
-			border: 1px solid rgba(214,180,119,.7);
+			padding: 12px 18px;
+
+			border: 1px solid rgba(214,180,119,.75);
+
 			color: var(--gold) !important;
 		}
 
@@ -148,13 +162,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		.hero {
 			position: relative;
+
 			width: 100%;
 			height: min(900px, 100vh);
 			min-height: 680px;
+
 			overflow: hidden;
 
 			display: flex;
-			align-items: flex-end;
+			align-items: center;
 		}
 
 		.hero-image {
@@ -165,7 +181,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			height: 100%;
 
 			object-fit: cover;
-			object-position: center 30%;
+			object-position: center 28%;
 
 			transform: scale(1.01);
 		}
@@ -178,14 +194,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				linear-gradient(
 					90deg,
 					rgba(0,0,0,.82) 0%,
-					rgba(0,0,0,.48) 42%,
-					rgba(0,0,0,.12) 100%
+					rgba(0,0,0,.53) 40%,
+					rgba(0,0,0,.14) 100%
 				),
 				linear-gradient(
 					0deg,
-					rgba(0,0,0,.85) 0%,
-					rgba(0,0,0,.12) 55%,
-					rgba(0,0,0,.20) 100%
+					rgba(0,0,0,.72) 0%,
+					rgba(0,0,0,.05) 65%
 				);
 		}
 
@@ -194,9 +209,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			z-index: 2;
 
 			width: min(1380px, calc(100% - 70px));
-			margin: auto;
 
-			padding-bottom: 100px;
+			margin: -65px auto 0;
 		}
 
 		.eyebrow,
@@ -204,38 +218,39 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			margin: 0;
 
 			font-size: 10px;
-			font-weight: 700;
+			font-weight: 800;
 			letter-spacing: .25em;
+
 			text-transform: uppercase;
 
 			color: var(--gold);
 		}
 
 		.hero h1 {
-			margin: 18px 0 25px;
+			margin: 20px 0 25px;
 
-			max-width: 900px;
-
-			font-size: clamp(76px, 12vw, 175px);
+			font-size: clamp(80px, 12vw, 175px);
 			line-height: .80;
+
 			letter-spacing: -.065em;
 			font-weight: 850;
 		}
 
 		.hero-subtitle {
-			max-width: 560px;
+			max-width: 570px;
 
 			margin: 0;
 
 			font-size: clamp(17px, 2vw, 23px);
 			line-height: 1.5;
 
-			color: rgba(255,255,255,.82);
+			color: rgba(255,255,255,.84);
 		}
 
 		.hero-actions {
 			display: flex;
 			gap: 13px;
+
 			margin-top: 34px;
 		}
 
@@ -265,7 +280,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		.button-primary:hover {
-			background: #ecd29b;
+			background: #eed39c;
 			transform: translateY(-2px);
 		}
 
@@ -283,154 +298,282 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.hero-location {
 			position: absolute;
 			right: 35px;
-			bottom: 35px;
+			bottom: 32px;
 
 			z-index: 3;
 
 			font-size: 9px;
 			font-weight: 700;
 			letter-spacing: .18em;
-			text-transform: uppercase;
 
-			color: rgba(255,255,255,.55);
+			color: rgba(255,255,255,.52);
 		}
 
 
 		/* =========================================================
-		   COMMON SECTIONS
+		   VIDEO
+		========================================================= */
+
+		.video-section {
+			width: min(1380px, calc(100% - 70px));
+
+			margin: auto;
+
+			padding: 100px 0 125px;
+		}
+
+		.video-heading {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+
+			gap: 50px;
+
+			margin-bottom: 45px;
+		}
+
+		.video-heading h2 {
+			margin: 15px 0 0;
+
+			font-size: clamp(40px, 5vw, 68px);
+			line-height: .98;
+
+			letter-spacing: -.045em;
+		}
+
+		.video-heading p {
+			max-width: 350px;
+			margin: 0;
+
+			font-size: 14px;
+			line-height: 1.7;
+
+			color: var(--muted);
+		}
+
+		.cinematic-video {
+			position: relative;
+
+			width: 100%;
+			aspect-ratio: 16 / 9;
+
+			overflow: hidden;
+
+			background: #111;
+		}
+
+		.cinematic-video img {
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+
+			filter: brightness(.58);
+
+			transition: transform 1s ease;
+		}
+
+		.cinematic-video:hover img {
+			transform: scale(1.025);
+		}
+
+		.video-vignette {
+			position: absolute;
+			inset: 0;
+
+			background:
+				linear-gradient(
+					0deg,
+					rgba(0,0,0,.60),
+					transparent 60%
+				);
+		}
+
+		.video-center {
+			position: absolute;
+			inset: 0;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.play-button {
+			width: 82px;
+			height: 82px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			border: 1px solid rgba(255,255,255,.85);
+			border-radius: 50%;
+
+			font-size: 18px;
+
+			padding-left: 4px;
+
+			color: white;
+
+			backdrop-filter: blur(4px);
+		}
+
+		.video-duration {
+			position: absolute;
+			right: 25px;
+			bottom: 22px;
+
+			font-size: 9px;
+			font-weight: 700;
+			letter-spacing: .16em;
+
+			color: rgba(255,255,255,.75);
+		}
+
+
+		/* =========================================================
+		   COMMON SECTION
 		========================================================= */
 
 		.section {
 			width: min(1380px, calc(100% - 70px));
+
 			margin: auto;
-			padding: 135px 0;
+
+			padding: 125px 0;
 		}
 
 		.section-title {
-			margin: 16px 0 0;
+			margin: 15px 0 0;
 
-			font-size: clamp(42px, 5vw, 72px);
+			font-size: clamp(42px, 5vw, 70px);
 			line-height: .98;
+
 			letter-spacing: -.045em;
 			font-weight: 750;
 		}
 
 
 		/* =========================================================
-		   ABOUT
-		========================================================= */
-
-		.intro {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 110px;
-			align-items: start;
-		}
-
-		.intro-text {
-			margin: 37px 0 0;
-
-			max-width: 560px;
-
-			font-size: 19px;
-			line-height: 1.8;
-			color: var(--muted);
-		}
-
-
-		/* =========================================================
-		   PERFORMANCE CARDS
+		   PERFORMANCES
 		========================================================= */
 
 		.services-header {
 			display: flex;
 			align-items: flex-end;
 			justify-content: space-between;
+
 			gap: 70px;
 
 			margin-bottom: 58px;
 		}
 
 		.services-header > div {
-			max-width: 700px;
+			max-width: 720px;
 		}
 
 		.services-note {
-			max-width: 400px;
+			max-width: 410px;
+
 			margin: 0;
 
 			font-size: 15px;
-			line-height: 1.7;
+			line-height: 1.75;
 
 			color: var(--muted);
 		}
 
 		.service-grid {
 			display: grid;
+
 			grid-template-columns: repeat(2, 1fr);
+
 			gap: 18px;
 		}
 
 		.service-card {
 			position: relative;
 
-			display: block;
+			min-height: 440px;
 
-			height: 520px;
+			display: grid;
+			grid-template-columns: 43% 57%;
 
 			overflow: hidden;
 
-			background: #111;
+			background: var(--black-2);
 
 			border: 1px solid var(--line);
 
 			text-decoration: none;
+
+			transition:
+				border-color .35s ease,
+				transform .35s ease;
 		}
 
-		.service-card img {
-			position: absolute;
-			inset: 0;
+		.service-card:hover {
+			border-color: rgba(214,180,119,.45);
+			transform: translateY(-3px);
+		}
 
+
+		/* IMAGE SIDE */
+
+		.service-image {
+			position: relative;
+
+			height: 100%;
+			min-height: 440px;
+
+			overflow: hidden;
+		}
+
+		.service-image img {
 			width: 100%;
 			height: 100%;
 
 			object-fit: cover;
 
-			transition:
-				transform .8s cubic-bezier(.2,.7,.2,1),
-				filter .8s ease;
+			transition: transform .8s cubic-bezier(.2,.7,.2,1);
 		}
 
-		.service-overlay {
+		.service-card:hover .service-image img {
+			transform: scale(1.06);
+		}
+
+		.service-image::after {
+			content: "";
+
 			position: absolute;
 			inset: 0;
 
 			background:
 				linear-gradient(
-					180deg,
-					rgba(0,0,0,.08) 0%,
-					rgba(0,0,0,.10) 30%,
-					rgba(0,0,0,.90) 100%
+					90deg,
+					transparent 55%,
+					rgba(8,8,9,.65)
 				);
 		}
 
-		.service-content {
-			position: absolute;
-			inset: 0;
 
-			z-index: 2;
+		/* TEXT SIDE */
 
-			padding: 34px;
+		.service-info {
+			position: relative;
+
+			padding: 38px 34px;
 
 			display: flex;
 			flex-direction: column;
-			justify-content: flex-end;
+			justify-content: center;
 		}
 
 		.service-number {
 			position: absolute;
-			top: 31px;
-			left: 34px;
+
+			top: 28px;
+			right: 30px;
 
 			font-size: 10px;
 			font-weight: 700;
@@ -440,63 +583,49 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		.service-icon {
-			width: 39px;
-			height: 39px;
+			width: 42px;
+			height: 42px;
 
 			display: flex;
 			align-items: center;
 			justify-content: center;
 
-			margin-bottom: 15px;
+			margin-bottom: 27px;
 
-			border: 1px solid rgba(214,180,119,.75);
+			border: 1px solid rgba(214,180,119,.65);
 			border-radius: 50%;
 
 			color: var(--gold);
 
 			font-size: 17px;
-
-			transition:
-				background .3s ease,
-				color .3s ease;
 		}
 
-		.service-card h3 {
-			margin: 0 0 12px;
+		.service-info h3 {
+			margin: 0 0 15px;
 
-			font-size: clamp(32px, 3vw, 46px);
+			font-size: clamp(30px, 3vw, 43px);
 			line-height: 1;
-			letter-spacing: -.04em;
 
-			color: white;
+			letter-spacing: -.04em;
 		}
 
-		.service-card p {
-			max-width: 390px;
+		.service-info p {
+			max-width: 330px;
 
-			margin: 0 0 20px;
+			margin: 0 0 27px;
 
-			font-size: 15px;
-			line-height: 1.6;
+			font-size: 14px;
+			line-height: 1.7;
 
-			color: rgba(255,255,255,.72);
+			color: var(--muted);
 		}
 
 		.service-link {
 			font-size: 9px;
 			font-weight: 800;
-			letter-spacing: .18em;
+			letter-spacing: .17em;
 
 			color: var(--gold);
-		}
-
-		.service-card:hover img {
-			transform: scale(1.07);
-		}
-
-		.service-card:hover .service-icon {
-			background: var(--gold);
-			color: #111;
 		}
 
 
@@ -510,25 +639,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			display: grid;
 			grid-template-columns: 1.15fr .85fr;
 
-			background: #111113;
-		}
-
-		.feature-image-wrap {
-			min-height: 720px;
-			overflow: hidden;
+			background: var(--black-2);
 		}
 
 		.feature-image {
+			min-height: 700px;
+			overflow: hidden;
+		}
+
+		.feature-image img {
 			width: 100%;
 			height: 100%;
-
-			min-height: 720px;
+			min-height: 700px;
 
 			object-fit: cover;
 		}
 
 		.feature-content {
-			padding: 100px 80px;
+			padding: 90px 80px;
 
 			display: flex;
 			flex-direction: column;
@@ -538,8 +666,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.feature-content h2 {
 			margin: 18px 0 25px;
 
-			font-size: clamp(42px, 5vw, 70px);
+			font-size: clamp(42px, 5vw, 68px);
 			line-height: .98;
+
 			letter-spacing: -.045em;
 		}
 
@@ -548,8 +677,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			margin: 0;
 
-			font-size: 17px;
-			line-height: 1.75;
+			font-size: 16px;
+			line-height: 1.8;
 
 			color: var(--muted);
 		}
@@ -557,9 +686,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.feature-link {
 			margin-top: 30px;
 
-			font-size: 10px;
+			font-size: 9px;
 			font-weight: 800;
-			letter-spacing: .17em;
+			letter-spacing: .18em;
 
 			color: var(--gold);
 
@@ -586,7 +715,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		.gallery-item {
-			position: relative;
 			overflow: hidden;
 			background: #111;
 		}
@@ -610,86 +738,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
 		/* =========================================================
-		   VIDEO
-		========================================================= */
-
-		.video-section {
-			padding-top: 80px;
-		}
-
-		.video-box {
-			position: relative;
-
-			width: 100%;
-			aspect-ratio: 16 / 9;
-
-			margin-top: 50px;
-
-			overflow: hidden;
-
-			background: #111;
-		}
-
-		.video-box img {
-			width: 100%;
-			height: 100%;
-
-			object-fit: cover;
-
-			filter: brightness(.62);
-		}
-
-		.video-overlay {
-			position: absolute;
-			inset: 0;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.play-button {
-			width: 78px;
-			height: 78px;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			border: 1px solid rgba(255,255,255,.8);
-			border-radius: 50%;
-
-			color: white;
-
-			font-size: 18px;
-			padding-left: 4px;
-		}
-
-		.video-caption {
-			position: absolute;
-			left: 30px;
-			bottom: 25px;
-
-			font-size: 9px;
-			font-weight: 700;
-			letter-spacing: .18em;
-
-			color: white;
-		}
-
-
-		/* =========================================================
 		   BOOKING
 		========================================================= */
 
 		.booking {
 			text-align: center;
-			padding-top: 150px;
-			padding-bottom: 170px;
-		}
 
-		.booking .section-title {
-			margin-top: 18px;
+			padding-top: 145px;
+			padding-bottom: 165px;
 		}
 
 		.booking-text {
@@ -697,8 +753,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			margin: 28px auto 35px;
 
-			font-size: 17px;
-			line-height: 1.75;
+			font-size: 16px;
+			line-height: 1.8;
 
 			color: var(--muted);
 		}
@@ -716,25 +772,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		.site-footer {
 			border-top: 1px solid var(--line);
-			background: #080809;
+			background: #070708;
 		}
 
 		.footer-inner {
 			width: min(1380px, calc(100% - 70px));
-			margin: auto;
 
 			min-height: 130px;
+
+			margin: auto;
 
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 30px;
+			gap: 25px;
 		}
 
 		.footer-brand {
 			font-size: 18px;
 			font-weight: 800;
-			letter-spacing: .08em;
+			letter-spacing: .09em;
 		}
 
 		.footer-info {
@@ -751,43 +808,30 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		   TABLET
 		========================================================= */
 
-		@media (max-width: 900px) {
+		@media (max-width: 950px) {
 
 			.nav-inner,
 			.hero-content,
+			.video-section,
 			.section,
 			.footer-inner {
-				width: min(100% - 44px, 700px);
+				width: calc(100% - 44px);
 			}
 
 			.nav-links {
-				gap: 16px;
+				gap: 17px;
 			}
 
 			.nav-links a:not(.nav-book) {
 				display: none;
 			}
 
-			.hero {
-				min-height: 700px;
-			}
-
 			.hero-content {
-				padding-bottom: 70px;
-			}
-
-			.hero-location {
-				right: 22px;
-				bottom: 22px;
+				margin-top: -35px;
 			}
 
 			.intro {
 				grid-template-columns: 1fr;
-				gap: 25px;
-			}
-
-			.intro-text {
-				margin-top: 0;
 			}
 
 			.services-header {
@@ -798,17 +842,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				margin-top: 25px;
 			}
 
+			.service-grid {
+				grid-template-columns: 1fr;
+			}
+
 			.feature {
 				grid-template-columns: 1fr;
 			}
 
-			.feature-image-wrap,
-			.feature-image {
+			.feature-image,
+			.feature-image img {
 				min-height: 550px;
 			}
 
 			.feature-content {
-				padding: 70px 35px;
+				padding: 75px 35px;
 			}
 		}
 
@@ -821,13 +869,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.nav-inner,
 			.hero-content,
+			.video-section,
 			.section,
 			.footer-inner {
 				width: calc(100% - 36px);
-			}
-
-			.site-nav {
-				background: rgba(0,0,0,.35);
 			}
 
 			.nav-inner {
@@ -840,7 +885,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.nav-book {
 				padding: 10px 13px;
-				font-size: 9px !important;
 			}
 
 			.hero {
@@ -853,18 +897,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			}
 
 			.hero-content {
-				padding-bottom: 62px;
+				margin-top: -30px;
 			}
 
 			.hero h1 {
-				font-size: clamp(64px, 19vw, 105px);
-				max-width: 100%;
-				margin-bottom: 20px;
+				font-size: clamp(65px, 19vw, 105px);
 			}
 
 			.hero-subtitle {
 				font-size: 16px;
-				max-width: 330px;
+				max-width: 340px;
 			}
 
 			.hero-actions {
@@ -872,13 +914,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				align-items: flex-start;
 			}
 
-			.button {
-				width: auto;
-				min-width: 155px;
-			}
-
 			.hero-location {
 				display: none;
+			}
+
+			.video-section {
+				padding-top: 80px;
+				padding-bottom: 85px;
+			}
+
+			.video-heading {
+				display: block;
+			}
+
+			.video-heading p {
+				margin-top: 20px;
+			}
+
+			.play-button {
+				width: 65px;
+				height: 65px;
 			}
 
 			.section {
@@ -889,26 +944,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				font-size: 43px;
 			}
 
-			.service-grid {
-				grid-template-columns: 1fr;
-			}
-
 			.service-card {
-				height: 450px;
+				grid-template-columns: 1fr;
+				min-height: auto;
 			}
 
-			.service-content {
-				padding: 26px;
+			.service-image {
+				height: 280px;
+				min-height: 280px;
+			}
+
+			.service-info {
+				min-height: 280px;
+				padding: 32px 25px;
 			}
 
 			.service-number {
-				left: 26px;
-				top: 26px;
+				top: 25px;
+				right: 25px;
 			}
 
-			.feature-image-wrap,
-			.feature-image {
-				min-height: 460px;
+			.feature-image,
+			.feature-image img {
+				min-height: 450px;
 			}
 
 			.feature-content {
@@ -930,15 +988,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.gallery-item:last-child {
 				grid-column: span 2;
-			}
-
-			.video-box {
-				margin-top: 35px;
-			}
-
-			.play-button {
-				width: 62px;
-				height: 62px;
 			}
 
 			.booking {
@@ -971,6 +1020,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	===================================================== -->
 
 	<header class="site-nav">
+
 		<div class="nav-inner">
 
 			<a href="/" class="logo">
@@ -978,21 +1028,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			</a>
 
 			<nav class="nav-links">
-				<a href="#about">ABOUT</a>
-				<a href="#experience">EXPERIENCE</a>
-				<a href="#gallery">GALLERY</a>
-				<a href="#video">VIDEOS</a>
+
+				<a href="#experience">
+					EXPERIENCE
+				</a>
+
+				<a href="#gallery">
+					GALLERY
+				</a>
+
+				<a href="#video">
+					VIDEO
+				</a>
 
 				<a href="#booking" class="nav-book">
 					BOOK NOW
 				</a>
+
 			</nav>
 
 		</div>
+
 	</header>
 
 
 	<main>
+
 
 		<!-- =====================================================
 		     HERO
@@ -1052,28 +1113,68 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
 		<!-- =====================================================
-		     ABOUT
+		     10 SECOND CINEMATIC VIDEO
 		===================================================== -->
 
-		<section class="section intro" id="about">
+		<section
+			class="video-section"
+			id="video"
+		>
 
-			<div>
+			<div class="video-heading">
 
-				<p class="section-label">
-					THE ARTIST
+				<div>
+
+					<p class="section-label">
+						THE PERFORMANCE
+					</p>
+
+					<h2>
+						See the artist.
+					</h2>
+
+				</div>
+
+				<p>
+					A short glimpse into the atmosphere,
+					energy and presence of a Roushan
+					live performance.
 				</p>
-
-				<h2 class="section-title">
-					Music that makes the moment.
-				</h2>
 
 			</div>
 
-			<p class="intro-text">
-				Roushan is a singer and live performer based in Patna,
-				bringing music, energy and a personal touch to weddings,
-				events, birthdays, celebrations and private occasions.
-			</p>
+
+			<!--
+				VIDEO PLACEHOLDER
+
+				Replace this block with the YouTube
+				video once the final 10-second clip
+				is available.
+			-->
+
+			<div class="cinematic-video">
+
+				<img
+					src="/hero_event_standing.jpeg"
+					alt="Roushan live performance"
+					loading="lazy"
+				/>
+
+				<div class="video-vignette"></div>
+
+				<div class="video-center">
+
+					<div class="play-button">
+						▶
+					</div>
+
+				</div>
+
+				<div class="video-duration">
+					CINEMATIC PERFORMANCE · 00:10
+				</div>
+
+			</div>
 
 		</section>
 
@@ -1102,8 +1203,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 
 				<p class="services-note">
-					From intimate celebrations to energetic live events,
-					Roushan brings music and presence to every occasion.
+					Choose the kind of occasion and we'll
+					shape the performance around the
+					atmosphere you want.
 				</p>
 
 			</div>
@@ -1112,22 +1214,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<div class="service-grid">
 
 
-				<!-- WEDDINGS -->
+				<!-- =================================================
+				     WEDDINGS
+				================================================= -->
 
 				<a
 					href="#booking"
 					class="service-card"
 				>
 
-					<img
-						src="/hero_event_standing.jpeg"
-						alt="Roushan performing at a wedding event"
-						loading="lazy"
-					/>
+					<div class="service-image">
 
-					<div class="service-overlay"></div>
+						<img
+							src="/hero_event_standing.jpeg"
+							alt="Roushan performing at a wedding"
+							loading="lazy"
+						/>
 
-					<div class="service-content">
+					</div>
+
+					<div class="service-info">
 
 						<span class="service-number">
 							01
@@ -1142,8 +1248,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						</h3>
 
 						<p>
-							Live music for weddings, sangeet
-							and unforgettable celebrations.
+							Live music for wedding celebrations,
+							sangeet and memorable moments.
 						</p>
 
 						<span class="service-link">
@@ -1155,22 +1261,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</a>
 
 
-				<!-- EVENTS -->
+				<!-- =================================================
+				     EVENTS
+				================================================= -->
 
 				<a
 					href="#booking"
 					class="service-card"
 				>
 
-					<img
-						src="/hero_event.jpeg"
-						alt="Roushan performing live at an event"
-						loading="lazy"
-					/>
+					<div class="service-image">
 
-					<div class="service-overlay"></div>
+						<img
+							src="/hero_event.jpeg"
+							alt="Roushan performing at an event"
+							loading="lazy"
+						/>
 
-					<div class="service-content">
+					</div>
+
+					<div class="service-info">
 
 						<span class="service-number">
 							02
@@ -1198,22 +1308,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</a>
 
 
-				<!-- BIRTHDAYS -->
+				<!-- =================================================
+				     BIRTHDAYS
+				================================================= -->
 
 				<a
 					href="#booking"
 					class="service-card"
 				>
 
-					<img
-						src="/hero_live3.jpg"
-						alt="Roushan performing live for a celebration"
-						loading="lazy"
-					/>
+					<div class="service-image">
 
-					<div class="service-overlay"></div>
+						<img
+							src="/hero_live3.jpg"
+							alt="Roushan performing live"
+							loading="lazy"
+						/>
 
-					<div class="service-content">
+					</div>
+
+					<div class="service-info">
 
 						<span class="service-number">
 							03
@@ -1241,22 +1355,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</a>
 
 
-				<!-- CORPORATE -->
+				<!-- =================================================
+				     CORPORATE
+				================================================= -->
 
 				<a
 					href="#booking"
 					class="service-card"
 				>
 
-					<img
-						src="/hero_casula_standing.jpg"
-						alt="Roushan dressed for a professional event"
-						loading="lazy"
-					/>
+					<div class="service-image">
 
-					<div class="service-overlay"></div>
+						<img
+							src="/hero_casula_standing.jpg"
+							alt="Roushan at a professional event"
+							loading="lazy"
+						/>
 
-					<div class="service-content">
+					</div>
+
+					<div class="service-info">
 
 						<span class="service-number">
 							04
@@ -1294,12 +1412,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		<section class="feature">
 
-			<div class="feature-image-wrap">
+			<div class="feature-image">
 
 				<img
-					class="feature-image"
 					src="/hero_live2.jpg"
-					alt="Roushan performing at a live event"
+					alt="Roushan performing live"
 					loading="lazy"
 				/>
 
@@ -1316,9 +1433,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</h2>
 
 				<p>
-					From intimate celebrations to energetic live
-					events, Roushan brings a versatile performance
-					experience to every occasion.
+					From intimate celebrations to energetic
+					live events, Roushan brings a versatile
+					performance experience to every occasion.
 				</p>
 
 				<a
@@ -1371,7 +1488,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 					<img
 						src="/hero_event_standing.jpeg"
-						alt="Roushan performing live"
+						alt="Roushan live performance"
 						loading="lazy"
 					/>
 
@@ -1413,53 +1530,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
 		<!-- =====================================================
-		     VIDEO
-		===================================================== -->
-
-		<section
-			class="section video-section"
-			id="video"
-		>
-
-			<p class="section-label">
-				WATCH ROUSHAN
-			</p>
-
-			<h2 class="section-title">
-				See the performance.
-			</h2>
-
-			<!--
-				YouTube video will be connected here later.
-				For now this is a premium video placeholder.
-			-->
-
-			<div class="video-box">
-
-				<img
-					src="/hero_event_standing.jpeg"
-					alt="Roushan live performance"
-					loading="lazy"
-				/>
-
-				<div class="video-overlay">
-
-					<div class="play-button">
-						▶
-					</div>
-
-				</div>
-
-				<div class="video-caption">
-					LIVE PERFORMANCE
-				</div>
-
-			</div>
-
-		</section>
-
-
-		<!-- =====================================================
 		     BOOKING
 		===================================================== -->
 
@@ -1477,9 +1547,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			</h2>
 
 			<p class="booking-text">
-				Tell us about your wedding, birthday, private event
-				or celebration. We'll help you plan the right
-				performance for your occasion.
+				Tell us about your wedding, birthday,
+				private event or celebration. We'll help
+				you plan the right performance for your occasion.
 			</p>
 
 			<div class="booking-actions">
