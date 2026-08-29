@@ -1,28 +1,26 @@
 ---
+const VIDEO_URL = "https://www.youtube.com/embed/YOUR_VIDEO_ID";
+
 const services = [
   {
     number: "01",
     title: "Weddings",
     text: "Live music for wedding celebrations, intimate moments and unforgettable evenings.",
-    symbol: "✦",
   },
   {
     number: "02",
     title: "Events",
     text: "Live performances for private, social and special events.",
-    symbol: "◌",
   },
   {
     number: "03",
-    title: "Celebrations",
-    text: "Make birthdays and personal celebrations more memorable with live music.",
-    symbol: "◇",
+    title: "Birthdays",
+    text: "Make birthdays and celebrations more memorable with live music.",
   },
   {
     number: "04",
     title: "Corporate",
     text: "Professional live entertainment for corporate events and gatherings.",
-    symbol: "□",
   },
 ];
 ---
@@ -36,19 +34,20 @@ const services = [
 
     <meta
       name="description"
-      content="Roushan — Singer, live performer and recording artist. Weddings, events, celebrations and cinematic music."
+      content="Roushan — singer and live performer for weddings, events, birthdays and corporate occasions."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
+
     <div class="grain"></div>
 
     <!-- =========================
@@ -56,26 +55,39 @@ const services = [
     ========================== -->
 
     <header class="header">
-      <a href="/" class="logo" aria-label="Roushan">
-        <span class="logo-symbol">R</span>
-        <span class="logo-name">ROUSHAN</span>
+
+      <a href="/" class="logo">
+        <span class="logo-mark">
+          R
+        </span>
+
+        <span class="logo-name">
+          ROUSHAN
+        </span>
       </a>
+
 
       <nav class="desktop-nav">
         <a href="#about">ABOUT</a>
-        <a href="#cinema">CINEMA</a>
+        <a href="#performance">PERFORMANCES</a>
         <a href="#live">LIVE</a>
         <a href="#contact">CONTACT</a>
       </nav>
 
-      <a href="#contact" class="header-book">
+
+      <a href="#contact" class="header-button">
         BOOK ROUSHAN
       </a>
 
-      <button class="menu-toggle" aria-label="Open menu">
+
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+      >
         <span></span>
         <span></span>
       </button>
+
     </header>
 
 
@@ -84,10 +96,12 @@ const services = [
     ========================== -->
 
     <div class="mobile-menu">
+
       <a href="#about">ABOUT</a>
-      <a href="#cinema">CINEMA</a>
+      <a href="#performance">PERFORMANCES</a>
       <a href="#live">LIVE</a>
       <a href="#contact">CONTACT</a>
+
     </div>
 
 
@@ -99,212 +113,238 @@ const services = [
 
       <section class="hero">
 
-        <div class="hero-background"></div>
+        <div class="hero-copy">
 
-        <div class="hero-content">
-
-          <div class="hero-intro">
-            <span class="line"></span>
-            <span>SINGER · LIVE PERFORMER · ARTIST</span>
+          <div class="eyebrow">
+            <span></span>
+            SINGER · LIVE PERFORMER
           </div>
 
+
           <h1>
-            Music
+            Bring the
             <br />
-            with a
-            <em>story.</em>
+            <em>music.</em>
           </h1>
 
+
           <p>
-            Roushan is a singer and live performer creating
-            memorable experiences through music, performance
-            and cinematic storytelling.
+            Live music for weddings, celebrations,
+            events and special occasions.
           </p>
 
-          <div class="hero-buttons">
 
-            <a href="#cinema" class="primary-button">
-              <span class="play-icon">▶</span>
-              WATCH FILM
+          <div class="hero-actions">
+
+            <a
+              href="#performance"
+              class="button button-primary"
+            >
+              <span>▶</span>
+              WATCH PERFORMANCE
             </a>
 
-            <a href="#contact" class="secondary-button">
+            <a
+              href="#contact"
+              class="button button-secondary"
+            >
               BOOK ROUSHAN
               <span>↗</span>
             </a>
 
           </div>
 
+
+          <div class="hero-location">
+            <span></span>
+            Patna, Bihar · Available for events
+          </div>
+
         </div>
 
 
-        <!-- Main portrait -->
+        <!-- Hero image -->
 
-        <div class="hero-portrait">
+        <div class="hero-image">
 
-          <!-- Replace with best Roushan portrait -->
           <img
             src="/images/roushan-hero.jpg"
-            alt="Roushan singer and live performer"
+            alt="Roushan — singer and live performer"
           />
 
-          <div class="portrait-dark"></div>
+          <div class="hero-image-shade"></div>
 
-          <div class="portrait-caption">
-            <strong>ROUSHAN</strong>
-            <span>SINGER / ARTIST</span>
+
+          <div class="hero-image-info">
+
+            <strong>
+              ROUSHAN
+            </strong>
+
+            <span>
+              SINGER / LIVE PERFORMER
+            </span>
+
           </div>
 
-          <div class="portrait-index">
+
+          <div class="hero-image-number">
             01
           </div>
 
         </div>
 
 
-        <div class="hero-vertical">
-          MUSIC
-          <span>•</span>
-          PERFORMANCE
-          <span>•</span>
-          CINEMA
+        <!-- Graphic identity -->
+
+        <div class="hero-graphic">
+
+          <div class="graphic-ring">
+
+            <span class="graphic-r">
+              R
+            </span>
+
+            <span class="graphic-note">
+              ♪
+            </span>
+
+          </div>
+
+          <span class="graphic-text">
+            LIVE · MUSIC · PERFORMANCE
+          </span>
+
         </div>
 
       </section>
 
 
       <!-- =========================
-           ARTIST INTRO
+           INTRO
       ========================== -->
 
-      <section class="artist-intro" id="about">
+      <section
+        class="intro"
+        id="about"
+      >
 
         <div class="section-number">
           01 / ABOUT
         </div>
 
-        <div class="artist-intro-main">
 
-          <div class="label">
+        <div class="intro-content">
+
+          <span class="section-label">
             THE ARTIST
-          </div>
+          </span>
+
 
           <h2>
-            A voice can fill
-            <br />
-            a room.
-            <em>
-              A feeling can
-              <br />
-              stay forever.
-            </em>
+            Music that feels
+            <em>right.</em>
           </h2>
 
+
           <p>
-            Roushan brings together live vocals, stage presence
-            and emotion to create performances that feel personal,
-            elegant and memorable.
+            Roushan is a singer and live performer
+            bringing energy, emotion and a personal
+            touch to every performance.
           </p>
 
         </div>
 
-        <div class="artist-mark">
-          R
+
+        <div class="intro-symbol">
+
+          <span>R</span>
+
+          <small>
+            VOICE<br />
+            MUSIC<br />
+            LIVE
+          </small>
+
         </div>
 
       </section>
 
 
       <!-- =========================
-           CINEMATIC FILM
+           FEATURED PERFORMANCE
       ========================== -->
 
-      <section class="cinema" id="cinema">
+      <section
+        class="performance"
+        id="performance"
+      >
 
-        <div class="cinema-header">
+        <div class="performance-heading">
 
           <div>
 
-            <div class="label">
-              02 / CINEMATIC
-            </div>
+            <span class="section-label">
+              02 / FEATURED PERFORMANCE
+            </span>
 
             <h2>
-              From music
-              <br />
-              to <em>cinema.</em>
+              Hear the
+              <em>artist.</em>
             </h2>
 
           </div>
 
+
           <p>
-            A visual interpretation of Roushan's music —
-            combining performance, atmosphere and story
-            into a cinematic experience.
+            Watch Roushan perform live and
+            experience the voice, energy and
+            atmosphere of the performance.
           </p>
 
         </div>
 
 
-        <div class="film">
+        <div class="video-frame">
 
-          <!--
-            Replace:
-            /images/cinematic-poster.jpg
-            /videos/roushan-film.mp4
-          -->
+          <iframe
+            src={VIDEO_URL}
+            title="Roushan performance"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
 
-          <video
-            id="mainFilm"
-            poster="/images/cinematic-poster.jpg"
-            playsinline
-            muted
-            preload="metadata"
-          >
-            <source
-              src="/videos/roushan-film.mp4"
-              type="video/mp4"
-            />
-          </video>
 
-          <div class="film-overlay"></div>
-
-          <button
-            class="film-play"
-            id="filmPlay"
-            aria-label="Play cinematic film"
-          >
-            <span>▶</span>
-          </button>
-
-          <div class="film-bottom">
-
+          <div class="video-label">
             <span>ROUSHAN</span>
-
-            <span>01:30</span>
-
-            <span>CINEMATIC MUSIC FILM</span>
-
+            <span>LIVE PERFORMANCE</span>
           </div>
 
         </div>
 
 
-        <div class="film-footer">
+        <div class="video-caption">
 
           <div>
-            <span class="label">
-              A VISUAL STORY
+
+            <span class="section-label">
+              LIVE MUSIC
             </span>
 
             <h3>
-              Every song has
-              <em>a world.</em>
+              A performance is
+              <em>an experience.</em>
             </h3>
+
           </div>
 
-          <a href="#" class="arrow-link">
-            WATCH FULL FILM
+
+          <a
+            href="#contact"
+            class="text-link"
+          >
+            BOOK FOR YOUR EVENT
             <span>↗</span>
           </a>
 
@@ -314,57 +354,101 @@ const services = [
 
 
       <!-- =========================
-           SOUND → CINEMA
+           EXPERIENCE
       ========================== -->
 
-      <section class="journey">
+      <section class="experience">
 
-        <div class="journey-title">
+        <div class="experience-title">
 
-          <span class="label">
+          <span class="section-label">
             THE EXPERIENCE
           </span>
 
           <h2>
             Voice.
             <span>Music.</span>
-            Story.
-            <em>Cinema.</em>
+            Energy.
           </h2>
 
         </div>
 
 
-        <div class="journey-track">
+        <div class="experience-grid">
 
-          <div class="journey-item">
-            <small>01</small>
-            <strong>VOICE</strong>
-            <span>The artist.</span>
+          <div class="experience-item">
+
+            <span>01</span>
+
+            <div class="experience-icon">
+              ♪
+            </div>
+
+            <strong>
+              VOICE
+            </strong>
+
+            <p>
+              The sound that brings people together.
+            </p>
+
           </div>
 
-          <div class="journey-line"></div>
 
-          <div class="journey-item">
-            <small>02</small>
-            <strong>MUSIC</strong>
-            <span>The emotion.</span>
+          <div class="experience-item">
+
+            <span>02</span>
+
+            <div class="experience-icon">
+              ♫
+            </div>
+
+            <strong>
+              MUSIC
+            </strong>
+
+            <p>
+              Songs chosen for the moment.
+            </p>
+
           </div>
 
-          <div class="journey-line"></div>
 
-          <div class="journey-item">
-            <small>03</small>
-            <strong>STORY</strong>
-            <span>The meaning.</span>
+          <div class="experience-item">
+
+            <span>03</span>
+
+            <div class="experience-icon">
+              ◉
+            </div>
+
+            <strong>
+              ENERGY
+            </strong>
+
+            <p>
+              A live presence your audience remembers.
+            </p>
+
           </div>
 
-          <div class="journey-line"></div>
 
-          <div class="journey-item">
-            <small>04</small>
-            <strong>CINEMA</strong>
-            <span>The experience.</span>
+          <div class="experience-item">
+
+            <span>04</span>
+
+            <div class="experience-icon">
+              R
+            </div>
+
+            <strong>
+              ROUSHAN
+            </strong>
+
+            <p>
+              A performance shaped around your event.
+            </p>
+
           </div>
 
         </div>
@@ -373,7 +457,7 @@ const services = [
 
 
       <!-- =========================
-           ARTIST PROFILE
+           PROFILE
       ========================== -->
 
       <section class="profile">
@@ -385,37 +469,44 @@ const services = [
             alt="Roushan"
           />
 
-          <span class="profile-number">
+          <span>
             03
           </span>
 
         </div>
 
 
-        <div class="profile-content">
+        <div class="profile-copy">
 
-          <span class="label">
-            THE ARTIST
+          <span class="section-label">
+            ABOUT ROUSHAN
           </span>
 
+
           <h2>
-            Music that
-            <em>connects.</em>
+            The artist
+            <em>behind the voice.</em>
           </h2>
 
-          <p>
-            Roushan is a singer and live performer based in
-            Patna, Bihar, performing for weddings, celebrations,
-            private events and corporate occasions.
-          </p>
 
           <p>
-            Every performance is shaped around the audience,
-            venue and atmosphere — creating an experience
-            rather than simply filling a stage with sound.
+            Roushan performs across weddings,
+            birthdays, private celebrations,
+            corporate events and social gatherings.
           </p>
 
-          <a href="#contact" class="arrow-link">
+
+          <p>
+            The focus is simple — good music,
+            a strong live performance and an
+            atmosphere people enjoy being part of.
+          </p>
+
+
+          <a
+            href="#contact"
+            class="text-link"
+          >
             GET IN TOUCH
             <span>↗</span>
           </a>
@@ -429,50 +520,63 @@ const services = [
            LIVE SERVICES
       ========================== -->
 
-      <section class="live" id="live">
+      <section
+        class="live"
+        id="live"
+      >
 
         <div class="live-heading">
 
           <div>
 
-            <span class="label">
+            <span class="section-label">
               04 / LIVE
             </span>
 
             <h2>
-              Bring the
-              <em>music.</em>
+              Choose your
+              <em>occasion.</em>
             </h2>
 
           </div>
 
+
           <p>
-            Live performances designed around the energy,
-            audience and character of your event.
+            Live performances for moments
+            worth celebrating.
           </p>
 
         </div>
 
 
-        <div class="services">
+        <div class="service-grid">
 
           {services.map((service) => (
 
-            <article class="service">
+            <article class="service-card">
 
-              <div class="service-header">
+              <div class="service-top">
 
-                <span class="service-number">
+                <span>
                   {service.number}
                 </span>
 
-                <span class="service-symbol">
-                  {service.symbol}
-                </span>
+                <div class="service-logo">
+
+                  <span class="service-note">
+                    ♪
+                  </span>
+
+                  <span class="service-r">
+                    R
+                  </span>
+
+                </div>
 
               </div>
 
-              <div class="service-body">
+
+              <div class="service-content">
 
                 <h3>
                   {service.title}
@@ -483,6 +587,7 @@ const services = [
                 </p>
 
               </div>
+
 
               <span class="service-arrow">
                 ↗
@@ -498,115 +603,50 @@ const services = [
 
 
       <!-- =========================
-           PERFORMANCE
+           CALL TO ACTION
       ========================== -->
 
-      <section class="performance">
+      <section
+        class="contact"
+        id="contact"
+      >
 
-        <div class="performance-copy">
+        <div class="contact-content">
 
-          <span class="label">
-            LIVE PERFORMANCE
+          <span class="section-label">
+            05 / BOOKING
           </span>
+
 
           <h2>
-            Hear the
-            <em>artist.</em>
-          </h2>
-
-          <p>
-            Discover live performances, musical moments
-            and the sound behind Roushan.
-          </p>
-
-          <a href="#" class="arrow-link">
-            WATCH PERFORMANCES
-            <span>↗</span>
-          </a>
-
-        </div>
-
-
-        <div class="audio-visual">
-
-          <div class="wave">
-
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-
-          </div>
-
-          <div class="audio-button">
-            ▶
-          </div>
-
-          <span class="audio-label">
-            PLAY LIVE SESSION
-          </span>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           CONTACT
-      ========================== -->
-
-      <section class="contact" id="contact">
-
-        <div class="contact-inner">
-
-          <span class="label">
-            05 / CONTACT
-          </span>
-
-          <h2>
-            Let's make
+            Make your event
             <br />
-            your event
-            <em>memorable.</em>
+            <em>sound special.</em>
           </h2>
 
+
           <p>
-            Tell us about your event, date and location.
-            We'll help create the right musical experience.
+            Tell us about your event, date and
+            location and let's plan the performance.
           </p>
 
-          <div class="contact-buttons">
+
+          <div class="contact-actions">
 
             <a
               href="tel:+910000000000"
-              class="primary-button"
+              class="button button-primary"
             >
               CALL ROUSHAN
               <span>↗</span>
             </a>
 
+
             <a
               href="https://wa.me/910000000000"
-              class="secondary-button"
               target="_blank"
               rel="noopener"
+              class="button button-secondary"
             >
               WHATSAPP
               <span>↗</span>
@@ -616,8 +656,17 @@ const services = [
 
         </div>
 
-        <div class="contact-letter">
-          R
+
+        <div class="contact-graphic">
+
+          <div class="big-r">
+            R
+          </div>
+
+          <div class="contact-circle">
+            ♪
+          </div>
+
         </div>
 
       </section>
@@ -633,7 +682,7 @@ const services = [
 
       <div class="footer-brand">
 
-        <span class="logo-symbol">
+        <span class="logo-mark">
           R
         </span>
 
@@ -647,7 +696,7 @@ const services = [
       <div class="footer-nav">
 
         <a href="#about">ABOUT</a>
-        <a href="#cinema">CINEMA</a>
+        <a href="#performance">PERFORMANCES</a>
         <a href="#live">LIVE</a>
         <a href="#contact">CONTACT</a>
 
@@ -656,106 +705,76 @@ const services = [
 
       <div class="social">
 
-        <a href="#" aria-label="Instagram">
-          IG
+        <a href="#">
+          INSTAGRAM
         </a>
 
-        <a href="#" aria-label="YouTube">
-          YT
+        <a href="#">
+          YOUTUBE
         </a>
 
       </div>
 
 
-      <div class="footer-copy">
+      <div class="copyright">
         © 2026 ROUSHAN · ALL RIGHTS RESERVED
       </div>
 
     </footer>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script>
-      /* =========================
-         FILM PLAYER
-      ========================== */
 
-      const film = document.getElementById("mainFilm");
-      const filmPlay = document.getElementById("filmPlay");
+      /* Mobile navigation */
 
-      if (film && filmPlay) {
-
-        filmPlay.addEventListener("click", async () => {
-
-          if (film.paused) {
-
-            await film.play();
-
-            filmPlay.classList.add("playing");
-
-          } else {
-
-            film.pause();
-
-            filmPlay.classList.remove("playing");
-
-          }
-
-        });
-
-        film.addEventListener("play", () => {
-          filmPlay.classList.add("playing");
-        });
-
-        film.addEventListener("pause", () => {
-          filmPlay.classList.remove("playing");
-        });
-
-      }
-
-
-      /* =========================
-         MOBILE MENU
-      ========================== */
-
-      const menuToggle =
+      const menuButton =
         document.querySelector(".menu-toggle");
 
       const mobileMenu =
         document.querySelector(".mobile-menu");
 
-      if (menuToggle && mobileMenu) {
 
-        menuToggle.addEventListener("click", () => {
+      menuButton?.addEventListener(
+        "click",
+        () => {
 
-          document.body.classList.toggle("menu-active");
+          document.body.classList.toggle(
+            "menu-open"
+          );
+
+        }
+      );
+
+
+      mobileMenu
+        ?.querySelectorAll("a")
+        .forEach((link) => {
+
+          link.addEventListener(
+            "click",
+            () => {
+
+              document.body.classList.remove(
+                "menu-open"
+              );
+
+            }
+          );
 
         });
 
-        mobileMenu
-          .querySelectorAll("a")
-          .forEach((link) => {
 
-            link.addEventListener("click", () => {
+      /* Scroll reveal */
 
-              document.body.classList.remove(
-                "menu-active"
-              );
-
-            });
-
-          });
-
-      }
-
-
-      /* =========================
-         SCROLL REVEALS
-      ========================== */
-
-      const sections =
+      const revealElements =
         document.querySelectorAll(
-          ".artist-intro, .cinema, .journey, .profile, .live, .performance, .contact"
+          ".intro, .performance, .experience, .profile, .live, .contact"
         );
+
 
       const observer =
         new IntersectionObserver(
@@ -766,7 +785,7 @@ const services = [
               if (entry.isIntersecting) {
 
                 entry.target.classList.add(
-                  "is-visible"
+                  "visible"
                 );
 
               }
@@ -775,35 +794,48 @@ const services = [
 
           },
           {
-            threshold: 0.1,
+            threshold: 0.08
           }
         );
 
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
+
+      revealElements.forEach(
+        (element) =>
+          observer.observe(element)
+      );
+
     </script>
+
   </body>
 </html>
 
 
 <style>
-  /* =========================================================
-     DESIGN SYSTEM
-  ========================================================= */
+
+  /* =====================================================
+     DESIGN
+  ===================================================== */
 
   :root {
-    --black: #090807;
-    --black-soft: #100e0c;
-    --black-card: #141210;
 
-    --cream: #eee5d9;
-    --cream-soft: #c8beb2;
+    --paper: #eee7dc;
+    --paper-light: #f5f0e8;
 
-    --gold: #c9a477;
-    --gold-light: #d9b98d;
+    --charcoal: #292521;
+    --charcoal-soft: #403a34;
 
-    --line: rgba(238, 229, 217, 0.14);
+    --brown: #5a493a;
+
+    --gold: #b78d60;
+    --gold-light: #d0ad83;
+
+    --muted: #756d65;
+
+    --line:
+      rgba(52, 46, 40, 0.16);
+
+    --dark-line:
+      rgba(238, 231, 220, 0.15);
 
     --serif:
       "Playfair Display",
@@ -814,12 +846,13 @@ const services = [
       "DM Sans",
       Arial,
       sans-serif;
+
   }
 
 
-  /* =========================================================
+  /* =====================================================
      RESET
-  ========================================================= */
+  ===================================================== */
 
   * {
     box-sizing: border-box;
@@ -832,228 +865,301 @@ const services = [
 
 
   body {
+
     margin: 0;
-    background: var(--black);
-    color: var(--cream);
-    font-family: var(--sans);
+
+    background:
+      var(--paper);
+
+    color:
+      var(--charcoal);
+
+    font-family:
+      var(--sans);
+
     overflow-x: hidden;
+
   }
 
 
   ::selection {
-    background: var(--gold);
-    color: var(--black);
+
+    background:
+      var(--gold);
+
+    color:
+      white;
+
   }
 
 
   a {
+
     color: inherit;
+
     text-decoration: none;
+
   }
 
 
   img,
-  video {
+  iframe {
+
     display: block;
+
     max-width: 100%;
+
   }
 
 
-  button {
-    font-family: inherit;
-  }
-
-
-  /* =========================================================
-     FILM GRAIN
-  ========================================================= */
+  /* =====================================================
+     GRAIN
+  ===================================================== */
 
   .grain {
+
     position: fixed;
+
     inset: 0;
+
     z-index: 9999;
+
     pointer-events: none;
 
-    opacity: 0.035;
+    opacity: .018;
 
     background-image:
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E");
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
   }
 
 
-  /* =========================================================
+  /* =====================================================
      HEADER
-  ========================================================= */
+  ===================================================== */
 
   .header {
+
     position: absolute;
 
     top: 0;
     left: 0;
     right: 0;
 
-    height: 92px;
+    height: 90px;
 
     padding:
       0 5vw;
 
     display: flex;
+
     align-items: center;
 
     z-index: 100;
+
   }
 
 
   .logo {
+
     display: flex;
+
     align-items: center;
-    gap: 12px;
+
+    gap: 11px;
+
   }
 
 
-  .logo-symbol {
-    width: 36px;
-    height: 36px;
+  .logo-mark {
 
-    border: 1px solid var(--gold);
+    width: 34px;
+    height: 34px;
 
     display: grid;
+
     place-items: center;
 
-    color: var(--gold);
+    border:
+      1px solid
+      var(--gold);
 
-    font-family: var(--serif);
-    font-size: 21px;
+    color:
+      var(--gold);
+
+    font-family:
+      var(--serif);
+
+    font-size: 20px;
+
   }
 
 
   .logo-name {
-    font-size: 11px;
+
+    font-size: 10px;
+
     font-weight: 700;
 
-    letter-spacing: 0.23em;
+    letter-spacing:
+      .22em;
+
   }
 
 
   .desktop-nav {
+
     margin-left: auto;
-    margin-right: 42px;
 
     display: flex;
-    gap: 34px;
+
+    gap: 32px;
+
+    margin-right: 38px;
+
   }
 
 
   .desktop-nav a {
-    color:
-      rgba(238, 229, 217, 0.7);
 
     font-size: 9px;
+
     font-weight: 600;
 
-    letter-spacing: 0.16em;
+    letter-spacing:
+      .14em;
+
+    color:
+      rgba(41, 37, 33, .72);
 
     transition:
-      color 0.3s ease;
+      color .25s ease;
+
   }
 
 
   .desktop-nav a:hover {
-    color: var(--gold-light);
+
+    color:
+      var(--gold);
+
   }
 
 
-  .header-book {
-    padding: 12px 18px;
+  .header-button {
 
-    border: 1px solid
-      rgba(201, 164, 119, 0.6);
+    padding:
+      12px 17px;
+
+    border:
+      1px solid
+      rgba(90, 73, 58, .45);
 
     font-size: 9px;
-    font-weight: 600;
 
-    letter-spacing: 0.12em;
+    font-weight: 700;
+
+    letter-spacing:
+      .12em;
 
     transition:
-      all 0.3s ease;
+      .3s ease;
+
   }
 
 
-  .header-book:hover {
-    background: var(--gold-light);
-    color: var(--black);
+  .header-button:hover {
+
+    background:
+      var(--charcoal);
+
+    color:
+      var(--paper);
+
   }
 
 
   .menu-toggle {
+
     display: none;
 
-    margin-left: auto;
-
-    width: 38px;
-    height: 38px;
-
     border: 0;
+
     background: transparent;
 
     cursor: pointer;
+
   }
 
 
   .menu-toggle span {
+
     display: block;
 
     width: 25px;
+
     height: 1px;
 
-    margin: 6px auto;
+    margin: 6px;
 
-    background: var(--cream);
+    background:
+      var(--charcoal);
+
   }
 
 
-  /* =========================================================
+  /* =====================================================
      MOBILE MENU
-  ========================================================= */
+  ===================================================== */
 
   .mobile-menu {
+
     position: fixed;
+
     inset: 0;
 
     z-index: 90;
 
     display: none;
+
     flex-direction: column;
 
-    align-items: center;
     justify-content: center;
+
+    align-items: center;
 
     gap: 28px;
 
     background:
-      rgba(9, 8, 7, 0.98);
+      var(--paper);
+
   }
 
 
   .mobile-menu a {
-    font-family: var(--serif);
 
-    font-size: 38px;
+    font-family:
+      var(--serif);
 
-    color: var(--cream);
+    font-size:
+      36px;
+
   }
 
 
-  body.menu-active .mobile-menu {
+  body.menu-open .mobile-menu {
+
     display: flex;
+
   }
 
 
-  /* =========================================================
+  /* =====================================================
      HERO
-  ========================================================= */
+  ===================================================== */
 
   .hero {
+
     position: relative;
 
     min-height: 100vh;
@@ -1061,37 +1167,18 @@ const services = [
     display: grid;
 
     grid-template-columns:
-      50% 50%;
+      51% 49%;
 
     overflow: hidden;
 
     background:
-      radial-gradient(
-        circle at 72% 42%,
-        rgba(104, 66, 39, 0.2),
-        transparent 34%
-      ),
-      var(--black);
+      var(--paper);
+
   }
 
 
-  .hero-background {
-    position: absolute;
+  .hero-copy {
 
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-      radial-gradient(
-        ellipse at 28% 70%,
-        rgba(99, 67, 42, 0.08),
-        transparent 40%
-      );
-  }
-
-
-  .hero-content {
     position: relative;
 
     z-index: 5;
@@ -1099,162 +1186,235 @@ const services = [
     align-self: center;
 
     padding:
-      150px 3vw 90px 9vw;
+      145px 3vw 90px 9vw;
 
-    max-width: 760px;
   }
 
 
-  .hero-intro {
+  .eyebrow {
+
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 
-    margin-bottom: 30px;
-
-    color: var(--gold-light);
+    color:
+      var(--gold);
 
     font-size: 9px;
+
     font-weight: 700;
 
-    letter-spacing: 0.18em;
+    letter-spacing:
+      .17em;
+
+    margin-bottom:
+      30px;
+
   }
 
 
-  .hero-intro .line {
-    width: 34px;
+  .eyebrow span {
+
+    width: 32px;
+
     height: 1px;
 
-    background: var(--gold);
+    background:
+      var(--gold);
+
   }
 
 
   .hero h1 {
+
     margin: 0;
 
-    font-family: var(--serif);
+    font-family:
+      var(--serif);
 
     font-size:
-      clamp(60px, 7vw, 108px);
+      clamp(68px, 8vw, 120px);
+
+    line-height:
+      .88;
 
     font-weight: 400;
 
-    line-height: 0.91;
+    letter-spacing:
+      -.06em;
 
-    letter-spacing: -0.055em;
   }
 
 
   .hero h1 em {
-    color: var(--gold-light);
 
-    font-style: italic;
+    color:
+      var(--gold);
+
+    font-style:
+      italic;
+
   }
 
 
-  .hero-content > p {
-    max-width: 470px;
+  .hero-copy > p {
+
+    max-width: 430px;
 
     margin:
       38px 0 0;
 
-    color: var(--cream-soft);
+    color:
+      var(--muted);
 
     font-size: 14px;
 
-    line-height: 1.85;
+    line-height:
+      1.85;
+
   }
 
 
-  /* =========================================================
-     BUTTONS
-  ========================================================= */
+  .hero-actions {
 
-  .hero-buttons {
     display: flex;
 
-    gap: 12px;
+    gap: 11px;
 
-    margin-top: 34px;
+    margin-top:
+      32px;
+
   }
 
 
-  .primary-button,
-  .secondary-button {
-    min-height: 48px;
+  .button {
+
+    min-height:
+      47px;
 
     padding:
-      0 21px;
+      0 20px;
 
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    gap: 12px;
+    gap: 11px;
 
     font-size: 9px;
+
     font-weight: 700;
 
-    letter-spacing: 0.12em;
+    letter-spacing:
+      .11em;
 
     transition:
-      all 0.3s ease;
+      all .3s ease;
+
   }
 
 
-  .primary-button {
+  .button-primary {
+
     background:
-      var(--gold-light);
+      var(--charcoal);
 
     color:
-      var(--black);
+      var(--paper);
+
   }
 
 
-  .primary-button:hover {
+  .button-primary:hover {
+
     background:
-      var(--cream);
+      var(--brown);
+
   }
 
 
-  .secondary-button {
+  .button-secondary {
+
     border:
       1px solid
-      rgba(238, 229, 217, 0.28);
+      rgba(41, 37, 33, .3);
+
   }
 
 
-  .secondary-button:hover {
+  .button-secondary:hover {
+
     border-color:
       var(--gold);
 
     color:
-      var(--gold-light);
+      var(--gold);
+
   }
 
 
-  .play-icon {
+  .hero-location {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top:
+      45px;
+
+    color:
+      rgba(41, 37, 33, .48);
+
     font-size: 9px;
+
+    letter-spacing:
+      .06em;
+
   }
 
 
-  /* =========================================================
-     HERO PORTRAIT
-  ========================================================= */
+  .hero-location span {
 
-  .hero-portrait {
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+      var(--gold);
+
+  }
+
+
+  /* =====================================================
+     HERO IMAGE
+  ===================================================== */
+
+  .hero-image {
+
     position: relative;
 
     height: 100vh;
 
     overflow: hidden;
+
+    background:
+      #d6c5b3;
+
   }
 
 
-  .hero-portrait img {
+  .hero-image img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -1263,35 +1423,39 @@ const services = [
       center center;
 
     filter:
-      saturate(0.7)
-      contrast(1.08);
+      saturate(.78)
+      contrast(1.02);
 
     transform:
-      scale(1.04);
+      scale(1.025);
 
     animation:
-      portraitMove
-      16s
+      heroMove
+      15s
       ease-in-out
       infinite
       alternate;
+
   }
 
 
-  @keyframes portraitMove {
+  @keyframes heroMove {
+
     from {
       transform:
-        scale(1.04);
+        scale(1.025);
     }
 
     to {
       transform:
-        scale(1.08);
+        scale(1.055);
     }
+
   }
 
 
-  .portrait-dark {
+  .hero-image-shade {
+
     position: absolute;
 
     inset: 0;
@@ -1299,124 +1463,189 @@ const services = [
     background:
       linear-gradient(
         90deg,
-        var(--black) 0%,
-        rgba(9, 8, 7, 0.42) 24%,
-        transparent 65%
+        rgba(41,37,33,.32),
+        transparent 35%
       ),
       linear-gradient(
         0deg,
-        rgba(9, 8, 7, 0.7),
-        transparent 45%,
-        rgba(9, 8, 7, 0.12)
+        rgba(41,37,33,.38),
+        transparent 42%
       );
+
   }
 
 
-  .portrait-caption {
+  .hero-image-info {
+
     position: absolute;
 
-    left: 32px;
-    bottom: 38px;
+    left: 30px;
+
+    bottom: 35px;
 
     display: flex;
 
     flex-direction: column;
 
     gap: 5px;
+
+    color:
+      white;
+
   }
 
 
-  .portrait-caption strong {
+  .hero-image-info strong {
+
     font-size: 10px;
 
     letter-spacing:
-      0.18em;
+      .18em;
+
   }
 
 
-  .portrait-caption span {
-    color:
-      var(--gold-light);
+  .hero-image-info span {
 
     font-size: 7px;
 
     letter-spacing:
-      0.16em;
+      .16em;
+
+    color:
+      #e4c8a5;
+
   }
 
 
-  .portrait-index {
+  .hero-image-number {
+
     position: absolute;
 
-    right: 35px;
-    bottom: 24px;
+    right: 27px;
+
+    bottom: 15px;
 
     font-family:
       var(--serif);
 
-    font-size: 90px;
+    font-size:
+      90px;
 
     color:
-      rgba(238, 229, 217, 0.1);
+      rgba(255,255,255,.22);
+
   }
 
 
-  .hero-vertical {
-    position: absolute;
+  /* =====================================================
+     HERO GRAPHIC
+  ===================================================== */
 
-    right: 23px;
-    top: 50%;
+  .hero-graphic {
+
+    position: absolute;
 
     z-index: 10;
 
-    transform:
-      translateY(-50%);
+    right: 40%;
 
-    writing-mode:
-      vertical-rl;
+    bottom: 12%;
+
+    transform:
+      translateX(50%);
 
     display: flex;
 
-    gap: 12px;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+  }
+
+
+  .graphic-ring {
+
+    width: 90px;
+
+    height: 90px;
+
+    border:
+      1px solid
+      rgba(183,141,96,.75);
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    position: relative;
+
+    background:
+      rgba(238,231,220,.75);
+
+    backdrop-filter:
+      blur(5px);
+
+  }
+
+
+  .graphic-r {
+
+    font-family:
+      var(--serif);
+
+    font-size: 47px;
 
     color:
-      rgba(238, 229, 217, 0.35);
+      var(--brown);
+
+  }
+
+
+  .graphic-note {
+
+    position: absolute;
+
+    right: 17px;
+
+    top: 13px;
+
+    color:
+      var(--gold);
+
+    font-size: 18px;
+
+  }
+
+
+  .graphic-text {
 
     font-size: 7px;
 
     letter-spacing:
-      0.23em;
-  }
+      .16em;
 
-
-  /* =========================================================
-     LABEL
-  ========================================================= */
-
-  .label {
     color:
-      var(--gold-light);
+      rgba(41,37,33,.58);
 
-    font-size: 9px;
+    white-space:
+      nowrap;
 
-    font-weight: 700;
-
-    letter-spacing:
-      0.18em;
-
-    text-transform:
-      uppercase;
   }
 
 
-  /* =========================================================
-     ARTIST INTRO
-  ========================================================= */
+  /* =====================================================
+     INTRO
+  ===================================================== */
 
-  .artist-intro {
-    position: relative;
+  .intro {
 
-    min-height: 680px;
+    min-height:
+      620px;
 
     padding:
       130px 9vw;
@@ -1426,7 +1655,8 @@ const services = [
     grid-template-columns:
       18% 62% 20%;
 
-    align-items: center;
+    align-items:
+      center;
 
     border-top:
       1px solid var(--line);
@@ -1437,374 +1667,459 @@ const services = [
     opacity: 0;
 
     transform:
-      translateY(35px);
+      translateY(30px);
 
     transition:
-      all 1s ease;
+      1s ease;
+
   }
 
 
-  .artist-intro.is-visible {
+  .intro.visible {
+
     opacity: 1;
 
     transform:
-      translateY(0);
+      none;
+
   }
 
 
   .section-number {
+
     color:
       var(--gold);
 
     font-size: 9px;
 
     letter-spacing:
-      0.15em;
+      .14em;
+
   }
 
 
-  .artist-intro-main h2 {
-    margin:
-      20px 0 35px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(50px, 5.2vw, 82px);
-
-    font-weight: 400;
-
-    line-height:
-      0.99;
-
-    letter-spacing:
-      -0.045em;
-  }
-
-
-  .artist-intro-main h2 em {
-    color:
-      var(--gold-light);
-
-    font-style: italic;
-  }
-
-
-  .artist-intro-main p {
-    max-width: 540px;
+  .section-label {
 
     color:
-      var(--cream-soft);
-
-    font-size: 15px;
-
-    line-height: 1.9;
-  }
-
-
-  .artist-mark {
-    justify-self: end;
-
-    width: 170px;
-    height: 170px;
-
-    border:
-      1px solid
-      var(--line);
-
-    border-radius: 50%;
-
-    display: grid;
-
-    place-items: center;
-
-    font-family:
-      var(--serif);
-
-    font-size: 92px;
-
-    color:
-      rgba(201, 164, 119, 0.42);
-  }
-
-
-  /* =========================================================
-     CINEMA
-  ========================================================= */
-
-  .cinema {
-    padding:
-      140px 7vw;
-
-    opacity: 0;
-
-    transform:
-      translateY(35px);
-
-    transition:
-      all 1s ease;
-  }
-
-
-  .cinema.is-visible {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-
-  .cinema-header {
-    display: grid;
-
-    grid-template-columns:
-      1fr 0.55fr;
-
-    gap: 80px;
-
-    align-items: end;
-
-    margin-bottom: 55px;
-  }
-
-
-  .cinema-header h2 {
-    margin:
-      20px 0 0;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(52px, 5.5vw, 88px);
-
-    font-weight: 400;
-
-    line-height:
-      0.95;
-
-    letter-spacing:
-      -0.05em;
-  }
-
-
-  .cinema-header h2 em {
-    color:
-      var(--gold-light);
-
-    font-style:
-      italic;
-  }
-
-
-  .cinema-header > p {
-    max-width: 400px;
-
-    margin: 0;
-
-    color:
-      var(--cream-soft);
-
-    font-size: 13px;
-
-    line-height: 1.85;
-  }
-
-
-  /* =========================================================
-     FILM
-  ========================================================= */
-
-  .film {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio:
-      16 / 8.6;
-
-    overflow: hidden;
-
-    border:
-      1px solid var(--line);
-
-    background:
-      #050505;
-  }
-
-
-  .film video {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-  }
-
-
-  .film-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-      linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.72),
-        transparent 45%
-      );
-  }
-
-
-  .film-play {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-      translate(-50%, -50%);
-
-    width: 88px;
-    height: 88px;
-
-    border:
-      1px solid
-      rgba(238, 229, 217, 0.7);
-
-    border-radius: 50%;
-
-    background:
-      rgba(9, 8, 7, 0.25);
-
-    backdrop-filter:
-      blur(10px);
-
-    color:
-      var(--cream);
-
-    cursor: pointer;
-
-    transition:
-      all 0.35s ease;
-  }
-
-
-  .film-play:hover {
-    background:
-      var(--gold-light);
-
-    color:
-      var(--black);
-
-    transform:
-      translate(-50%, -50%)
-      scale(1.08);
-  }
-
-
-  .film-play.playing {
-    opacity: 0.12;
-  }
-
-
-  .film-bottom {
-    position: absolute;
-
-    left: 25px;
-    right: 25px;
-    bottom: 20px;
-
-    display: flex;
-
-    justify-content:
-      space-between;
-
-    color:
-      rgba(238, 229, 217, 0.72);
-
-    font-size: 7px;
-
-    letter-spacing:
-      0.15em;
-  }
-
-
-  .film-footer {
-    display: flex;
-
-    align-items: center;
-
-    justify-content:
-      space-between;
-
-    padding-top: 27px;
-  }
-
-
-  .film-footer h3 {
-    margin:
-      8px 0 0;
-
-    font-family:
-      var(--serif);
-
-    font-size: 27px;
-
-    font-weight: 400;
-  }
-
-
-  .film-footer h3 em {
-    color:
-      var(--gold-light);
-
-    font-style:
-      italic;
-  }
-
-
-  .arrow-link {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    color:
-      var(--gold-light);
+      var(--gold);
 
     font-size: 9px;
 
     font-weight: 700;
 
     letter-spacing:
-      0.13em;
+      .17em;
+
+    text-transform:
+      uppercase;
+
   }
 
 
-  .arrow-link span {
-    transition:
-      transform 0.3s ease;
+  .intro-content h2 {
+
+    margin:
+      20px 0 30px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(54px, 5.5vw, 88px);
+
+    line-height:
+      .96;
+
+    font-weight:
+      400;
+
+    letter-spacing:
+      -.05em;
+
   }
 
 
-  .arrow-link:hover span {
+  .intro-content h2 em {
+
+    color:
+      var(--gold);
+
+    font-style:
+      italic;
+
+  }
+
+
+  .intro-content p {
+
+    max-width:
+      530px;
+
+    margin: 0;
+
+    color:
+      var(--muted);
+
+    font-size:
+      15px;
+
+    line-height:
+      1.9;
+
+  }
+
+
+  .intro-symbol {
+
+    justify-self:
+      end;
+
+    width:
+      155px;
+
+    height:
+      155px;
+
+    border:
+      1px solid var(--line);
+
+    border-radius:
+      50%;
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    gap:
+      8px;
+
+  }
+
+
+  .intro-symbol > span {
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      72px;
+
+    color:
+      var(--gold);
+
+    line-height:
+      .8;
+
+  }
+
+
+  .intro-symbol small {
+
+    color:
+      var(--muted);
+
+    font-size:
+      6px;
+
+    text-align:
+      center;
+
+    letter-spacing:
+      .15em;
+
+    line-height:
+      1.6;
+
+  }
+
+
+  /* =====================================================
+     PERFORMANCE
+  ===================================================== */
+
+  .performance {
+
+    padding:
+      140px 7vw;
+
+    opacity: 0;
+
     transform:
-      translate(4px, -4px);
+      translateY(30px);
+
+    transition:
+      1s ease;
+
   }
 
 
-  /* =========================================================
-     JOURNEY
-  ========================================================= */
+  .performance.visible {
 
-  .journey {
+    opacity: 1;
+
+    transform:
+      none;
+
+  }
+
+
+  .performance-heading {
+
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr .55fr;
+
+    gap:
+      80px;
+
+    align-items:
+      end;
+
+    margin-bottom:
+      50px;
+
+  }
+
+
+  .performance-heading h2 {
+
+    margin:
+      20px 0 0;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(54px, 5.5vw, 88px);
+
+    font-weight:
+      400;
+
+    line-height:
+      .94;
+
+    letter-spacing:
+      -.05em;
+
+  }
+
+
+  .performance-heading h2 em {
+
+    color:
+      var(--gold);
+
+    font-style:
+      italic;
+
+  }
+
+
+  .performance-heading p {
+
+    max-width:
+      390px;
+
+    margin:
+      0;
+
+    color:
+      var(--muted);
+
+    font-size:
+      13px;
+
+    line-height:
+      1.85;
+
+  }
+
+
+  /* =====================================================
+     VIDEO
+  ===================================================== */
+
+  .video-frame {
+
+    position:
+      relative;
+
+    width:
+      100%;
+
+    aspect-ratio:
+      16 / 8.6;
+
+    overflow:
+      hidden;
+
+    background:
+      #1e1b18;
+
+    border:
+      1px solid
+      rgba(41,37,33,.14);
+
+  }
+
+
+  .video-frame iframe {
+
+    width:
+      100%;
+
+    height:
+      100%;
+
+    border:
+      0;
+
+  }
+
+
+  .video-label {
+
+    position:
+      absolute;
+
+    left:
+      22px;
+
+    right:
+      22px;
+
+    bottom:
+      17px;
+
+    display:
+      flex;
+
+    justify-content:
+      space-between;
+
+    pointer-events:
+      none;
+
+    color:
+      rgba(255,255,255,.72);
+
+    font-size:
+      7px;
+
+    letter-spacing:
+      .15em;
+
+  }
+
+
+  .video-caption {
+
+    padding-top:
+      26px;
+
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      space-between;
+
+  }
+
+
+  .video-caption h3 {
+
+    margin:
+      8px 0 0;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      27px;
+
+    font-weight:
+      400;
+
+  }
+
+
+  .video-caption h3 em {
+
+    color:
+      var(--gold);
+
+    font-style:
+      italic;
+
+  }
+
+
+  .text-link {
+
+    display:
+      inline-flex;
+
+    align-items:
+      center;
+
+    gap:
+      14px;
+
+    color:
+      var(--gold);
+
+    font-size:
+      9px;
+
+    font-weight:
+      700;
+
+    letter-spacing:
+      .12em;
+
+  }
+
+
+  .text-link span {
+
+    transition:
+      transform .3s ease;
+
+  }
+
+
+  .text-link:hover span {
+
+    transform:
+      translate(4px,-4px);
+
+  }
+
+
+  /* =====================================================
+     EXPERIENCE
+  ===================================================== */
+
+  .experience {
+
     padding:
       140px 9vw;
 
     background:
-      var(--black-soft);
+      #e4dbcf;
 
     border-top:
       1px solid var(--line);
@@ -1815,138 +2130,201 @@ const services = [
     opacity: 0;
 
     transform:
-      translateY(35px);
+      translateY(30px);
 
     transition:
-      all 1s ease;
+      1s ease;
+
   }
 
 
-  .journey.is-visible {
+  .experience.visible {
+
     opacity: 1;
 
     transform:
-      translateY(0);
+      none;
+
   }
 
 
-  .journey-title {
+  .experience-title {
+
     text-align:
       center;
+
   }
 
 
-  .journey-title h2 {
-    max-width: 900px;
+  .experience-title h2 {
+
+    max-width:
+      900px;
 
     margin:
-      25px auto 85px;
+      25px auto 80px;
 
     font-family:
       var(--serif);
 
     font-size:
-      clamp(45px, 6vw, 90px);
+      clamp(48px, 6vw, 90px);
 
-    font-weight: 400;
+    font-weight:
+      400;
 
     line-height:
-      0.98;
+      .95;
 
     letter-spacing:
-      -0.05em;
+      -.05em;
+
   }
 
 
-  .journey-title h2 span {
+  .experience-title h2 span {
+
     color:
-      var(--cream-soft);
+      var(--muted);
+
   }
 
 
-  .journey-title h2 em {
-    color:
-      var(--gold-light);
+  .experience-grid {
 
-    font-style:
-      italic;
-  }
-
-
-  .journey-track {
-    display: grid;
+    display:
+      grid;
 
     grid-template-columns:
-      1fr auto
-      1fr auto
-      1fr auto
-      1fr;
+      repeat(4,1fr);
 
-    align-items:
-      center;
+    border-top:
+      1px solid var(--line);
 
-    gap: 25px;
+    border-left:
+      1px solid var(--line);
+
   }
 
 
-  .journey-item {
-    display: flex;
+  .experience-item {
+
+    min-height:
+      270px;
+
+    padding:
+      25px;
+
+    border-right:
+      1px solid var(--line);
+
+    border-bottom:
+      1px solid var(--line);
+
+    display:
+      flex;
 
     flex-direction:
       column;
 
-    gap: 8px;
+    align-items:
+      flex-start;
+
   }
 
 
-  .journey-item small {
+  .experience-item > span {
+
     color:
       var(--gold);
 
-    font-size: 8px;
+    font-size:
+      9px;
+
   }
 
 
-  .journey-item strong {
-    font-size: 11px;
+  .experience-icon {
+
+    width:
+      54px;
+
+    height:
+      54px;
+
+    margin:
+      25px 0 28px;
+
+    border:
+      1px solid
+      rgba(90,73,58,.25);
+
+    border-radius:
+      50%;
+
+    display:
+      grid;
+
+    place-items:
+      center;
+
+    color:
+      var(--gold);
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      25px;
+
+  }
+
+
+  .experience-item strong {
+
+    font-size:
+      10px;
 
     letter-spacing:
-      0.16em;
+      .16em;
+
   }
 
 
-  .journey-item span {
+  .experience-item p {
+
+    max-width:
+      190px;
+
     color:
-      var(--cream-soft);
+      var(--muted);
 
-    font-size: 10px;
+    font-size:
+      11px;
+
+    line-height:
+      1.65;
+
   }
 
 
-  .journey-line {
-    width: 55px;
-
-    height: 1px;
-
-    background:
-      var(--line);
-  }
-
-
-  /* =========================================================
+  /* =====================================================
      PROFILE
-  ========================================================= */
+  ===================================================== */
 
   .profile {
+
     padding:
       150px 9vw;
 
-    display: grid;
+    display:
+      grid;
 
     grid-template-columns:
-      0.9fr 1fr;
+      .9fr 1fr;
 
-    gap: 10vw;
+    gap:
+      10vw;
 
     align-items:
       center;
@@ -1954,170 +2332,221 @@ const services = [
     opacity: 0;
 
     transform:
-      translateY(35px);
+      translateY(30px);
 
     transition:
-      all 1s ease;
+      1s ease;
+
   }
 
 
-  .profile.is-visible {
+  .profile.visible {
+
     opacity: 1;
 
     transform:
-      translateY(0);
+      none;
+
   }
 
 
   .profile-image {
-    position: relative;
+
+    position:
+      relative;
 
     aspect-ratio:
       4 / 5;
 
-    overflow: hidden;
+    overflow:
+      hidden;
 
     background:
-      #111;
+      #cbb9a6;
+
   }
 
 
   .profile-image img {
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+    width:
+      100%;
+
+    height:
+      100%;
+
+    object-fit:
+      cover;
 
     filter:
-      saturate(0.72);
+      saturate(.75);
+
   }
 
 
   .profile-image::after {
-    content: "";
 
-    position: absolute;
+    content:
+      "";
 
-    inset: 0;
+    position:
+      absolute;
+
+    inset:
+      0;
 
     background:
       linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.55),
-        transparent 50%
+        rgba(30,25,21,.4),
+        transparent 55%
       );
+
   }
 
 
-  .profile-number {
-    position: absolute;
+  .profile-image > span {
 
-    z-index: 2;
+    position:
+      absolute;
 
-    right: 25px;
-    bottom: 15px;
+    right:
+      22px;
 
-    font-family:
-      var(--serif);
+    bottom:
+      10px;
 
-    font-size: 75px;
-
-    color:
-      rgba(238, 229, 217, 0.3);
-  }
-
-
-  .profile-content h2 {
-    margin:
-      20px 0 35px;
+    z-index:
+      2;
 
     font-family:
       var(--serif);
 
     font-size:
-      clamp(50px, 5.2vw, 82px);
+      75px;
 
-    font-weight: 400;
+    color:
+      rgba(255,255,255,.35);
 
-    line-height:
-      0.97;
-
-    letter-spacing:
-      -0.05em;
   }
 
 
-  .profile-content h2 em {
+  .profile-copy h2 {
+
+    margin:
+      20px 0 32px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(50px,5vw,82px);
+
+    font-weight:
+      400;
+
+    line-height:
+      .96;
+
+    letter-spacing:
+      -.05em;
+
+  }
+
+
+  .profile-copy h2 em {
+
     color:
-      var(--gold-light);
+      var(--gold);
 
     font-style:
       italic;
+
   }
 
 
-  .profile-content p {
-    max-width: 520px;
+  .profile-copy p {
+
+    max-width:
+      520px;
 
     color:
-      var(--cream-soft);
+      var(--muted);
 
-    font-size: 13px;
+    font-size:
+      13px;
 
     line-height:
       1.9;
+
   }
 
 
-  .profile-content .arrow-link {
-    margin-top: 22px;
+  .profile-copy .text-link {
+
+    margin-top:
+      20px;
+
   }
 
 
-  /* =========================================================
+  /* =====================================================
      LIVE SERVICES
-  ========================================================= */
+  ===================================================== */
 
   .live {
+
     padding:
       140px 7vw;
 
     border-top:
       1px solid var(--line);
 
-    opacity: 0;
+    opacity:
+      0;
 
     transform:
-      translateY(35px);
+      translateY(30px);
 
     transition:
-      all 1s ease;
+      1s ease;
+
   }
 
 
-  .live.is-visible {
-    opacity: 1;
+  .live.visible {
+
+    opacity:
+      1;
 
     transform:
-      translateY(0);
+      none;
+
   }
 
 
   .live-heading {
-    display: grid;
+
+    display:
+      grid;
 
     grid-template-columns:
-      1fr 0.55fr;
+      1fr .55fr;
 
-    gap: 80px;
+    gap:
+      80px;
 
-    align-items: end;
+    align-items:
+      end;
 
-    margin-bottom: 55px;
+    margin-bottom:
+      55px;
+
   }
 
 
   .live-heading h2 {
+
     margin:
       20px 0 0;
 
@@ -2125,63 +2554,81 @@ const services = [
       var(--serif);
 
     font-size:
-      clamp(52px, 5.5vw, 88px);
+      clamp(52px,5.5vw,88px);
 
-    font-weight: 400;
+    font-weight:
+      400;
 
     line-height:
-      0.95;
+      .94;
 
     letter-spacing:
-      -0.05em;
+      -.05em;
+
   }
 
 
   .live-heading h2 em {
+
     color:
-      var(--gold-light);
+      var(--gold);
 
     font-style:
       italic;
+
   }
 
 
   .live-heading > p {
-    max-width: 400px;
 
-    margin: 0;
+    max-width:
+      390px;
+
+    margin:
+      0;
 
     color:
-      var(--cream-soft);
+      var(--muted);
 
-    font-size: 13px;
+    font-size:
+      13px;
 
-    line-height: 1.85;
+    line-height:
+      1.85;
+
   }
 
 
-  .services {
-    display: grid;
+  .service-grid {
+
+    display:
+      grid;
 
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2,1fr);
 
     border-top:
       1px solid var(--line);
 
     border-left:
       1px solid var(--line);
+
   }
 
 
-  .service {
-    position: relative;
+  .service-card {
 
-    min-height: 320px;
+    position:
+      relative;
 
-    padding: 28px;
+    min-height:
+      310px;
 
-    display: flex;
+    padding:
+      28px;
+
+    display:
+      flex;
 
     flex-direction:
       column;
@@ -2196,711 +2643,702 @@ const services = [
       1px solid var(--line);
 
     transition:
-      background 0.4s ease;
+      background .35s ease;
+
   }
 
 
-  .service:hover {
+  .service-card:hover {
+
     background:
-      var(--black-soft);
+      #e8e0d5;
+
   }
 
 
-  .service-header {
-    display: flex;
+  .service-top {
+
+    display:
+      flex;
+
+    justify-content:
+      space-between;
 
     align-items:
       flex-start;
 
-    justify-content:
-      space-between;
   }
 
 
-  .service-number {
+  .service-top > span {
+
     color:
       var(--gold);
 
-    font-size: 9px;
+    font-size:
+      9px;
 
-    letter-spacing:
-      0.12em;
   }
 
 
-  .service-symbol {
-    width: 55px;
-    height: 55px;
+  .service-logo {
+
+    position:
+      relative;
+
+    width:
+      55px;
+
+    height:
+      55px;
 
     border:
-      1px solid var(--line);
+      1px solid
+      rgba(183,141,96,.45);
 
-    border-radius: 50%;
+    border-radius:
+      50%;
 
-    display: grid;
+    display:
+      grid;
 
-    place-items: center;
+    place-items:
+      center;
 
-    color:
-      var(--gold-light);
+  }
+
+
+  .service-r {
 
     font-family:
       var(--serif);
 
-    font-size: 26px;
+    color:
+      var(--gold);
 
-    transition:
-      transform 0.5s ease;
+    font-size:
+      27px;
+
   }
 
 
-  .service:hover .service-symbol {
-    transform:
-      rotate(12deg)
-      scale(1.08);
+  .service-note {
+
+    position:
+      absolute;
+
+    top:
+      6px;
+
+    right:
+      10px;
+
+    color:
+      var(--brown);
+
+    font-size:
+      12px;
+
   }
 
 
-  .service-body h3 {
+  .service-content h3 {
+
     margin:
       0 0 13px;
 
     font-family:
       var(--serif);
 
-    font-size: 42px;
+    font-size:
+      41px;
 
-    font-weight: 400;
+    font-weight:
+      400;
+
   }
 
 
-  .service-body p {
-    max-width: 380px;
+  .service-content p {
 
-    margin: 0;
+    max-width:
+      390px;
+
+    margin:
+      0;
 
     color:
-      var(--cream-soft);
+      var(--muted);
 
-    font-size: 12px;
+    font-size:
+      12px;
 
-    line-height: 1.7;
+    line-height:
+      1.7;
+
   }
 
 
   .service-arrow {
-    position: absolute;
 
-    right: 28px;
-    bottom: 28px;
+    position:
+      absolute;
+
+    right:
+      28px;
+
+    bottom:
+      28px;
 
     color:
       var(--gold);
 
-    font-size: 20px;
+    font-size:
+      19px;
+
   }
 
 
-  /* =========================================================
-     PERFORMANCE
-  ========================================================= */
+  /* =====================================================
+     CONTACT
+  ===================================================== */
 
-  .performance {
+  .contact {
+
+    position:
+      relative;
+
+    min-height:
+      610px;
+
     padding:
       130px 9vw;
 
-    display: grid;
-
-    grid-template-columns:
-      0.8fr 1.2fr;
-
-    gap: 8vw;
+    display:
+      flex;
 
     align-items:
       center;
 
-    background:
-      #0d0c0a;
+    overflow:
+      hidden;
 
-    opacity: 0;
+    background:
+      var(--charcoal);
+
+    color:
+      var(--paper);
+
+    opacity:
+      0;
 
     transform:
-      translateY(35px);
+      translateY(30px);
 
     transition:
-      all 1s ease;
+      1s ease;
+
   }
 
 
-  .performance.is-visible {
-    opacity: 1;
+  .contact.visible {
+
+    opacity:
+      1;
 
     transform:
-      translateY(0);
+      none;
+
   }
 
 
-  .performance-copy h2 {
-    margin:
-      20px 0 25px;
+  .contact-content {
 
-    font-family:
-      var(--serif);
+    position:
+      relative;
 
-    font-size:
-      clamp(50px, 5vw, 80px);
+    z-index:
+      2;
 
-    font-weight: 400;
+    max-width:
+      850px;
 
-    line-height:
-      0.98;
   }
 
 
-  .performance-copy h2 em {
+  .contact .section-label {
+
     color:
       var(--gold-light);
 
-    font-style:
-      italic;
-  }
-
-
-  .performance-copy p {
-    max-width: 390px;
-
-    color:
-      var(--cream-soft);
-
-    font-size: 13px;
-
-    line-height:
-      1.8;
-
-    margin-bottom:
-      28px;
-  }
-
-
-  .audio-visual {
-    position: relative;
-
-    height: 370px;
-
-    display: grid;
-
-    place-items:
-      center;
-
-    overflow: hidden;
-
-    border:
-      1px solid var(--line);
-
-    background:
-      radial-gradient(
-        circle,
-        rgba(201, 164, 119, 0.1),
-        transparent 52%
-      );
-  }
-
-
-  .wave {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      center;
-
-    gap: 5px;
-
-    opacity: 0.5;
-  }
-
-
-  .wave i {
-    width: 2px;
-
-    height: 30px;
-
-    background:
-      var(--gold);
-
-    animation:
-      audioWave
-      1.5s
-      ease-in-out
-      infinite
-      alternate;
-  }
-
-
-  .wave i:nth-child(2n) {
-    animation-delay:
-      -0.35s;
-  }
-
-
-  .wave i:nth-child(3n) {
-    animation-delay:
-      -0.7s;
-  }
-
-
-  .wave i:nth-child(4n) {
-    height: 75px;
-  }
-
-
-  .wave i:nth-child(5n) {
-    height: 110px;
-  }
-
-
-  @keyframes audioWave {
-    from {
-      transform:
-        scaleY(0.35);
-    }
-
-    to {
-      transform:
-        scaleY(1);
-    }
-  }
-
-
-  .audio-button {
-    position: relative;
-
-    z-index: 2;
-
-    width: 92px;
-    height: 92px;
-
-    border-radius: 50%;
-
-    display: grid;
-
-    place-items: center;
-
-    background:
-      var(--gold-light);
-
-    color:
-      var(--black);
-
-    font-size: 20px;
-  }
-
-
-  .audio-label {
-    position: absolute;
-
-    left: 25px;
-    bottom: 22px;
-
-    color:
-      rgba(238, 229, 217, 0.55);
-
-    font-size: 7px;
-
-    letter-spacing:
-      0.16em;
-  }
-
-
-  /* =========================================================
-     CONTACT
-  ========================================================= */
-
-  .contact {
-    position: relative;
-
-    min-height: 650px;
-
-    padding:
-      150px 9vw;
-
-    display: flex;
-
-    align-items:
-      center;
-
-    overflow: hidden;
-
-    border-top:
-      1px solid var(--line);
-
-    opacity: 0;
-
-    transform:
-      translateY(35px);
-
-    transition:
-      all 1s ease;
-  }
-
-
-  .contact.is-visible {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-
-  .contact::before {
-    content: "";
-
-    position: absolute;
-
-    width: 620px;
-    height: 620px;
-
-    right: -200px;
-    top: -100px;
-
-    border-radius: 50%;
-
-    border:
-      1px solid
-      rgba(201, 164, 119, 0.12);
-
-    box-shadow:
-      0 0 0 90px
-      rgba(201, 164, 119, 0.025),
-      0 0 0 180px
-      rgba(201, 164, 119, 0.018);
-  }
-
-
-  .contact-inner {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 900px;
   }
 
 
   .contact h2 {
+
     margin:
-      22px 0 30px;
+      22px 0 28px;
 
     font-family:
       var(--serif);
 
     font-size:
-      clamp(55px, 6vw, 94px);
+      clamp(55px,6vw,94px);
 
-    font-weight: 400;
+    font-weight:
+      400;
 
     line-height:
-      0.95;
+      .94;
 
     letter-spacing:
-      -0.05em;
+      -.05em;
+
   }
 
 
   .contact h2 em {
+
     color:
       var(--gold-light);
 
     font-style:
       italic;
+
   }
 
 
-  .contact-inner > p {
-    max-width: 500px;
+  .contact-content > p {
+
+    max-width:
+      480px;
 
     color:
-      var(--cream-soft);
+      rgba(238,231,220,.6);
 
-    font-size: 13px;
+    font-size:
+      13px;
 
     line-height:
       1.85;
+
   }
 
 
-  .contact-buttons {
-    display: flex;
+  .contact-actions {
 
-    gap: 12px;
+    display:
+      flex;
 
-    margin-top: 35px;
+    gap:
+      11px;
+
+    margin-top:
+      32px;
+
   }
 
 
-  .contact-letter {
-    position: absolute;
+  .contact .button-secondary {
 
-    right: 10vw;
-    bottom: 45px;
+    border-color:
+      rgba(238,231,220,.3);
+
+    color:
+      var(--paper);
+
+  }
+
+
+  .contact .button-secondary:hover {
+
+    border-color:
+      var(--gold-light);
+
+    color:
+      var(--gold-light);
+
+  }
+
+
+  .contact-graphic {
+
+    position:
+      absolute;
+
+    right:
+      8vw;
+
+    bottom:
+      -30px;
+
+    width:
+      390px;
+
+    height:
+      390px;
+
+    display:
+      grid;
+
+    place-items:
+      center;
+
+  }
+
+
+  .big-r {
 
     font-family:
       var(--serif);
 
-    font-size: 230px;
+    font-size:
+      330px;
+
+    line-height:
+      1;
 
     color:
-      rgba(201, 164, 119, 0.06);
+      rgba(201,164,119,.09);
+
   }
 
 
-  /* =========================================================
+  .contact-circle {
+
+    position:
+      absolute;
+
+    width:
+      105px;
+
+    height:
+      105px;
+
+    border:
+      1px solid
+      rgba(201,164,119,.5);
+
+    border-radius:
+      50%;
+
+    display:
+      grid;
+
+    place-items:
+      center;
+
+    color:
+      var(--gold-light);
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      31px;
+
+  }
+
+
+  /* =====================================================
      FOOTER
-  ========================================================= */
+  ===================================================== */
 
   footer {
-    padding:
-      35px 5vw;
 
-    display: grid;
+    padding:
+      30px 5vw;
+
+    display:
+      grid;
 
     grid-template-columns:
       1fr auto auto;
 
-    gap: 45px;
+    gap:
+      45px;
 
     align-items:
       center;
 
+    background:
+      var(--paper-light);
+
     border-top:
       1px solid var(--line);
+
   }
 
 
   .footer-brand {
-    display: flex;
+
+    display:
+      flex;
 
     align-items:
       center;
 
-    gap: 11px;
+    gap:
+      10px;
 
-    font-size: 10px;
+    font-size:
+      10px;
 
-    font-weight: 700;
+    font-weight:
+      700;
 
     letter-spacing:
-      0.18em;
+      .18em;
+
   }
 
 
-  .footer-brand .logo-symbol {
-    width: 28px;
-    height: 28px;
+  .footer-brand .logo-mark {
 
-    font-size: 16px;
+    width:
+      28px;
+
+    height:
+      28px;
+
+    font-size:
+      16px;
+
   }
 
 
   .footer-nav {
-    display: flex;
 
-    gap: 25px;
+    display:
+      flex;
+
+    gap:
+      25px;
+
   }
 
 
   .footer-nav a,
   .social a {
-    color:
-      var(--cream-soft);
 
-    font-size: 8px;
+    font-size:
+      8px;
+
+    color:
+      var(--muted);
 
     letter-spacing:
-      0.13em;
+      .12em;
+
   }
 
 
   .social {
-    display: flex;
 
-    gap: 18px;
+    display:
+      flex;
+
+    gap:
+      18px;
+
   }
 
 
-  .footer-copy {
+  .copyright {
+
     grid-column:
       1 / -1;
 
     padding-top:
-      18px;
+      17px;
 
     border-top:
       1px solid var(--line);
 
     color:
-      rgba(238, 229, 217, 0.3);
+      rgba(41,37,33,.35);
 
-    font-size: 7px;
+    font-size:
+      7px;
 
     letter-spacing:
-      0.1em;
+      .1em;
+
   }
 
 
-  /* =========================================================
-     RESPONSIVE
-  ========================================================= */
+  /* =====================================================
+     TABLET / MOBILE
+  ===================================================== */
 
   @media (max-width: 900px) {
 
     .header {
-      height: 76px;
+
+      height:
+        76px;
 
       padding:
         0 6vw;
+
     }
 
 
     .desktop-nav,
-    .header-book {
-      display: none;
+    .header-button {
+
+      display:
+        none;
+
     }
 
 
     .menu-toggle {
-      display: block;
+
+      display:
+        block;
+
+      margin-left:
+        auto;
+
     }
 
 
     .hero {
-      min-height:
-        auto;
 
-      display: flex;
-
-      flex-direction:
-        column-reverse;
-    }
-
-
-    .hero-portrait {
-      height:
-        70vh;
-
-      min-height:
-        520px;
-    }
-
-
-    .hero-content {
-      padding:
-        85px 7vw 75px;
-    }
-
-
-    .hero h1 {
-      font-size:
-        clamp(55px, 14vw, 90px);
-    }
-
-
-    .hero-vertical {
-      display: none;
-    }
-
-
-    .artist-intro {
-      display: block;
-
-      min-height:
-        auto;
-
-      padding:
-        100px 7vw;
-    }
-
-
-    .artist-intro-main {
-      margin-top:
-        45px;
-    }
-
-
-    .artist-mark {
-      margin-top:
-        55px;
-
-      width:
-        115px;
-
-      height:
-        115px;
-
-      font-size:
-        62px;
-    }
-
-
-    .cinema,
-    .live {
-      padding:
-        100px 6vw;
-    }
-
-
-    .cinema-header,
-    .live-heading {
-      display:
-        block;
-    }
-
-
-    .cinema-header > p,
-    .live-heading > p {
-      margin-top:
-        30px;
-    }
-
-
-    .journey {
-      padding:
-        100px 7vw;
-    }
-
-
-    .journey-track {
       display:
         flex;
 
       flex-direction:
-        column;
+        column-reverse;
 
-      align-items:
-        flex-start;
-
-      gap:
-        20px;
     }
 
 
-    .journey-line {
-      width:
-        1px;
+    .hero-image {
 
       height:
+        68vh;
+
+      min-height:
+        510px;
+
+    }
+
+
+    .hero-copy {
+
+      padding:
+        80px 7vw;
+
+    }
+
+
+    .hero h1 {
+
+      font-size:
+        clamp(60px,14vw,92px);
+
+    }
+
+
+    .hero-graphic {
+
+      right:
+        13%;
+
+      bottom:
+        7%;
+
+      transform:
+        none;
+
+    }
+
+
+    .hero-vertical {
+
+      display:
+        none;
+
+    }
+
+
+    .intro {
+
+      display:
+        block;
+
+      min-height:
+        auto;
+
+      padding:
+        100px 7vw;
+
+    }
+
+
+    .intro-content {
+
+      margin-top:
+        45px;
+
+    }
+
+
+    .intro-symbol {
+
+      margin-top:
+        55px;
+
+    }
+
+
+    .performance,
+    .live {
+
+      padding:
+        100px 6vw;
+
+    }
+
+
+    .performance-heading,
+    .live-heading {
+
+      display:
+        block;
+
+    }
+
+
+    .performance-heading p,
+    .live-heading > p {
+
+      margin-top:
         30px;
 
-      margin-left:
-        4px;
+    }
+
+
+    .experience {
+
+      padding:
+        100px 7vw;
+
+    }
+
+
+    .experience-grid {
+
+      grid-template-columns:
+        repeat(2,1fr);
+
     }
 
 
     .profile {
+
       padding:
         100px 7vw;
 
@@ -2912,175 +3350,197 @@ const services = [
 
       gap:
         60px;
+
     }
 
 
     .profile-image {
+
       width:
         100%;
+
     }
 
 
-    .services {
+    .service-grid {
+
       grid-template-columns:
         1fr;
-    }
 
-
-    .performance {
-      padding:
-        100px 7vw;
-
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      gap:
-        55px;
-    }
-
-
-    .audio-visual {
-      width:
-        100%;
-
-      height:
-        300px;
     }
 
 
     .contact {
+
       padding:
         100px 7vw;
 
       min-height:
         570px;
+
     }
 
 
-    .contact-letter {
-      font-size:
-        160px;
+    .contact-graphic {
 
       right:
-        5vw;
+        -80px;
 
       bottom:
-        25px;
+        -40px;
+
+      transform:
+        scale(.7);
+
     }
 
 
     footer {
+
       grid-template-columns:
         1fr auto;
 
       padding:
         30px 6vw;
+
     }
 
 
     .footer-nav {
+
       display:
         none;
+
     }
 
-
-    .footer-copy {
-      grid-column:
-        1 / -1;
-    }
   }
 
 
   @media (max-width: 520px) {
 
-    .hero-portrait {
+    .hero-image {
+
       height:
-        67vh;
+        64vh;
 
       min-height:
-        480px;
+        470px;
+
     }
 
 
-    .hero-buttons,
-    .contact-buttons {
+    .hero-actions,
+    .contact-actions {
+
       flex-direction:
         column;
+
     }
 
 
-    .primary-button,
-    .secondary-button {
+    .button {
+
       width:
         100%;
+
     }
 
 
-    .artist-intro-main h2,
-    .cinema-header h2,
+    .hero-graphic {
+
+      right:
+        7%;
+
+      bottom:
+        5%;
+
+      transform:
+        scale(.78);
+
+      transform-origin:
+        bottom right;
+
+    }
+
+
+    .intro-content h2,
+    .performance-heading h2,
     .live-heading h2,
-    .profile-content h2,
-    .performance-copy h2,
+    .profile-copy h2,
     .contact h2 {
-      font-size:
-        50px;
-    }
 
-
-    .film {
-      aspect-ratio:
-        16 / 10;
-    }
-
-
-    .film-play {
-      width:
-        66px;
-
-      height:
-        66px;
-    }
-
-
-    .film-bottom span:nth-child(2) {
-      display:
-        none;
-    }
-
-
-    .film-footer {
-      display:
-        block;
-    }
-
-
-    .film-footer .arrow-link {
-      margin-top:
-        22px;
-    }
-
-
-    .service {
-      min-height:
-        285px;
-
-      padding:
-        22px;
-    }
-
-
-    .service-body h3 {
-      font-size:
-        37px;
-    }
-
-
-    .contact h2 {
       font-size:
         51px;
+
     }
+
+
+    .video-frame {
+
+      aspect-ratio:
+        16 / 10;
+
+    }
+
+
+    .video-caption {
+
+      display:
+        block;
+
+    }
+
+
+    .video-caption .text-link {
+
+      margin-top:
+        22px;
+
+    }
+
+
+    .experience-grid {
+
+      grid-template-columns:
+        1fr;
+
+    }
+
+
+    .experience-item {
+
+      min-height:
+        230px;
+
+    }
+
+
+    .service-card {
+
+      min-height:
+        280px;
+
+    }
+
+
+    .service-content h3 {
+
+      font-size:
+        37px;
+
+    }
+
+
+    .contact-graphic {
+
+      transform:
+        scale(.55);
+
+      transform-origin:
+        bottom right;
+
+    }
+
   }
+
 </style>
