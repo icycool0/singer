@@ -1,1583 +1,3086 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+const services = [
+  {
+    number: "01",
+    title: "Weddings",
+    text: "Live music for wedding celebrations, intimate moments and unforgettable evenings.",
+    symbol: "✦",
+  },
+  {
+    number: "02",
+    title: "Events",
+    text: "Live performances for private, social and special events.",
+    symbol: "◌",
+  },
+  {
+    number: "03",
+    title: "Celebrations",
+    text: "Make birthdays and personal celebrations more memorable with live music.",
+    symbol: "◇",
+  },
+  {
+    number: "04",
+    title: "Corporate",
+    text: "Professional live entertainment for corporate events and gatherings.",
+    symbol: "□",
+  },
+];
 ---
 
-<!doctype html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Roushan — Singer & Live Performer</title>
+
+    <meta
+      name="description"
+      content="Roushan — Singer, live performer and recording artist. Weddings, events, celebrations and cinematic music."
+    />
 
-	<BaseHead
-		title="Roushan | Singer & Live Performer in Patna"
-		description="Roushan is a singer and live performer in Patna, available for weddings, events, birthdays, corporate occasions and private celebrations."
-	/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-	<style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-		/* =====================================================
-		   DESIGN SYSTEM
-		===================================================== */
+  <body>
+    <div class="grain"></div>
 
-		:root {
-			--bg: #08090b;
-			--surface: #101114;
-			--surface-light: #16171b;
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-			--white: #f5f2eb;
-			--muted: #aaa8a2;
+    <header class="header">
+      <a href="/" class="logo" aria-label="Roushan">
+        <span class="logo-symbol">R</span>
+        <span class="logo-name">ROUSHAN</span>
+      </a>
 
-			--gold: #d5b16f;
-			--gold-light: #e5ca91;
+      <nav class="desktop-nav">
+        <a href="#about">ABOUT</a>
+        <a href="#cinema">CINEMA</a>
+        <a href="#live">LIVE</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
 
-			--line: rgba(255,255,255,.10);
+      <a href="#contact" class="header-book">
+        BOOK ROUSHAN
+      </a>
 
-			--max: 1280px;
-		}
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+    </header>
 
 
-		/* =====================================================
-		   RESET
-		===================================================== */
+    <!-- =========================
+         MOBILE MENU
+    ========================== -->
 
-		* {
-			box-sizing: border-box;
-		}
+    <div class="mobile-menu">
+      <a href="#about">ABOUT</a>
+      <a href="#cinema">CINEMA</a>
+      <a href="#live">LIVE</a>
+      <a href="#contact">CONTACT</a>
+    </div>
 
-		html {
-			scroll-behavior: smooth;
-		}
 
-		body {
-			margin: 0;
-			padding: 0;
-			background: var(--bg);
-			color: var(--white);
+    <main>
 
-			font-family:
-				Inter,
-				Arial,
-				Helvetica,
-				sans-serif;
+      <!-- =========================
+           HERO
+      ========================== -->
 
-			-webkit-font-smoothing: antialiased;
-		}
+      <section class="hero">
 
-		a {
-			color: inherit;
-		}
+        <div class="hero-background"></div>
 
-		img {
-			display: block;
-			max-width: 100%;
-		}
+        <div class="hero-content">
 
+          <div class="hero-intro">
+            <span class="line"></span>
+            <span>SINGER · LIVE PERFORMER · ARTIST</span>
+          </div>
 
-		/* =====================================================
-		   NAVIGATION
-		===================================================== */
+          <h1>
+            Music
+            <br />
+            with a
+            <em>story.</em>
+          </h1>
 
-		.nav {
-			position: absolute;
-			z-index: 50;
+          <p>
+            Roushan is a singer and live performer creating
+            memorable experiences through music, performance
+            and cinematic storytelling.
+          </p>
 
-			top: 0;
-			left: 0;
+          <div class="hero-buttons">
 
-			width: 100%;
+            <a href="#cinema" class="primary-button">
+              <span class="play-icon">▶</span>
+              WATCH FILM
+            </a>
 
-			padding: 28px 5vw;
-		}
+            <a href="#contact" class="secondary-button">
+              BOOK ROUSHAN
+              <span>↗</span>
+            </a>
 
-		.nav-inner {
-			width: min(var(--max), 100%);
-			margin: auto;
+          </div>
 
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
+        </div>
 
-		.logo {
-			text-decoration: none;
 
-			font-size: 18px;
-			font-weight: 800;
+        <!-- Main portrait -->
 
-			letter-spacing: .15em;
-		}
+        <div class="hero-portrait">
 
-		.logo span {
-			color: var(--gold);
-		}
+          <!-- Replace with best Roushan portrait -->
+          <img
+            src="/images/roushan-hero.jpg"
+            alt="Roushan singer and live performer"
+          />
 
-		.nav-links {
-			display: flex;
-			align-items: center;
+          <div class="portrait-dark"></div>
 
-			gap: 30px;
-		}
+          <div class="portrait-caption">
+            <strong>ROUSHAN</strong>
+            <span>SINGER / ARTIST</span>
+          </div>
 
-		.nav-links a {
-			text-decoration: none;
+          <div class="portrait-index">
+            01
+          </div>
 
-			font-size: 11px;
-			font-weight: 700;
+        </div>
 
-			letter-spacing: .14em;
 
-			color: rgba(255,255,255,.82);
+        <div class="hero-vertical">
+          MUSIC
+          <span>•</span>
+          PERFORMANCE
+          <span>•</span>
+          CINEMA
+        </div>
 
-			transition:
-				opacity .25s ease,
-				background .25s ease,
-				color .25s ease;
-		}
+      </section>
 
-		.nav-links a:hover {
-			opacity: .6;
-		}
 
-		.nav-book {
-			padding: 11px 17px;
+      <!-- =========================
+           ARTIST INTRO
+      ========================== -->
 
-			border: 1px solid rgba(255,255,255,.35);
-		}
+      <section class="artist-intro" id="about">
 
+        <div class="section-number">
+          01 / ABOUT
+        </div>
 
-		/* =====================================================
-		   HERO
-		===================================================== */
+        <div class="artist-intro-main">
 
-		.hero {
-			position: relative;
+          <div class="label">
+            THE ARTIST
+          </div>
 
-			height: 90vh;
-			min-height: 680px;
+          <h2>
+            A voice can fill
+            <br />
+            a room.
+            <em>
+              A feeling can
+              <br />
+              stay forever.
+            </em>
+          </h2>
 
-			overflow: hidden;
+          <p>
+            Roushan brings together live vocals, stage presence
+            and emotion to create performances that feel personal,
+            elegant and memorable.
+          </p>
 
-			display: flex;
-			align-items: center;
-		}
+        </div>
 
-		.hero-image {
-			position: absolute;
+        <div class="artist-mark">
+          R
+        </div>
 
-			inset: 0;
+      </section>
 
-			width: 100%;
-			height: 100%;
 
-			object-fit: cover;
+      <!-- =========================
+           CINEMATIC FILM
+      ========================== -->
 
-			object-position: center 30%;
+      <section class="cinema" id="cinema">
 
-			transform: scale(1.015);
-		}
+        <div class="cinema-header">
 
-		.hero-overlay {
-			position: absolute;
+          <div>
 
-			inset: 0;
+            <div class="label">
+              02 / CINEMATIC
+            </div>
 
-			background:
-				linear-gradient(
-					90deg,
-					rgba(4,5,7,.94) 0%,
-					rgba(4,5,7,.72) 35%,
-					rgba(4,5,7,.28) 70%,
-					rgba(4,5,7,.35) 100%
-				),
+            <h2>
+              From music
+              <br />
+              to <em>cinema.</em>
+            </h2>
 
-				linear-gradient(
-					0deg,
-					rgba(4,5,7,.86),
-					transparent 60%
-				);
-		}
+          </div>
 
-		.hero-content {
-			position: relative;
-			z-index: 5;
+          <p>
+            A visual interpretation of Roushan's music —
+            combining performance, atmosphere and story
+            into a cinematic experience.
+          </p>
 
-			width: min(var(--max), 90%);
+        </div>
 
-			margin: 25px auto 0;
-		}
 
-		.eyebrow {
-			margin: 0 0 20px;
+        <div class="film">
 
-			color: var(--gold);
+          <!--
+            Replace:
+            /images/cinematic-poster.jpg
+            /videos/roushan-film.mp4
+          -->
 
-			font-size: 10px;
-			font-weight: 800;
+          <video
+            id="mainFilm"
+            poster="/images/cinematic-poster.jpg"
+            playsinline
+            muted
+            preload="metadata"
+          >
+            <source
+              src="/videos/roushan-film.mp4"
+              type="video/mp4"
+            />
+          </video>
 
-			letter-spacing: .25em;
-		}
+          <div class="film-overlay"></div>
 
-		.hero h1 {
-			margin: 0;
+          <button
+            class="film-play"
+            id="filmPlay"
+            aria-label="Play cinematic film"
+          >
+            <span>▶</span>
+          </button>
 
-			max-width: 800px;
+          <div class="film-bottom">
 
-			font-size: clamp(80px, 12vw, 175px);
+            <span>ROUSHAN</span>
 
-			line-height: .78;
+            <span>01:30</span>
 
-			letter-spacing: -.075em;
+            <span>CINEMATIC MUSIC FILM</span>
 
-			font-weight: 850;
-		}
+          </div>
 
-		.hero-subtitle {
-			max-width: 570px;
+        </div>
 
-			margin: 38px 0 0;
 
-			color: rgba(255,255,255,.84);
+        <div class="film-footer">
 
-			font-size: clamp(18px, 2vw, 24px);
+          <div>
+            <span class="label">
+              A VISUAL STORY
+            </span>
 
-			line-height: 1.5;
-		}
+            <h3>
+              Every song has
+              <em>a world.</em>
+            </h3>
+          </div>
 
-		.hero-buttons {
-			display: flex;
+          <a href="#" class="arrow-link">
+            WATCH FULL FILM
+            <span>↗</span>
+          </a>
 
-			gap: 12px;
+        </div>
 
-			margin-top: 30px;
-		}
+      </section>
 
-		.button {
-			display: inline-flex;
 
-			align-items: center;
-			justify-content: center;
+      <!-- =========================
+           SOUND → CINEMA
+      ========================== -->
 
-			min-height: 48px;
+      <section class="journey">
 
-			padding: 0 23px;
+        <div class="journey-title">
 
-			text-decoration: none;
+          <span class="label">
+            THE EXPERIENCE
+          </span>
 
-			font-size: 10px;
-			font-weight: 800;
+          <h2>
+            Voice.
+            <span>Music.</span>
+            Story.
+            <em>Cinema.</em>
+          </h2>
 
-			letter-spacing: .15em;
+        </div>
 
-			transition:
-				transform .25s ease,
-				background .25s ease,
-				color .25s ease;
-		}
 
-		.button:hover {
-			transform: translateY(-2px);
-		}
+        <div class="journey-track">
 
-		.button-primary {
-			background: var(--gold);
+          <div class="journey-item">
+            <small>01</small>
+            <strong>VOICE</strong>
+            <span>The artist.</span>
+          </div>
 
-			color: #111;
-		}
+          <div class="journey-line"></div>
 
-		.button-primary:hover {
-			background: var(--gold-light);
-		}
+          <div class="journey-item">
+            <small>02</small>
+            <strong>MUSIC</strong>
+            <span>The emotion.</span>
+          </div>
 
-		.button-outline {
-			border: 1px solid rgba(255,255,255,.55);
+          <div class="journey-line"></div>
 
-			color: white;
-		}
+          <div class="journey-item">
+            <small>03</small>
+            <strong>STORY</strong>
+            <span>The meaning.</span>
+          </div>
 
-		.button-outline:hover {
-			background: white;
+          <div class="journey-line"></div>
 
-			color: #111;
-		}
+          <div class="journey-item">
+            <small>04</small>
+            <strong>CINEMA</strong>
+            <span>The experience.</span>
+          </div>
 
-		.hero-location {
-			position: absolute;
+        </div>
 
-			right: 5vw;
-			bottom: 28px;
+      </section>
 
-			z-index: 5;
 
-			color: rgba(255,255,255,.52);
+      <!-- =========================
+           ARTIST PROFILE
+      ========================== -->
 
-			font-size: 9px;
-			letter-spacing: .2em;
-		}
+      <section class="profile">
 
+        <div class="profile-image">
 
-		/* =====================================================
-		   COMMON SECTIONS
-		===================================================== */
+          <img
+            src="/images/roushan-portrait.jpg"
+            alt="Roushan"
+          />
 
-		.section {
-			width: min(var(--max), 90%);
+          <span class="profile-number">
+            03
+          </span>
 
-			margin: auto;
+        </div>
 
-			padding: 125px 0;
-		}
 
-		.label {
-			margin: 0 0 16px;
+        <div class="profile-content">
 
-			color: var(--gold);
+          <span class="label">
+            THE ARTIST
+          </span>
 
-			font-size: 10px;
-			font-weight: 800;
+          <h2>
+            Music that
+            <em>connects.</em>
+          </h2>
 
-			letter-spacing: .25em;
+          <p>
+            Roushan is a singer and live performer based in
+            Patna, Bihar, performing for weddings, celebrations,
+            private events and corporate occasions.
+          </p>
 
-			text-transform: uppercase;
-		}
+          <p>
+            Every performance is shaped around the audience,
+            venue and atmosphere — creating an experience
+            rather than simply filling a stage with sound.
+          </p>
 
-		.section-title {
-			margin: 0;
+          <a href="#contact" class="arrow-link">
+            GET IN TOUCH
+            <span>↗</span>
+          </a>
 
-			max-width: 850px;
+        </div>
 
-			font-size: clamp(43px, 6vw, 78px);
+      </section>
 
-			line-height: .95;
 
-			letter-spacing: -.055em;
+      <!-- =========================
+           LIVE SERVICES
+      ========================== -->
 
-			font-weight: 750;
-		}
+      <section class="live" id="live">
 
+        <div class="live-heading">
 
-		/* =====================================================
-		   YOUTUBE / CINEMATIC VIDEO
-		===================================================== */
+          <div>
 
-		.cinematic {
-			width: min(1180px, 90%);
+            <span class="label">
+              04 / LIVE
+            </span>
 
-			margin: auto;
+            <h2>
+              Bring the
+              <em>music.</em>
+            </h2>
 
-			padding: 100px 0 125px;
-		}
+          </div>
 
-		.cinematic-header {
-			display: flex;
+          <p>
+            Live performances designed around the energy,
+            audience and character of your event.
+          </p>
 
-			align-items: flex-end;
-			justify-content: space-between;
+        </div>
 
-			gap: 50px;
 
-			margin-bottom: 32px;
-		}
+        <div class="services">
 
-		.cinematic-note {
-			max-width: 350px;
+          {services.map((service) => (
 
-			margin: 0;
+            <article class="service">
 
-			color: var(--muted);
+              <div class="service-header">
 
-			font-size: 14px;
+                <span class="service-number">
+                  {service.number}
+                </span>
 
-			line-height: 1.7;
-		}
+                <span class="service-symbol">
+                  {service.symbol}
+                </span>
 
-		.youtube-frame {
-			position: relative;
+              </div>
 
-			width: 100%;
+              <div class="service-body">
 
-			aspect-ratio: 16 / 9;
+                <h3>
+                  {service.title}
+                </h3>
 
-			overflow: hidden;
+                <p>
+                  {service.text}
+                </p>
 
-			background: #000;
+              </div>
 
-			box-shadow:
-				0 30px 90px rgba(0,0,0,.38);
-		}
+              <span class="service-arrow">
+                ↗
+              </span>
 
-		.youtube-frame iframe {
-			position: absolute;
+            </article>
 
-			inset: 0;
+          ))}
 
-			width: 100%;
-			height: 100%;
+        </div>
 
-			border: 0;
-		}
+      </section>
 
 
-		/* =====================================================
-		   ARTIST INTRO
-		===================================================== */
+      <!-- =========================
+           PERFORMANCE
+      ========================== -->
 
-		.artist {
-			display: grid;
+      <section class="performance">
 
-			grid-template-columns: 1fr 1fr;
+        <div class="performance-copy">
 
-			gap: 100px;
+          <span class="label">
+            LIVE PERFORMANCE
+          </span>
 
-			align-items: start;
-		}
+          <h2>
+            Hear the
+            <em>artist.</em>
+          </h2>
 
-		.artist-copy {
-			max-width: 560px;
+          <p>
+            Discover live performances, musical moments
+            and the sound behind Roushan.
+          </p>
 
-			margin-left: auto;
+          <a href="#" class="arrow-link">
+            WATCH PERFORMANCES
+            <span>↗</span>
+          </a>
 
-			padding-top: 15px;
-		}
+        </div>
 
-		.artist-copy p {
-			margin: 0;
 
-			color: var(--muted);
+        <div class="audio-visual">
 
-			font-size: 18px;
+          <div class="wave">
 
-			line-height: 1.8;
-		}
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
 
-		.artist-line {
-			width: 70px;
-			height: 1px;
+          </div>
 
-			margin: 30px 0;
+          <div class="audio-button">
+            ▶
+          </div>
 
-			background: var(--gold);
-		}
+          <span class="audio-label">
+            PLAY LIVE SESSION
+          </span>
 
+        </div>
 
-		/* =====================================================
-		   PERFORMANCE SECTION
-		===================================================== */
+      </section>
 
-		.experience-intro {
-			display: grid;
 
-			grid-template-columns: 1.3fr .7fr;
+      <!-- =========================
+           CONTACT
+      ========================== -->
 
-			gap: 80px;
+      <section class="contact" id="contact">
 
-			align-items: end;
+        <div class="contact-inner">
 
-			margin-bottom: 55px;
-		}
+          <span class="label">
+            05 / CONTACT
+          </span>
 
-		.experience-note {
-			margin: 0;
+          <h2>
+            Let's make
+            <br />
+            your event
+            <em>memorable.</em>
+          </h2>
 
-			color: var(--muted);
+          <p>
+            Tell us about your event, date and location.
+            We'll help create the right musical experience.
+          </p>
 
-			font-size: 15px;
+          <div class="contact-buttons">
 
-			line-height: 1.7;
-		}
+            <a
+              href="tel:+910000000000"
+              class="primary-button"
+            >
+              CALL ROUSHAN
+              <span>↗</span>
+            </a>
 
-		.performance-grid {
-			display: grid;
+            <a
+              href="https://wa.me/910000000000"
+              class="secondary-button"
+              target="_blank"
+              rel="noopener"
+            >
+              WHATSAPP
+              <span>↗</span>
+            </a>
 
-			grid-template-columns: 1fr 1fr;
+          </div>
 
-			gap: 2px;
+        </div>
 
-			background: var(--line);
-		}
+        <div class="contact-letter">
+          R
+        </div>
 
-		.performance-card {
-			position: relative;
+      </section>
 
-			min-height: 390px;
+    </main>
 
-			overflow: hidden;
 
-			background: var(--surface);
-		}
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-		.performance-card img {
-			position: absolute;
+    <footer>
 
-			inset: 0;
+      <div class="footer-brand">
 
-			width: 100%;
-			height: 100%;
+        <span class="logo-symbol">
+          R
+        </span>
 
-			object-fit: cover;
+        <span>
+          ROUSHAN
+        </span>
 
-			opacity: .62;
+      </div>
 
-			transition:
-				transform .8s ease,
-				opacity .6s ease;
-		}
 
-		.performance-card:hover img {
-			transform: scale(1.045);
+      <div class="footer-nav">
 
-			opacity: .72;
-		}
+        <a href="#about">ABOUT</a>
+        <a href="#cinema">CINEMA</a>
+        <a href="#live">LIVE</a>
+        <a href="#contact">CONTACT</a>
 
-		.performance-card::after {
-			content: "";
+      </div>
 
-			position: absolute;
 
-			inset: 0;
+      <div class="social">
 
-			background:
-				linear-gradient(
-					0deg,
-					rgba(5,5,6,.96),
-					rgba(5,5,6,.08) 75%
-				);
-		}
+        <a href="#" aria-label="Instagram">
+          IG
+        </a>
 
-		.performance-content {
-			position: absolute;
+        <a href="#" aria-label="YouTube">
+          YT
+        </a>
 
-			z-index: 3;
+      </div>
 
-			left: 30px;
-			right: 30px;
-			bottom: 28px;
-		}
 
-		.performance-number {
-			display: block;
+      <div class="footer-copy">
+        © 2026 ROUSHAN · ALL RIGHTS RESERVED
+      </div>
 
-			margin-bottom: 15px;
+    </footer>
 
-			color: var(--gold);
 
-			font-size: 10px;
-			font-weight: 800;
+    <script>
+      /* =========================
+         FILM PLAYER
+      ========================== */
 
-			letter-spacing: .2em;
-		}
+      const film = document.getElementById("mainFilm");
+      const filmPlay = document.getElementById("filmPlay");
 
-		.performance-icon {
-			position: absolute;
+      if (film && filmPlay) {
 
-			z-index: 4;
+        filmPlay.addEventListener("click", async () => {
 
-			top: 25px;
-			right: 27px;
+          if (film.paused) {
 
-			width: 44px;
-			height: 44px;
+            await film.play();
 
-			border: 1px solid rgba(255,255,255,.32);
+            filmPlay.classList.add("playing");
 
-			border-radius: 50%;
+          } else {
 
-			display: grid;
-			place-items: center;
+            film.pause();
 
-			color: white;
+            filmPlay.classList.remove("playing");
 
-			font-size: 17px;
-		}
+          }
 
-		.performance-card h3 {
-			margin: 0 0 8px;
+        });
 
-			font-size: 31px;
+        film.addEventListener("play", () => {
+          filmPlay.classList.add("playing");
+        });
 
-			letter-spacing: -.035em;
-		}
+        film.addEventListener("pause", () => {
+          filmPlay.classList.remove("playing");
+        });
 
-		.performance-card p {
-			max-width: 410px;
+      }
 
-			margin: 0;
 
-			color: rgba(255,255,255,.7);
+      /* =========================
+         MOBILE MENU
+      ========================== */
 
-			font-size: 14px;
+      const menuToggle =
+        document.querySelector(".menu-toggle");
 
-			line-height: 1.65;
-		}
+      const mobileMenu =
+        document.querySelector(".mobile-menu");
 
+      if (menuToggle && mobileMenu) {
 
-		/* =====================================================
-		   LIVE EXPERIENCE FEATURE
-		===================================================== */
+        menuToggle.addEventListener("click", () => {
 
-		.feature {
-			display: grid;
+          document.body.classList.toggle("menu-active");
 
-			grid-template-columns: 1.2fr .8fr;
+        });
 
-			min-height: 680px;
-		}
+        mobileMenu
+          .querySelectorAll("a")
+          .forEach((link) => {
 
-		.feature-image {
-			width: 100%;
-			height: 100%;
+            link.addEventListener("click", () => {
 
-			min-height: 620px;
+              document.body.classList.remove(
+                "menu-active"
+              );
 
-			object-fit: cover;
-		}
+            });
 
-		.feature-copy {
-			display: flex;
+          });
 
-			flex-direction: column;
+      }
 
-			justify-content: center;
 
-			padding: 80px;
+      /* =========================
+         SCROLL REVEALS
+      ========================== */
 
-			background: var(--surface-light);
-		}
+      const sections =
+        document.querySelectorAll(
+          ".artist-intro, .cinema, .journey, .profile, .live, .performance, .contact"
+        );
 
-		.feature-copy h2 {
-			margin: 0 0 28px;
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
 
-			font-size: clamp(43px, 5vw, 68px);
+            entries.forEach((entry) => {
 
-			line-height: .95;
+              if (entry.isIntersecting) {
 
-			letter-spacing: -.055em;
-		}
+                entry.target.classList.add(
+                  "is-visible"
+                );
 
-		.feature-copy p {
-			margin: 0;
+              }
 
-			color: var(--muted);
+            });
 
-			font-size: 16px;
+          },
+          {
+            threshold: 0.1,
+          }
+        );
 
-			line-height: 1.8;
-		}
-
-		.feature-link {
-			margin-top: 30px;
-
-			color: var(--gold);
-
-			font-size: 11px;
-			font-weight: 800;
-
-			letter-spacing: .12em;
-
-			text-decoration: none;
-		}
-
-
-		/* =====================================================
-		   GALLERY
-		===================================================== */
-
-		.gallery-heading {
-			margin-bottom: 45px;
-		}
-
-		.gallery-grid {
-			display: grid;
-
-			grid-template-columns: 1.5fr 1fr 1fr;
-
-			grid-template-rows: 300px 300px;
-
-			gap: 10px;
-		}
-
-		.gallery-item {
-			overflow: hidden;
-
-			background: var(--surface);
-		}
-
-		.gallery-item:first-child {
-			grid-row: span 2;
-		}
-
-		.gallery-item img {
-			width: 100%;
-			height: 100%;
-
-			object-fit: cover;
-
-			transition: transform .8s ease;
-		}
-
-		.gallery-item:hover img {
-			transform: scale(1.04);
-		}
-
-
-		/* =====================================================
-		   BOOKING
-		===================================================== */
-
-		.booking {
-			padding: 150px 20px 170px;
-
-			text-align: center;
-
-			border-top: 1px solid var(--line);
-		}
-
-		.booking .section-title {
-			margin: auto;
-		}
-
-		.booking-text {
-			max-width: 600px;
-
-			margin: 28px auto 36px;
-
-			color: var(--muted);
-
-			font-size: 17px;
-
-			line-height: 1.75;
-		}
-
-		.booking-actions {
-			display: flex;
-
-			justify-content: center;
-
-			gap: 12px;
-		}
-
-
-		/* =====================================================
-		   FOOTER
-		===================================================== */
-
-		.footer {
-			border-top: 1px solid var(--line);
-
-			padding: 30px 5vw;
-		}
-
-		.footer-inner {
-			width: min(var(--max), 100%);
-
-			margin: auto;
-
-			display: flex;
-
-			align-items: center;
-			justify-content: space-between;
-
-			gap: 25px;
-
-			color: #707176;
-
-			font-size: 10px;
-
-			letter-spacing: .08em;
-		}
-
-		.footer-brand {
-			color: white;
-
-			font-weight: 800;
-
-			letter-spacing: .16em;
-		}
-
-
-		/* =====================================================
-		   TABLET / MOBILE
-		===================================================== */
-
-		@media (max-width: 800px) {
-
-			.nav {
-				padding: 20px 22px;
-			}
-
-			.nav-links {
-				display: none;
-			}
-
-			.hero {
-				height: 86vh;
-
-				min-height: 650px;
-			}
-
-			.hero-content {
-				width: calc(100% - 44px);
-
-				margin-top: 30px;
-			}
-
-			.hero h1 {
-				font-size: clamp(72px, 21vw, 120px);
-
-				max-width: 100%;
-			}
-
-			.hero-subtitle {
-				margin-top: 28px;
-
-				font-size: 17px;
-			}
-
-			.hero-location {
-				right: 22px;
-				bottom: 20px;
-			}
-
-			.section {
-				width: calc(100% - 44px);
-
-				padding: 85px 0;
-			}
-
-			.cinematic {
-				width: calc(100% - 44px);
-
-				padding: 75px 0 90px;
-			}
-
-			.cinematic-header {
-				display: block;
-			}
-
-			.cinematic-note {
-				margin-top: 20px;
-			}
-
-			.youtube-frame {
-				aspect-ratio: 16 / 9;
-			}
-
-			.artist {
-				grid-template-columns: 1fr;
-
-				gap: 35px;
-			}
-
-			.artist-copy {
-				margin: 0;
-			}
-
-			.experience-intro {
-				grid-template-columns: 1fr;
-
-				gap: 25px;
-			}
-
-			.performance-grid {
-				grid-template-columns: 1fr;
-			}
-
-			.performance-card {
-				min-height: 360px;
-			}
-
-			.feature {
-				grid-template-columns: 1fr;
-			}
-
-			.feature-image {
-				min-height: 480px;
-			}
-
-			.feature-copy {
-				padding: 60px 25px;
-			}
-
-			.gallery-grid {
-				grid-template-columns: 1fr 1fr;
-
-				grid-template-rows:
-					250px
-					250px
-					250px;
-			}
-
-			.gallery-item:first-child {
-				grid-row: span 1;
-			}
-
-			.booking {
-				padding: 100px 22px 120px;
-			}
-
-			.booking-actions {
-				flex-direction: column;
-
-				align-items: stretch;
-
-				max-width: 260px;
-
-				margin: auto;
-			}
-
-			.footer-inner {
-				flex-direction: column;
-
-				align-items: flex-start;
-
-				gap: 12px;
-			}
-		}
-
-
-		/* =====================================================
-		   SMALL MOBILE
-		===================================================== */
-
-		@media (max-width: 500px) {
-
-			.hero-buttons {
-				flex-direction: column;
-
-				align-items: stretch;
-
-				max-width: 235px;
-			}
-
-			.button {
-				width: 100%;
-			}
-
-			.performance-card {
-				min-height: 330px;
-			}
-
-			.gallery-grid {
-				grid-template-columns: 1fr;
-
-				grid-template-rows:
-					repeat(5, 320px);
-			}
-
-			.gallery-item:first-child {
-				grid-row: span 1;
-			}
-
-		}
-
-	</style>
-
-</head>
-
-
-<body>
-
-
-	<!-- =====================================================
-	     NAVIGATION
-	===================================================== -->
-
-	<header class="nav">
-
-		<div class="nav-inner">
-
-			<a
-				href="/"
-				class="logo"
-			>
-				ROUSHAN<span>.</span>
-			</a>
-
-			<nav class="nav-links">
-
-				<a href="#about">
-					ABOUT
-				</a>
-
-				<a href="#experience">
-					EXPERIENCE
-				</a>
-
-				<a href="#gallery">
-					GALLERY
-				</a>
-
-				<a
-					href="#booking"
-					class="nav-book"
-				>
-					BOOK NOW
-				</a>
-
-			</nav>
-
-		</div>
-
-	</header>
-
-
-
-	<main>
-
-
-		<!-- =================================================
-		     HERO
-		================================================= -->
-
-		<section class="hero">
-
-			<img
-				class="hero-image"
-				src="/hero_live3.jpg"
-				alt="Roushan performing live on stage"
-				fetchpriority="high"
-			/>
-
-			<div class="hero-overlay"></div>
-
-
-			<div class="hero-content">
-
-				<p class="eyebrow">
-					SINGER • LIVE PERFORMER • PATNA
-				</p>
-
-				<h1>
-					ROUSHAN
-				</h1>
-
-				<p class="hero-subtitle">
-					Live music for weddings, celebrations
-					and unforgettable events.
-				</p>
-
-
-				<div class="hero-buttons">
-
-					<a
-						href="#booking"
-						class="button button-primary"
-					>
-						BOOK ROUSHAN
-					</a>
-
-					<a
-						href="#experience"
-						class="button button-outline"
-					>
-						EXPLORE
-					</a>
-
-				</div>
-
-			</div>
-
-
-			<div class="hero-location">
-				PATNA · BIHAR · INDIA
-			</div>
-
-		</section>
-
-
-
-		<!-- =================================================
-		     YOUTUBE VIDEO
-		================================================= -->
-
-		<section
-			class="cinematic"
-			id="video"
-		>
-
-			<div class="cinematic-header">
-
-				<div>
-
-					<p class="label">
-						ROUSHAN LIVE
-					</p>
-
-					<h2 class="section-title">
-						Feel the performance.
-					</h2>
-
-				</div>
-
-
-				<p class="cinematic-note">
-					Experience the voice, energy and
-					atmosphere behind Roushan's live
-					performance.
-				</p>
-
-			</div>
-
-
-			<div class="youtube-frame">
-
-				<iframe
-					src="https://www.youtube-nocookie.com/embed/RrjtsRxXmGI?rel=0"
-					title="Roushan Live Performance"
-					loading="lazy"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen
-				></iframe>
-
-			</div>
-
-		</section>
-
-
-
-		<!-- =================================================
-		     ARTIST
-		================================================= -->
-
-		<section
-			class="section artist"
-			id="about"
-		>
-
-			<div>
-
-				<p class="label">
-					THE ARTIST
-				</p>
-
-				<h2 class="section-title">
-					Music that makes
-					the moment.
-				</h2>
-
-			</div>
-
-
-			<div class="artist-copy">
-
-				<p>
-					Roushan is a singer and live performer
-					based in Patna, bringing music, energy
-					and a personal touch to weddings,
-					events, birthdays, celebrations and
-					private occasions.
-				</p>
-
-
-				<div class="artist-line"></div>
-
-
-				<p>
-					From intimate gatherings to energetic
-					live events, every performance is shaped
-					around the atmosphere of the occasion.
-				</p>
-
-			</div>
-
-		</section>
-
-
-
-		<!-- =================================================
-		     PERFORMANCE TYPES
-		================================================= -->
-
-		<section
-			class="section"
-			id="experience"
-		>
-
-			<div class="experience-intro">
-
-				<div>
-
-					<p class="label">
-						PERFORMANCES
-					</p>
-
-					<h2 class="section-title">
-						Available for
-						your special moments.
-					</h2>
-
-				</div>
-
-
-				<p class="experience-note">
-					Choose the kind of occasion and
-					we'll shape the performance around
-					the atmosphere you want.
-				</p>
-
-			</div>
-
-
-
-			<div class="performance-grid">
-
-
-				<!-- WEDDINGS -->
-
-				<article class="performance-card">
-
-					<img
-						src="/hero_casula_standing.jpg"
-						alt="Roushan available for wedding performances"
-						loading="lazy"
-					/>
-
-					<div class="performance-icon">
-						♡
-					</div>
-
-					<div class="performance-content">
-
-						<span class="performance-number">
-							01
-						</span>
-
-						<h3>
-							Weddings
-						</h3>
-
-						<p>
-							Live music for wedding celebrations,
-							sangeet and unforgettable moments.
-						</p>
-
-					</div>
-
-				</article>
-
-
-
-				<!-- EVENTS -->
-
-				<article class="performance-card">
-
-					<img
-						src="/hero_event.jpeg"
-						alt="Roushan performing at an event"
-						loading="lazy"
-					/>
-
-					<div class="performance-icon">
-						♪
-					</div>
-
-					<div class="performance-content">
-
-						<span class="performance-number">
-							02
-						</span>
-
-						<h3>
-							Events
-						</h3>
-
-						<p>
-							Live performances for private,
-							social and special events.
-						</p>
-
-					</div>
-
-				</article>
-
-
-
-				<!-- BIRTHDAYS -->
-
-				<article class="performance-card">
-
-					<img
-						src="/hero_sitting_sofa.jpg"
-						alt="Roushan portrait"
-						loading="lazy"
-					/>
-
-					<div class="performance-icon">
-						✦
-					</div>
-
-					<div class="performance-content">
-
-						<span class="performance-number">
-							03
-						</span>
-
-						<h3>
-							Birthdays
-						</h3>
-
-						<p>
-							Make birthdays and celebrations
-							more memorable with live music.
-						</p>
-
-					</div>
-
-				</article>
-
-
-
-				<!-- CORPORATE -->
-
-				<article class="performance-card">
-
-					<img
-						src="/hero_standinf_close.jpg"
-						alt="Roushan available for corporate events"
-						loading="lazy"
-					/>
-
-					<div class="performance-icon">
-						◇
-					</div>
-
-					<div class="performance-content">
-
-						<span class="performance-number">
-							04
-						</span>
-
-						<h3>
-							Corporate
-						</h3>
-
-						<p>
-							Professional live entertainment
-							for corporate events and gatherings.
-						</p>
-
-					</div>
-
-				</article>
-
-
-			</div>
-
-		</section>
-
-
-
-		<!-- =================================================
-		     LIVE EXPERIENCE
-		================================================= -->
-
-		<section class="feature">
-
-			<div>
-
-				<img
-					class="feature-image"
-					src="/hero_live2.jpg"
-					alt="Roushan performing live"
-					loading="lazy"
-				/>
-
-			</div>
-
-
-			<div class="feature-copy">
-
-				<p class="label">
-					LIVE EXPERIENCE
-				</p>
-
-				<h2>
-					Every event deserves
-					its own soundtrack.
-				</h2>
-
-				<p>
-					From intimate celebrations to energetic
-					live events, Roushan brings a versatile
-					performance experience to every occasion.
-				</p>
-
-				<a
-					href="#booking"
-					class="feature-link"
-				>
-					PLAN YOUR EVENT →
-				</a>
-
-			</div>
-
-		</section>
-
-
-
-		<!-- =================================================
-		     GALLERY
-		================================================= -->
-
-		<section
-			class="section"
-			id="gallery"
-		>
-
-			<div class="gallery-heading">
-
-				<p class="label">
-					GALLERY
-				</p>
-
-				<h2 class="section-title">
-					Moments on stage
-					& beyond.
-				</h2>
-
-			</div>
-
-
-			<div class="gallery-grid">
-
-
-				<div class="gallery-item">
-
-					<img
-						src="/hero_event.jpeg"
-						alt="Roushan performing at an event"
-						loading="lazy"
-					/>
-
-				</div>
-
-
-				<div class="gallery-item">
-
-					<img
-						src="/hero_event_standing.jpeg"
-						alt="Roushan live performance"
-						loading="lazy"
-					/>
-
-				</div>
-
-
-				<div class="gallery-item">
-
-					<img
-						src="/hero_sitting_sofa.jpg"
-						alt="Roushan portrait"
-						loading="lazy"
-					/>
-
-				</div>
-
-
-				<div class="gallery-item">
-
-					<img
-						src="/hero_standinf_close.jpg"
-						alt="Roushan portrait"
-						loading="lazy"
-					/>
-
-				</div>
-
-
-				<div class="gallery-item">
-
-					<img
-						src="/hero_standing_2.jpg"
-						alt="Roushan outdoor portrait"
-						loading="lazy"
-					/>
-
-				</div>
-
-
-			</div>
-
-		</section>
-
-
-
-		<!-- =================================================
-		     BOOKING
-		================================================= -->
-
-		<section
-			class="booking"
-			id="booking"
-		>
-
-			<p class="label">
-				BOOKING
-			</p>
-
-
-			<h2 class="section-title">
-				Planning an event?
-			</h2>
-
-
-			<p class="booking-text">
-				Tell us about your wedding, birthday,
-				private event or celebration. Let's
-				create the right performance for your
-				occasion.
-			</p>
-
-
-			<div class="booking-actions">
-
-				<a
-					href="tel:+91955275669"
-					class="button button-primary"
-				>
-					CALL ROUSHAN
-				</a>
-
-
-				<a
-					href="https://wa.me/91955275669"
-					class="button button-outline"
-					target="_blank"
-					rel="noopener"
-				>
-					WHATSAPP
-				</a>
-
-			</div>
-
-		</section>
-
-
-	</main>
-
-
-
-	<!-- =====================================================
-	     FOOTER
-	===================================================== -->
-
-	<footer class="footer">
-
-		<div class="footer-inner">
-
-			<div class="footer-brand">
-				ROUSHAN.
-			</div>
-
-			<div>
-				SINGER & LIVE PERFORMER · PATNA, BIHAR
-			</div>
-
-			<div>
-				© 2026 ROUSHAN
-			</div>
-
-		</div>
-
-	</footer>
-
-
-</body>
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
+  </body>
 </html>
+
+
+<style>
+  /* =========================================================
+     DESIGN SYSTEM
+  ========================================================= */
+
+  :root {
+    --black: #090807;
+    --black-soft: #100e0c;
+    --black-card: #141210;
+
+    --cream: #eee5d9;
+    --cream-soft: #c8beb2;
+
+    --gold: #c9a477;
+    --gold-light: #d9b98d;
+
+    --line: rgba(238, 229, 217, 0.14);
+
+    --serif:
+      "Playfair Display",
+      Georgia,
+      serif;
+
+    --sans:
+      "DM Sans",
+      Arial,
+      sans-serif;
+  }
+
+
+  /* =========================================================
+     RESET
+  ========================================================= */
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  body {
+    margin: 0;
+    background: var(--black);
+    color: var(--cream);
+    font-family: var(--sans);
+    overflow-x: hidden;
+  }
+
+
+  ::selection {
+    background: var(--gold);
+    color: var(--black);
+  }
+
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+
+  button {
+    font-family: inherit;
+  }
+
+
+  /* =========================================================
+     FILM GRAIN
+  ========================================================= */
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    opacity: 0.035;
+
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E");
+  }
+
+
+  /* =========================================================
+     HEADER
+  ========================================================= */
+
+  .header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 92px;
+
+    padding:
+      0 5vw;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 100;
+  }
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+
+  .logo-symbol {
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid var(--gold);
+
+    display: grid;
+    place-items: center;
+
+    color: var(--gold);
+
+    font-family: var(--serif);
+    font-size: 21px;
+  }
+
+
+  .logo-name {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.23em;
+  }
+
+
+  .desktop-nav {
+    margin-left: auto;
+    margin-right: 42px;
+
+    display: flex;
+    gap: 34px;
+  }
+
+
+  .desktop-nav a {
+    color:
+      rgba(238, 229, 217, 0.7);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    transition:
+      color 0.3s ease;
+  }
+
+
+  .desktop-nav a:hover {
+    color: var(--gold-light);
+  }
+
+
+  .header-book {
+    padding: 12px 18px;
+
+    border: 1px solid
+      rgba(201, 164, 119, 0.6);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    transition:
+      all 0.3s ease;
+  }
+
+
+  .header-book:hover {
+    background: var(--gold-light);
+    color: var(--black);
+  }
+
+
+  .menu-toggle {
+    display: none;
+
+    margin-left: auto;
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+
+  .menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    margin: 6px auto;
+
+    background: var(--cream);
+  }
+
+
+  /* =========================================================
+     MOBILE MENU
+  ========================================================= */
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+
+    z-index: 90;
+
+    display: none;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+
+    background:
+      rgba(9, 8, 7, 0.98);
+  }
+
+
+  .mobile-menu a {
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    color: var(--cream);
+  }
+
+
+  body.menu-active .mobile-menu {
+    display: flex;
+  }
+
+
+  /* =========================================================
+     HERO
+  ========================================================= */
+
+  .hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+      50% 50%;
+
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at 72% 42%,
+        rgba(104, 66, 39, 0.2),
+        transparent 34%
+      ),
+      var(--black);
+  }
+
+
+  .hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+      radial-gradient(
+        ellipse at 28% 70%,
+        rgba(99, 67, 42, 0.08),
+        transparent 40%
+      );
+  }
+
+
+  .hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    align-self: center;
+
+    padding:
+      150px 3vw 90px 9vw;
+
+    max-width: 760px;
+  }
+
+
+  .hero-intro {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+
+    color: var(--gold-light);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .hero-intro .line {
+    width: 34px;
+    height: 1px;
+
+    background: var(--gold);
+  }
+
+
+  .hero h1 {
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size:
+      clamp(60px, 7vw, 108px);
+
+    font-weight: 400;
+
+    line-height: 0.91;
+
+    letter-spacing: -0.055em;
+  }
+
+
+  .hero h1 em {
+    color: var(--gold-light);
+
+    font-style: italic;
+  }
+
+
+  .hero-content > p {
+    max-width: 470px;
+
+    margin:
+      38px 0 0;
+
+    color: var(--cream-soft);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+  }
+
+
+  /* =========================================================
+     BUTTONS
+  ========================================================= */
+
+  .hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 34px;
+  }
+
+
+  .primary-button,
+  .secondary-button {
+    min-height: 48px;
+
+    padding:
+      0 21px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    transition:
+      all 0.3s ease;
+  }
+
+
+  .primary-button {
+    background:
+      var(--gold-light);
+
+    color:
+      var(--black);
+  }
+
+
+  .primary-button:hover {
+    background:
+      var(--cream);
+  }
+
+
+  .secondary-button {
+    border:
+      1px solid
+      rgba(238, 229, 217, 0.28);
+  }
+
+
+  .secondary-button:hover {
+    border-color:
+      var(--gold);
+
+    color:
+      var(--gold-light);
+  }
+
+
+  .play-icon {
+    font-size: 9px;
+  }
+
+
+  /* =========================================================
+     HERO PORTRAIT
+  ========================================================= */
+
+  .hero-portrait {
+    position: relative;
+
+    height: 100vh;
+
+    overflow: hidden;
+  }
+
+
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position:
+      center center;
+
+    filter:
+      saturate(0.7)
+      contrast(1.08);
+
+    transform:
+      scale(1.04);
+
+    animation:
+      portraitMove
+      16s
+      ease-in-out
+      infinite
+      alternate;
+  }
+
+
+  @keyframes portraitMove {
+    from {
+      transform:
+        scale(1.04);
+    }
+
+    to {
+      transform:
+        scale(1.08);
+    }
+  }
+
+
+  .portrait-dark {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--black) 0%,
+        rgba(9, 8, 7, 0.42) 24%,
+        transparent 65%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(9, 8, 7, 0.7),
+        transparent 45%,
+        rgba(9, 8, 7, 0.12)
+      );
+  }
+
+
+  .portrait-caption {
+    position: absolute;
+
+    left: 32px;
+    bottom: 38px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+
+  .portrait-caption strong {
+    font-size: 10px;
+
+    letter-spacing:
+      0.18em;
+  }
+
+
+  .portrait-caption span {
+    color:
+      var(--gold-light);
+
+    font-size: 7px;
+
+    letter-spacing:
+      0.16em;
+  }
+
+
+  .portrait-index {
+    position: absolute;
+
+    right: 35px;
+    bottom: 24px;
+
+    font-family:
+      var(--serif);
+
+    font-size: 90px;
+
+    color:
+      rgba(238, 229, 217, 0.1);
+  }
+
+
+  .hero-vertical {
+    position: absolute;
+
+    right: 23px;
+    top: 50%;
+
+    z-index: 10;
+
+    transform:
+      translateY(-50%);
+
+    writing-mode:
+      vertical-rl;
+
+    display: flex;
+
+    gap: 12px;
+
+    color:
+      rgba(238, 229, 217, 0.35);
+
+    font-size: 7px;
+
+    letter-spacing:
+      0.23em;
+  }
+
+
+  /* =========================================================
+     LABEL
+  ========================================================= */
+
+  .label {
+    color:
+      var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing:
+      0.18em;
+
+    text-transform:
+      uppercase;
+  }
+
+
+  /* =========================================================
+     ARTIST INTRO
+  ========================================================= */
+
+  .artist-intro {
+    position: relative;
+
+    min-height: 680px;
+
+    padding:
+      130px 9vw;
+
+    display: grid;
+
+    grid-template-columns:
+      18% 62% 20%;
+
+    align-items: center;
+
+    border-top:
+      1px solid var(--line);
+
+    border-bottom:
+      1px solid var(--line);
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .artist-intro.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .section-number {
+    color:
+      var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing:
+      0.15em;
+  }
+
+
+  .artist-intro-main h2 {
+    margin:
+      20px 0 35px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(50px, 5.2vw, 82px);
+
+    font-weight: 400;
+
+    line-height:
+      0.99;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+
+  .artist-intro-main h2 em {
+    color:
+      var(--gold-light);
+
+    font-style: italic;
+  }
+
+
+  .artist-intro-main p {
+    max-width: 540px;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+  }
+
+
+  .artist-mark {
+    justify-self: end;
+
+    width: 170px;
+    height: 170px;
+
+    border:
+      1px solid
+      var(--line);
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-family:
+      var(--serif);
+
+    font-size: 92px;
+
+    color:
+      rgba(201, 164, 119, 0.42);
+  }
+
+
+  /* =========================================================
+     CINEMA
+  ========================================================= */
+
+  .cinema {
+    padding:
+      140px 7vw;
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .cinema.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .cinema-header {
+    display: grid;
+
+    grid-template-columns:
+      1fr 0.55fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 55px;
+  }
+
+
+  .cinema-header h2 {
+    margin:
+      20px 0 0;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(52px, 5.5vw, 88px);
+
+    font-weight: 400;
+
+    line-height:
+      0.95;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .cinema-header h2 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .cinema-header > p {
+    max-width: 400px;
+
+    margin: 0;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 13px;
+
+    line-height: 1.85;
+  }
+
+
+  /* =========================================================
+     FILM
+  ========================================================= */
+
+  .film {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+      16 / 8.6;
+
+    overflow: hidden;
+
+    border:
+      1px solid var(--line);
+
+    background:
+      #050505;
+  }
+
+
+  .film video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  .film-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.72),
+        transparent 45%
+      );
+  }
+
+
+  .film-play {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(-50%, -50%);
+
+    width: 88px;
+    height: 88px;
+
+    border:
+      1px solid
+      rgba(238, 229, 217, 0.7);
+
+    border-radius: 50%;
+
+    background:
+      rgba(9, 8, 7, 0.25);
+
+    backdrop-filter:
+      blur(10px);
+
+    color:
+      var(--cream);
+
+    cursor: pointer;
+
+    transition:
+      all 0.35s ease;
+  }
+
+
+  .film-play:hover {
+    background:
+      var(--gold-light);
+
+    color:
+      var(--black);
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+  }
+
+
+  .film-play.playing {
+    opacity: 0.12;
+  }
+
+
+  .film-bottom {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+
+    display: flex;
+
+    justify-content:
+      space-between;
+
+    color:
+      rgba(238, 229, 217, 0.72);
+
+    font-size: 7px;
+
+    letter-spacing:
+      0.15em;
+  }
+
+
+  .film-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+      space-between;
+
+    padding-top: 27px;
+  }
+
+
+  .film-footer h3 {
+    margin:
+      8px 0 0;
+
+    font-family:
+      var(--serif);
+
+    font-size: 27px;
+
+    font-weight: 400;
+  }
+
+
+  .film-footer h3 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .arrow-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color:
+      var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing:
+      0.13em;
+  }
+
+
+  .arrow-link span {
+    transition:
+      transform 0.3s ease;
+  }
+
+
+  .arrow-link:hover span {
+    transform:
+      translate(4px, -4px);
+  }
+
+
+  /* =========================================================
+     JOURNEY
+  ========================================================= */
+
+  .journey {
+    padding:
+      140px 9vw;
+
+    background:
+      var(--black-soft);
+
+    border-top:
+      1px solid var(--line);
+
+    border-bottom:
+      1px solid var(--line);
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .journey.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .journey-title {
+    text-align:
+      center;
+  }
+
+
+  .journey-title h2 {
+    max-width: 900px;
+
+    margin:
+      25px auto 85px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(45px, 6vw, 90px);
+
+    font-weight: 400;
+
+    line-height:
+      0.98;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .journey-title h2 span {
+    color:
+      var(--cream-soft);
+  }
+
+
+  .journey-title h2 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .journey-track {
+    display: grid;
+
+    grid-template-columns:
+      1fr auto
+      1fr auto
+      1fr auto
+      1fr;
+
+    align-items:
+      center;
+
+    gap: 25px;
+  }
+
+
+  .journey-item {
+    display: flex;
+
+    flex-direction:
+      column;
+
+    gap: 8px;
+  }
+
+
+  .journey-item small {
+    color:
+      var(--gold);
+
+    font-size: 8px;
+  }
+
+
+  .journey-item strong {
+    font-size: 11px;
+
+    letter-spacing:
+      0.16em;
+  }
+
+
+  .journey-item span {
+    color:
+      var(--cream-soft);
+
+    font-size: 10px;
+  }
+
+
+  .journey-line {
+    width: 55px;
+
+    height: 1px;
+
+    background:
+      var(--line);
+  }
+
+
+  /* =========================================================
+     PROFILE
+  ========================================================= */
+
+  .profile {
+    padding:
+      150px 9vw;
+
+    display: grid;
+
+    grid-template-columns:
+      0.9fr 1fr;
+
+    gap: 10vw;
+
+    align-items:
+      center;
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .profile.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .profile-image {
+    position: relative;
+
+    aspect-ratio:
+      4 / 5;
+
+    overflow: hidden;
+
+    background:
+      #111;
+  }
+
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+      saturate(0.72);
+  }
+
+
+  .profile-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.55),
+        transparent 50%
+      );
+  }
+
+
+  .profile-number {
+    position: absolute;
+
+    z-index: 2;
+
+    right: 25px;
+    bottom: 15px;
+
+    font-family:
+      var(--serif);
+
+    font-size: 75px;
+
+    color:
+      rgba(238, 229, 217, 0.3);
+  }
+
+
+  .profile-content h2 {
+    margin:
+      20px 0 35px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(50px, 5.2vw, 82px);
+
+    font-weight: 400;
+
+    line-height:
+      0.97;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .profile-content h2 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .profile-content p {
+    max-width: 520px;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 13px;
+
+    line-height:
+      1.9;
+  }
+
+
+  .profile-content .arrow-link {
+    margin-top: 22px;
+  }
+
+
+  /* =========================================================
+     LIVE SERVICES
+  ========================================================= */
+
+  .live {
+    padding:
+      140px 7vw;
+
+    border-top:
+      1px solid var(--line);
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .live.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .live-heading {
+    display: grid;
+
+    grid-template-columns:
+      1fr 0.55fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 55px;
+  }
+
+
+  .live-heading h2 {
+    margin:
+      20px 0 0;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(52px, 5.5vw, 88px);
+
+    font-weight: 400;
+
+    line-height:
+      0.95;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .live-heading h2 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .live-heading > p {
+    max-width: 400px;
+
+    margin: 0;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 13px;
+
+    line-height: 1.85;
+  }
+
+
+  .services {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    border-top:
+      1px solid var(--line);
+
+    border-left:
+      1px solid var(--line);
+  }
+
+
+  .service {
+    position: relative;
+
+    min-height: 320px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction:
+      column;
+
+    justify-content:
+      space-between;
+
+    border-right:
+      1px solid var(--line);
+
+    border-bottom:
+      1px solid var(--line);
+
+    transition:
+      background 0.4s ease;
+  }
+
+
+  .service:hover {
+    background:
+      var(--black-soft);
+  }
+
+
+  .service-header {
+    display: flex;
+
+    align-items:
+      flex-start;
+
+    justify-content:
+      space-between;
+  }
+
+
+  .service-number {
+    color:
+      var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing:
+      0.12em;
+  }
+
+
+  .service-symbol {
+    width: 55px;
+    height: 55px;
+
+    border:
+      1px solid var(--line);
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    color:
+      var(--gold-light);
+
+    font-family:
+      var(--serif);
+
+    font-size: 26px;
+
+    transition:
+      transform 0.5s ease;
+  }
+
+
+  .service:hover .service-symbol {
+    transform:
+      rotate(12deg)
+      scale(1.08);
+  }
+
+
+  .service-body h3 {
+    margin:
+      0 0 13px;
+
+    font-family:
+      var(--serif);
+
+    font-size: 42px;
+
+    font-weight: 400;
+  }
+
+
+  .service-body p {
+    max-width: 380px;
+
+    margin: 0;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  .service-arrow {
+    position: absolute;
+
+    right: 28px;
+    bottom: 28px;
+
+    color:
+      var(--gold);
+
+    font-size: 20px;
+  }
+
+
+  /* =========================================================
+     PERFORMANCE
+  ========================================================= */
+
+  .performance {
+    padding:
+      130px 9vw;
+
+    display: grid;
+
+    grid-template-columns:
+      0.8fr 1.2fr;
+
+    gap: 8vw;
+
+    align-items:
+      center;
+
+    background:
+      #0d0c0a;
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .performance.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .performance-copy h2 {
+    margin:
+      20px 0 25px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(50px, 5vw, 80px);
+
+    font-weight: 400;
+
+    line-height:
+      0.98;
+  }
+
+
+  .performance-copy h2 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .performance-copy p {
+    max-width: 390px;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 13px;
+
+    line-height:
+      1.8;
+
+    margin-bottom:
+      28px;
+  }
+
+
+  .audio-visual {
+    position: relative;
+
+    height: 370px;
+
+    display: grid;
+
+    place-items:
+      center;
+
+    overflow: hidden;
+
+    border:
+      1px solid var(--line);
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(201, 164, 119, 0.1),
+        transparent 52%
+      );
+  }
+
+
+  .wave {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    gap: 5px;
+
+    opacity: 0.5;
+  }
+
+
+  .wave i {
+    width: 2px;
+
+    height: 30px;
+
+    background:
+      var(--gold);
+
+    animation:
+      audioWave
+      1.5s
+      ease-in-out
+      infinite
+      alternate;
+  }
+
+
+  .wave i:nth-child(2n) {
+    animation-delay:
+      -0.35s;
+  }
+
+
+  .wave i:nth-child(3n) {
+    animation-delay:
+      -0.7s;
+  }
+
+
+  .wave i:nth-child(4n) {
+    height: 75px;
+  }
+
+
+  .wave i:nth-child(5n) {
+    height: 110px;
+  }
+
+
+  @keyframes audioWave {
+    from {
+      transform:
+        scaleY(0.35);
+    }
+
+    to {
+      transform:
+        scaleY(1);
+    }
+  }
+
+
+  .audio-button {
+    position: relative;
+
+    z-index: 2;
+
+    width: 92px;
+    height: 92px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+      var(--gold-light);
+
+    color:
+      var(--black);
+
+    font-size: 20px;
+  }
+
+
+  .audio-label {
+    position: absolute;
+
+    left: 25px;
+    bottom: 22px;
+
+    color:
+      rgba(238, 229, 217, 0.55);
+
+    font-size: 7px;
+
+    letter-spacing:
+      0.16em;
+  }
+
+
+  /* =========================================================
+     CONTACT
+  ========================================================= */
+
+  .contact {
+    position: relative;
+
+    min-height: 650px;
+
+    padding:
+      150px 9vw;
+
+    display: flex;
+
+    align-items:
+      center;
+
+    overflow: hidden;
+
+    border-top:
+      1px solid var(--line);
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+    transition:
+      all 1s ease;
+  }
+
+
+  .contact.is-visible {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    right: -200px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    border:
+      1px solid
+      rgba(201, 164, 119, 0.12);
+
+    box-shadow:
+      0 0 0 90px
+      rgba(201, 164, 119, 0.025),
+      0 0 0 180px
+      rgba(201, 164, 119, 0.018);
+  }
+
+
+  .contact-inner {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+  }
+
+
+  .contact h2 {
+    margin:
+      22px 0 30px;
+
+    font-family:
+      var(--serif);
+
+    font-size:
+      clamp(55px, 6vw, 94px);
+
+    font-weight: 400;
+
+    line-height:
+      0.95;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .contact h2 em {
+    color:
+      var(--gold-light);
+
+    font-style:
+      italic;
+  }
+
+
+  .contact-inner > p {
+    max-width: 500px;
+
+    color:
+      var(--cream-soft);
+
+    font-size: 13px;
+
+    line-height:
+      1.85;
+  }
+
+
+  .contact-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 35px;
+  }
+
+
+  .contact-letter {
+    position: absolute;
+
+    right: 10vw;
+    bottom: 45px;
+
+    font-family:
+      var(--serif);
+
+    font-size: 230px;
+
+    color:
+      rgba(201, 164, 119, 0.06);
+  }
+
+
+  /* =========================================================
+     FOOTER
+  ========================================================= */
+
+  footer {
+    padding:
+      35px 5vw;
+
+    display: grid;
+
+    grid-template-columns:
+      1fr auto auto;
+
+    gap: 45px;
+
+    align-items:
+      center;
+
+    border-top:
+      1px solid var(--line);
+  }
+
+
+  .footer-brand {
+    display: flex;
+
+    align-items:
+      center;
+
+    gap: 11px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing:
+      0.18em;
+  }
+
+
+  .footer-brand .logo-symbol {
+    width: 28px;
+    height: 28px;
+
+    font-size: 16px;
+  }
+
+
+  .footer-nav {
+    display: flex;
+
+    gap: 25px;
+  }
+
+
+  .footer-nav a,
+  .social a {
+    color:
+      var(--cream-soft);
+
+    font-size: 8px;
+
+    letter-spacing:
+      0.13em;
+  }
+
+
+  .social {
+    display: flex;
+
+    gap: 18px;
+  }
+
+
+  .footer-copy {
+    grid-column:
+      1 / -1;
+
+    padding-top:
+      18px;
+
+    border-top:
+      1px solid var(--line);
+
+    color:
+      rgba(238, 229, 217, 0.3);
+
+    font-size: 7px;
+
+    letter-spacing:
+      0.1em;
+  }
+
+
+  /* =========================================================
+     RESPONSIVE
+  ========================================================= */
+
+  @media (max-width: 900px) {
+
+    .header {
+      height: 76px;
+
+      padding:
+        0 6vw;
+    }
+
+
+    .desktop-nav,
+    .header-book {
+      display: none;
+    }
+
+
+    .menu-toggle {
+      display: block;
+    }
+
+
+    .hero {
+      min-height:
+        auto;
+
+      display: flex;
+
+      flex-direction:
+        column-reverse;
+    }
+
+
+    .hero-portrait {
+      height:
+        70vh;
+
+      min-height:
+        520px;
+    }
+
+
+    .hero-content {
+      padding:
+        85px 7vw 75px;
+    }
+
+
+    .hero h1 {
+      font-size:
+        clamp(55px, 14vw, 90px);
+    }
+
+
+    .hero-vertical {
+      display: none;
+    }
+
+
+    .artist-intro {
+      display: block;
+
+      min-height:
+        auto;
+
+      padding:
+        100px 7vw;
+    }
+
+
+    .artist-intro-main {
+      margin-top:
+        45px;
+    }
+
+
+    .artist-mark {
+      margin-top:
+        55px;
+
+      width:
+        115px;
+
+      height:
+        115px;
+
+      font-size:
+        62px;
+    }
+
+
+    .cinema,
+    .live {
+      padding:
+        100px 6vw;
+    }
+
+
+    .cinema-header,
+    .live-heading {
+      display:
+        block;
+    }
+
+
+    .cinema-header > p,
+    .live-heading > p {
+      margin-top:
+        30px;
+    }
+
+
+    .journey {
+      padding:
+        100px 7vw;
+    }
+
+
+    .journey-track {
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        flex-start;
+
+      gap:
+        20px;
+    }
+
+
+    .journey-line {
+      width:
+        1px;
+
+      height:
+        30px;
+
+      margin-left:
+        4px;
+    }
+
+
+    .profile {
+      padding:
+        100px 7vw;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      gap:
+        60px;
+    }
+
+
+    .profile-image {
+      width:
+        100%;
+    }
+
+
+    .services {
+      grid-template-columns:
+        1fr;
+    }
+
+
+    .performance {
+      padding:
+        100px 7vw;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      gap:
+        55px;
+    }
+
+
+    .audio-visual {
+      width:
+        100%;
+
+      height:
+        300px;
+    }
+
+
+    .contact {
+      padding:
+        100px 7vw;
+
+      min-height:
+        570px;
+    }
+
+
+    .contact-letter {
+      font-size:
+        160px;
+
+      right:
+        5vw;
+
+      bottom:
+        25px;
+    }
+
+
+    footer {
+      grid-template-columns:
+        1fr auto;
+
+      padding:
+        30px 6vw;
+    }
+
+
+    .footer-nav {
+      display:
+        none;
+    }
+
+
+    .footer-copy {
+      grid-column:
+        1 / -1;
+    }
+  }
+
+
+  @media (max-width: 520px) {
+
+    .hero-portrait {
+      height:
+        67vh;
+
+      min-height:
+        480px;
+    }
+
+
+    .hero-buttons,
+    .contact-buttons {
+      flex-direction:
+        column;
+    }
+
+
+    .primary-button,
+    .secondary-button {
+      width:
+        100%;
+    }
+
+
+    .artist-intro-main h2,
+    .cinema-header h2,
+    .live-heading h2,
+    .profile-content h2,
+    .performance-copy h2,
+    .contact h2 {
+      font-size:
+        50px;
+    }
+
+
+    .film {
+      aspect-ratio:
+        16 / 10;
+    }
+
+
+    .film-play {
+      width:
+        66px;
+
+      height:
+        66px;
+    }
+
+
+    .film-bottom span:nth-child(2) {
+      display:
+        none;
+    }
+
+
+    .film-footer {
+      display:
+        block;
+    }
+
+
+    .film-footer .arrow-link {
+      margin-top:
+        22px;
+    }
+
+
+    .service {
+      min-height:
+        285px;
+
+      padding:
+        22px;
+    }
+
+
+    .service-body h3 {
+      font-size:
+        37px;
+    }
+
+
+    .contact h2 {
+      font-size:
+        51px;
+    }
+  }
+</style>
