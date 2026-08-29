@@ -1,3546 +1,2475 @@
----
-const VIDEO_URL = "https://www.youtube.com/embed/YOUR_VIDEO_ID";
-
-const services = [
-  {
-    number: "01",
-    title: "Weddings",
-    text: "Live music for wedding celebrations, intimate moments and unforgettable evenings.",
-  },
-  {
-    number: "02",
-    title: "Events",
-    text: "Live performances for private, social and special events.",
-  },
-  {
-    number: "03",
-    title: "Birthdays",
-    text: "Make birthdays and celebrations more memorable with live music.",
-  },
-  {
-    number: "04",
-    title: "Corporate",
-    text: "Professional live entertainment for corporate events and gatherings.",
-  },
-];
----
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Roushan — Singer & Live Performer</title>
+  <title>Roushan — Singer & Live Performer</title>
 
-    <meta
-      name="description"
-      content="Roushan — singer and live performer for weddings, events, birthdays and corporate occasions."
-    />
+  <meta
+    name="description"
+    content="Roushan — singer and live performer for weddings, events, celebrations and special occasions."
+  />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
 
-  <body>
+  <style>
+    :root {
+      --bg: #fbf9f5;
+      --cream: #f4eee5;
+      --white: #ffffff;
 
-    <div class="grain"></div>
+      --ink: #20252b;
+      --muted: #706d68;
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+      --gold: #bd8a4b;
+      --gold-light: #d7b27e;
 
-    <header class="header">
+      --line: #e4ddd3;
 
-      <a href="/" class="logo">
-        <span class="logo-mark">
-          R
-        </span>
+      --dark: #202831;
 
-        <span class="logo-name">
-          ROUSHAN
-        </span>
-      </a>
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: white;
+    }
 
 
-      <nav class="desktop-nav">
-        <a href="#about">ABOUT</a>
-        <a href="#performance">PERFORMANCES</a>
-        <a href="#live">LIVE</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 90px;
+
+      padding: 0 5vw;
+
+      display: flex;
+      align-items: center;
+
+      z-index: 50;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-logo {
+      position: relative;
+
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      font-family: var(--serif);
+      font-size: 32px;
+
+      color: var(--ink);
+    }
+
+    .brand-logo::after {
+      content: "♪";
+
+      position: absolute;
+
+      right: -2px;
+      bottom: 1px;
+
+      font-family: var(--sans);
+      font-size: 13px;
+
+      color: var(--gold);
+    }
+
+    .brand-text strong {
+      display: block;
+
+      font-family: var(--serif);
+      font-size: 17px;
+
+      letter-spacing: .18em;
+      font-weight: 500;
+    }
+
+    .brand-text span {
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 6px;
+      letter-spacing: .24em;
+
+      color: var(--muted);
+    }
+
+    .nav {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 34px;
+    }
+
+    .nav a {
+      position: relative;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      color: #5d5a56;
+    }
+
+    .nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+
+      transition: width .25s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
+    }
+
+    .header-book {
+      margin-left: 32px;
+
+      padding: 13px 18px;
+
+      background: var(--gold);
+      color: white;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      transition: .25s ease;
+    }
+
+    .header-book:hover {
+      background: var(--ink);
+    }
+
+    .menu-button {
+      display: none;
+
+      margin-left: auto;
+
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      display: block;
+
+      width: 26px;
+      height: 1px;
+
+      background: var(--ink);
+
+      margin: 6px;
+    }
 
 
-      <a href="#contact" class="header-button">
-        BOOK ROUSHAN
-      </a>
+    /* ========================================
+       MOBILE MENU
+    ======================================== */
+
+    .mobile-menu {
+      display: none;
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 40;
+
+      background: var(--bg);
+
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      gap: 30px;
+    }
+
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 40px;
+    }
+
+    body.menu-open .mobile-menu {
+      display: flex;
+    }
 
 
-      <button
-        class="menu-toggle"
-        aria-label="Open menu"
-      >
-        <span></span>
-        <span></span>
-      </button>
+    /* ========================================
+       HERO
+    ======================================== */
 
-    </header>
+    .hero {
+      min-height: 100vh;
+
+      display: grid;
+
+      grid-template-columns: 48% 52%;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--white);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+
+      align-self: center;
+
+      padding:
+        145px 5vw
+        90px 8vw;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--gold);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: .17em;
+    }
+
+    .eyebrow span {
+      width: 30px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      margin: 26px 0 0;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(70px, 8vw, 118px);
+
+      font-weight: 400;
+
+      line-height: .84;
+
+      letter-spacing: -.065em;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 420px;
+
+      margin-top: 35px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 47px;
+
+      padding: 0 20px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      transition: .25s ease;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--ink);
+    }
+
+    .button-outline {
+      border: 1px solid #bfb4a7;
+
+      color: var(--ink);
+    }
+
+    .button-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-location {
+      margin-top: 40px;
+
+      color: #999188;
+
+      font-size: 8px;
+
+      letter-spacing: .08em;
+    }
+
+    .hero-location i {
+      display: inline-block;
+
+      width: 5px;
+      height: 5px;
+
+      margin-right: 8px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+    }
 
 
-    <!-- =========================
-         MOBILE MENU
-    ========================== -->
+    /* HERO PHOTO */
 
-    <div class="mobile-menu">
+    .hero-photo {
+      position: relative;
+
+      min-height: 100vh;
+
+      overflow: hidden;
+
+      background: #ddd1c2;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center center;
+
+      transform: scale(1.01);
+
+      transition: transform 8s ease;
+    }
+
+    .hero:hover .hero-photo img {
+      transform: scale(1.045);
+    }
+
+    .hero-photo::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.12),
+          transparent 35%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(25,28,30,.25),
+          transparent 50%
+        );
+    }
+
+    .hero-photo-caption {
+      position: absolute;
+
+      left: 28px;
+      bottom: 27px;
+
+      z-index: 3;
+
+      color: white;
+    }
+
+    .hero-photo-caption strong {
+      display: block;
+
+      font-size: 10px;
+
+      letter-spacing: .18em;
+    }
+
+    .hero-photo-caption small {
+      display: block;
+
+      margin-top: 5px;
+
+      font-size: 7px;
+
+      color: #e7c99e;
+
+      letter-spacing: .16em;
+    }
+
+    .hero-photo-number {
+      position: absolute;
+
+      right: 24px;
+      bottom: 2px;
+
+      z-index: 2;
+
+      font-family: var(--serif);
+
+      font-size: 90px;
+
+      color: rgba(255,255,255,.25);
+    }
+
+    .hero-symbol {
+      position: absolute;
+
+      right: 38%;
+      bottom: 9%;
+
+      z-index: 8;
+
+      width: 82px;
+      height: 82px;
+
+      border:
+        1px solid
+        rgba(189,138,75,.8);
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      background: rgba(255,255,255,.9);
+
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-symbol::before {
+      content: "R";
+
+      font-family: var(--serif);
+
+      font-size: 42px;
+
+      color: var(--gold);
+    }
+
+    .hero-symbol::after {
+      content: "♪";
+
+      position: absolute;
+
+      right: 13px;
+      top: 9px;
+
+      color: var(--gold);
+
+      font-size: 14px;
+    }
+
+
+    /* ========================================
+       COMMON
+    ======================================== */
+
+    .section {
+      padding: 125px 8vw;
+    }
+
+    .section-label {
+      color: var(--gold);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .18em;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+
+      font-size:
+        clamp(52px, 5.5vw, 82px);
+
+      line-height: .95;
+
+      font-weight: 400;
+
+      letter-spacing: -.055em;
+    }
+
+    .section-heading em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+
+    /* ========================================
+       ABOUT
+    ======================================== */
+
+    .about {
+      display: grid;
+
+      grid-template-columns: 16% 1fr 18%;
+
+      align-items: center;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about h2 {
+      margin: 20px 0 28px;
+    }
+
+    .about p {
+      max-width: 550px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+    }
+
+    .about-mark {
+      justify-self: end;
+
+      width: 145px;
+      height: 145px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      position: relative;
+    }
+
+    .about-mark strong {
+      font-family: var(--serif);
+
+      font-size: 70px;
+
+      color: var(--gold);
+    }
+
+    .about-mark::after {
+      content: "♪";
+
+      position: absolute;
+
+      right: 36px;
+      top: 32px;
+
+      font-size: 15px;
+
+      color: var(--gold);
+    }
+
+    .about-mark small {
+      position: absolute;
+
+      bottom: 24px;
+
+      font-size: 6px;
+
+      letter-spacing: .18em;
+
+      color: #8c8379;
+    }
+
+
+    /* ========================================
+       VIDEO
+    ======================================== */
+
+    .featured {
+      background: var(--white);
+    }
+
+    .featured-head {
+      display: grid;
+
+      grid-template-columns: 1fr .55fr;
+
+      gap: 80px;
+
+      align-items: end;
+
+      margin-bottom: 45px;
+    }
+
+    .featured-head h2 {
+      margin: 18px 0 0;
+    }
+
+    .featured-head p {
+      max-width: 400px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.85;
+    }
+
+    .video-wrapper {
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 8.8;
+
+      overflow: hidden;
+
+      background: #20252a;
+
+      box-shadow:
+        0 22px 55px
+        rgba(40,35,30,.13);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+    }
+
+    .video-info {
+      position: absolute;
+
+      left: 20px;
+      right: 20px;
+      bottom: 16px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      pointer-events: none;
+
+      color: rgba(255,255,255,.72);
+
+      font-size: 7px;
+
+      letter-spacing: .15em;
+    }
+
+    .video-bottom {
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: space-between;
+
+      padding-top: 25px;
+    }
+
+    .video-bottom h3 {
+      margin: 8px 0 0;
+
+      font-family: var(--serif);
+
+      font-size: 28px;
+
+      font-weight: 400;
+    }
+
+    .video-bottom h3 em {
+      color: var(--gold);
+
+      font-style: italic;
+    }
+
+    .text-link {
+      color: var(--gold);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .13em;
+    }
+
+    .text-link span {
+      margin-left: 9px;
+    }
+
+
+    /* ========================================
+       SERVICES
+    ======================================== */
+
+    .services {
+      background: var(--cream);
+
+      text-align: center;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .services h2 {
+      margin:
+        18px auto
+        65px;
+
+      max-width: 800px;
+    }
+
+    .services h2 span {
+      color: var(--gold);
+    }
+
+    .service-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      text-align: center;
+
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service {
+      min-height: 255px;
+
+      padding: 28px 22px;
+
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      background: rgba(255,255,255,.28);
+
+      transition:
+        background .25s ease,
+        transform .25s ease;
+    }
+
+    .service:hover {
+      background: white;
+
+      transform: translateY(-3px);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+
+      margin: 0 auto 22px;
+
+      border:
+        1px solid
+        #cbbba8;
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--gold);
+
+      font-family: var(--serif);
+
+      font-size: 23px;
+    }
+
+    .service h3 {
+      margin: 0 0 12px;
+
+      font-family: var(--serif);
+
+      font-size: 27px;
+
+      font-weight: 400;
+    }
+
+    .service p {
+      max-width: 205px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+      line-height: 1.7;
+    }
+
+    .service-link {
+      display: inline-block;
+
+      margin-top: 22px;
+
+      color: var(--gold);
+
+      font-size: 7px;
+
+      font-weight: 700;
+
+      letter-spacing: .13em;
+    }
+
+
+    /* ========================================
+       GALLERY
+    ======================================== */
+
+    .gallery {
+      background: var(--white);
+
+      text-align: center;
+    }
+
+    .gallery h2 {
+      margin:
+        18px auto
+        48px;
+    }
+
+    .gallery h2 em {
+      color: var(--gold);
+    }
+
+    .gallery-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 9px;
+
+      text-align: left;
+    }
+
+    .gallery-item {
+      position: relative;
+
+      aspect-ratio: 1.25 / 1;
+
+      overflow: hidden;
+
+      background: #ddd2c5;
+
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform .55s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          0deg,
+          rgba(20,22,24,.25),
+          transparent 55%
+        );
+
+      pointer-events: none;
+    }
+
+    .gallery-number {
+      position: absolute;
+
+      left: 12px;
+      bottom: 10px;
+
+      z-index: 2;
+
+      color: white;
+
+      font-size: 7px;
+
+      letter-spacing: .12em;
+    }
+
+    .gallery-dots {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      margin-top: 22px;
+    }
+
+    .gallery-dots span {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: #d6cdc2;
+    }
+
+    .gallery-dots span:first-child {
+      background: var(--gold);
+    }
+
+
+    /* ========================================
+       REVIEWS
+    ======================================== */
+
+    .reviews {
+      background: var(--bg);
+
+      text-align: center;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .reviews h2 {
+      margin:
+        18px auto
+        48px;
+    }
+
+    .review-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      text-align: left;
+    }
+
+    .review {
+      padding: 30px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      box-shadow:
+        0 10px 30px
+        rgba(50,40,30,.04);
+    }
+
+    .stars {
+      color: var(--gold);
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+    }
+
+    .review p {
+      margin:
+        20px 0
+        25px;
+
+      color: #5f5b56;
+
+      font-size: 12px;
+
+      line-height: 1.75;
+    }
+
+    .review strong {
+      display: block;
+
+      font-size: 9px;
+
+      letter-spacing: .08em;
+    }
+
+    .review small {
+      display: block;
+
+      margin-top: 5px;
+
+      color: #9a9289;
+
+      font-size: 8px;
+    }
+
+
+    /* ========================================
+       BOOKING
+    ======================================== */
+
+    .booking {
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--dark);
+
+      color: white;
+
+      min-height: 390px;
+
+      display: flex;
+
+      align-items: center;
+    }
+
+    .booking-content {
+      position: relative;
+
+      z-index: 3;
+    }
+
+    .booking .section-label {
+      color: var(--gold-light);
+    }
+
+    .booking h2 {
+      margin: 18px 0 25px;
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(50px, 6vw, 85px);
+
+      font-weight: 400;
+
+      line-height: .95;
+
+      letter-spacing: -.05em;
+    }
+
+    .booking h2 em {
+      color: var(--gold-light);
+
+      font-style: italic;
+    }
+
+    .booking p {
+      max-width: 460px;
+
+      margin: 0;
+
+      color: rgba(255,255,255,.62);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+    .booking-actions {
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 28px;
+    }
+
+    .booking .button-outline {
+      color: white;
+
+      border-color:
+        rgba(255,255,255,.3);
+    }
+
+    .booking .button-outline:hover {
+      color: var(--gold-light);
+
+      border-color:
+        var(--gold-light);
+    }
+
+    .booking-r {
+      position: absolute;
+
+      right: 9vw;
+      bottom: -70px;
+
+      font-family: var(--serif);
+
+      font-size: 350px;
+
+      line-height: 1;
+
+      color: rgba(215,178,126,.07);
+    }
+
+    .booking-note {
+      position: absolute;
+
+      right: 18vw;
+      bottom: 95px;
+
+      width: 95px;
+      height: 95px;
+
+      border:
+        1px solid
+        rgba(215,178,126,.45);
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--gold-light);
+
+      font-family: var(--serif);
+
+      font-size: 28px;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      position: relative;
+
+      padding:
+        32px 5vw
+        55px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.2fr 1fr 1fr 1fr;
+
+      gap: 40px;
+
+      background: var(--white);
+
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+
+      font-size: 35px;
+
+      color: var(--ink);
+    }
+
+    .footer-brand span {
+      font-family: var(--serif);
+
+      font-size: 14px;
+
+      letter-spacing: .18em;
+    }
+
+    .footer-column strong {
+      display: block;
+
+      margin-bottom: 14px;
+
+      font-size: 8px;
+
+      letter-spacing: .14em;
+    }
+
+    .footer-column a,
+    .footer-column p {
+      display: block;
+
+      margin: 7px 0;
+
+      color: var(--muted);
+
+      font-size: 9px;
+
+      line-height: 1.6;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      position: absolute;
+
+      left: 5vw;
+      right: 5vw;
+      bottom: 15px;
+
+      padding-top: 14px;
+
+      border-top: 1px solid var(--line);
+
+      color: #9b9288;
+
+      font-size: 7px;
+
+      letter-spacing: .1em;
+    }
+
+
+    /* ========================================
+       REVEAL
+    ======================================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity .9s ease,
+        transform .9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: none;
+    }
+
+
+    /* ========================================
+       TABLET
+    ======================================== */
+
+    @media (max-width: 950px) {
+
+      .nav,
+      .header-book {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        display: flex;
+
+        flex-direction: column-reverse;
+      }
+
+      .hero-photo {
+        height: 65vh;
+        min-height: 470px;
+      }
+
+      .hero-content {
+        padding:
+          80px 7vw;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(65px, 14vw, 95px);
+      }
+
+      .hero-symbol {
+        right: 8%;
+        bottom: 5%;
+      }
+
+      .about {
+        display: block;
+      }
+
+      .about-mark {
+        margin-top: 50px;
+      }
+
+      .featured-head {
+        display: block;
+      }
+
+      .featured-head p {
+        margin-top: 25px;
+      }
+
+      .service-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+      .review-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+      .profile {
+        display: block;
+      }
+
+      footer {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+    }
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 560px) {
+
+      .header {
+        height: 75px;
+
+        padding:
+          0 6vw;
+      }
+
+      .brand-text strong {
+        font-size: 14px;
+      }
+
+      .hero-photo {
+        height: 61vh;
+
+        min-height: 430px;
+      }
+
+      .hero-content {
+        padding:
+          75px 7vw;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions,
+      .booking-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-symbol {
+        transform: scale(.7);
+
+        transform-origin:
+          bottom right;
+      }
+
+      .section {
+        padding:
+          90px 7vw;
+      }
+
+      .section-heading {
+        font-size: 51px;
+      }
+
+      .about-mark {
+        width: 120px;
+        height: 120px;
+      }
+
+      .about-mark strong {
+        font-size: 58px;
+      }
+
+      .video-wrapper {
+        aspect-ratio: 16 / 10;
+      }
+
+      .video-bottom {
+        display: block;
+      }
+
+      .video-bottom .text-link {
+        display: block;
+
+        margin-top: 20px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .review {
+        padding: 25px;
+      }
+
+      .booking {
+        min-height: 500px;
+      }
+
+      .booking-r {
+        right: -100px;
+
+        transform:
+          scale(.65);
+
+        transform-origin:
+          bottom right;
+      }
+
+      .booking-note {
+        right: 25px;
+        bottom: 75px;
+
+        transform: scale(.7);
+      }
+
+      footer {
+        grid-template-columns:
+          1fr;
+
+        padding-bottom: 70px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ======================================
+       HEADER
+  ======================================= -->
+
+  <header class="header">
+
+    <a href="#" class="brand">
+
+      <div class="brand-logo">
+        R
+      </div>
+
+      <div class="brand-text">
+        <strong>ROUSHAN</strong>
+        <span>SINGER &amp; LIVE PERFORMER</span>
+      </div>
+
+    </a>
+
+
+    <nav class="nav">
 
       <a href="#about">ABOUT</a>
+
       <a href="#performance">PERFORMANCES</a>
-      <a href="#live">LIVE</a>
+
+      <a href="#services">SERVICES</a>
+
+      <a href="#gallery">GALLERY</a>
+
+      <a href="#reviews">REVIEWS</a>
+
       <a href="#contact">CONTACT</a>
 
-    </div>
+    </nav>
 
 
-    <main>
-
-      <!-- =========================
-           HERO
-      ========================== -->
-
-      <section class="hero">
-
-        <div class="hero-copy">
-
-          <div class="eyebrow">
-            <span></span>
-            SINGER · LIVE PERFORMER
-          </div>
+    <a
+      href="#contact"
+      class="header-book"
+    >
+      BOOK ROUSHAN
+    </a>
 
 
-          <h1>
-            Bring the
-            <br />
-            <em>music.</em>
-          </h1>
+    <button
+      class="menu-button"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
 
 
-          <p>
-            Live music for weddings, celebrations,
-            events and special occasions.
-          </p>
+  <!-- MOBILE MENU -->
+
+  <div class="mobile-menu">
+
+    <a href="#about">ABOUT</a>
+    <a href="#performance">PERFORMANCES</a>
+    <a href="#services">SERVICES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#reviews">REVIEWS</a>
+    <a href="#contact">CONTACT</a>
+
+  </div>
 
 
-          <div class="hero-actions">
-
-            <a
-              href="#performance"
-              class="button button-primary"
-            >
-              <span>▶</span>
-              WATCH PERFORMANCE
-            </a>
-
-            <a
-              href="#contact"
-              class="button button-secondary"
-            >
-              BOOK ROUSHAN
-              <span>↗</span>
-            </a>
-
-          </div>
+  <main>
 
 
-          <div class="hero-location">
-            <span></span>
-            Patna, Bihar · Available for events
-          </div>
+    <!-- ======================================
+         HERO
+    ======================================= -->
 
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          <span></span>
+          SINGER · LIVE PERFORMER
         </div>
 
 
-        <!-- Hero image -->
-
-        <div class="hero-image">
-
-          <img
-            src="/images/roushan-hero.jpg"
-            alt="Roushan — singer and live performer"
-          />
-
-          <div class="hero-image-shade"></div>
+        <h1>
+          Bring the
+          <br>
+          <em>music.</em>
+        </h1>
 
 
-          <div class="hero-image-info">
-
-            <strong>
-              ROUSHAN
-            </strong>
-
-            <span>
-              SINGER / LIVE PERFORMER
-            </span>
-
-          </div>
+        <p class="hero-description">
+          Live music for weddings, events,
+          celebrations and special occasions —
+          with a performance shaped around
+          the moment.
+        </p>
 
 
-          <div class="hero-image-number">
-            01
-          </div>
+        <div class="hero-actions">
 
-        </div>
-
-
-        <!-- Graphic identity -->
-
-        <div class="hero-graphic">
-
-          <div class="graphic-ring">
-
-            <span class="graphic-r">
-              R
-            </span>
-
-            <span class="graphic-note">
-              ♪
-            </span>
-
-          </div>
-
-          <span class="graphic-text">
-            LIVE · MUSIC · PERFORMANCE
-          </span>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           INTRO
-      ========================== -->
-
-      <section
-        class="intro"
-        id="about"
-      >
-
-        <div class="section-number">
-          01 / ABOUT
-        </div>
-
-
-        <div class="intro-content">
-
-          <span class="section-label">
-            THE ARTIST
-          </span>
-
-
-          <h2>
-            Music that feels
-            <em>right.</em>
-          </h2>
-
-
-          <p>
-            Roushan is a singer and live performer
-            bringing energy, emotion and a personal
-            touch to every performance.
-          </p>
-
-        </div>
-
-
-        <div class="intro-symbol">
-
-          <span>R</span>
-
-          <small>
-            VOICE<br />
-            MUSIC<br />
-            LIVE
-          </small>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           FEATURED PERFORMANCE
-      ========================== -->
-
-      <section
-        class="performance"
-        id="performance"
-      >
-
-        <div class="performance-heading">
-
-          <div>
-
-            <span class="section-label">
-              02 / FEATURED PERFORMANCE
-            </span>
-
-            <h2>
-              Hear the
-              <em>artist.</em>
-            </h2>
-
-          </div>
-
-
-          <p>
-            Watch Roushan perform live and
-            experience the voice, energy and
-            atmosphere of the performance.
-          </p>
-
-        </div>
-
-
-        <div class="video-frame">
-
-          <iframe
-            src={VIDEO_URL}
-            title="Roushan performance"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-
-
-          <div class="video-label">
-            <span>ROUSHAN</span>
-            <span>LIVE PERFORMANCE</span>
-          </div>
-
-        </div>
-
-
-        <div class="video-caption">
-
-          <div>
-
-            <span class="section-label">
-              LIVE MUSIC
-            </span>
-
-            <h3>
-              A performance is
-              <em>an experience.</em>
-            </h3>
-
-          </div>
+          <a
+            href="#performance"
+            class="button button-primary"
+          >
+            ▶ &nbsp; WATCH LIVE
+          </a>
 
 
           <a
             href="#contact"
-            class="text-link"
+            class="button button-outline"
           >
-            BOOK FOR YOUR EVENT
+            BOOK ROUSHAN
             <span>↗</span>
           </a>
 
         </div>
 
-      </section>
+
+        <div class="hero-location">
+          <i></i>
+          PATNA · BIHAR · INDIA
+        </div>
+
+      </div>
 
 
-      <!-- =========================
-           EXPERIENCE
-      ========================== -->
+      <!-- HERO IMAGE -->
 
-      <section class="experience">
+      <div class="hero-photo">
 
-        <div class="experience-title">
+        <img
+          src="https://singer.animeamar.workers.dev/hero_event.jpeg"
+          alt="Roushan performing live"
+        />
 
-          <span class="section-label">
-            THE EXPERIENCE
-          </span>
 
-          <h2>
-            Voice.
-            <span>Music.</span>
-            Energy.
+        <div class="hero-photo-caption">
+
+          <strong>
+            ROUSHAN
+          </strong>
+
+          <small>
+            SINGER / LIVE PERFORMER
+          </small>
+
+        </div>
+
+
+        <div class="hero-photo-number">
+          01
+        </div>
+
+      </div>
+
+
+      <div class="hero-symbol"></div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         ABOUT
+    ======================================= -->
+
+    <section
+      class="section about reveal"
+      id="about"
+    >
+
+      <div class="section-label">
+        01 / ABOUT
+      </div>
+
+
+      <div>
+
+        <div class="section-label">
+          THE ARTIST
+        </div>
+
+
+        <h2 class="section-heading">
+          Music that makes
+          <br>
+          the <em>moment.</em>
+        </h2>
+
+
+        <p>
+          Roushan is a singer and live performer
+          based in Patna, bringing music, energy
+          and a personal touch to weddings,
+          events, birthdays, celebrations and
+          private occasions.
+        </p>
+
+      </div>
+
+
+      <div class="about-mark">
+
+        <strong>
+          R
+        </strong>
+
+        <small>
+          VOICE · MUSIC · LIVE
+        </small>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         FEATURED PERFORMANCE
+    ======================================= -->
+
+    <section
+      class="section featured reveal"
+      id="performance"
+    >
+
+      <div class="featured-head">
+
+        <div>
+
+          <div class="section-label">
+            02 / FEATURED PERFORMANCE
+          </div>
+
+
+          <h2 class="section-heading">
+            See Roushan
+            <br>
+            <em>Live in Action.</em>
           </h2>
 
         </div>
 
 
-        <div class="experience-grid">
+        <p>
+          Experience the energy, voice and vibe
+          of a live performance that makes every
+          event memorable.
+        </p>
 
-          <div class="experience-item">
-
-            <span>01</span>
-
-            <div class="experience-icon">
-              ♪
-            </div>
-
-            <strong>
-              VOICE
-            </strong>
-
-            <p>
-              The sound that brings people together.
-            </p>
-
-          </div>
+      </div>
 
 
-          <div class="experience-item">
+      <div class="video-wrapper">
 
-            <span>02</span>
+        <!-- Actual YouTube performance -->
 
-            <div class="experience-icon">
-              ♫
-            </div>
-
-            <strong>
-              MUSIC
-            </strong>
-
-            <p>
-              Songs chosen for the moment.
-            </p>
-
-          </div>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/RrjtsRxXmGI?rel=0"
+          title="Roushan Live Performance"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
 
 
-          <div class="experience-item">
+        <div class="video-info">
 
-            <span>03</span>
+          <span>
+            ROUSHAN
+          </span>
 
-            <div class="experience-icon">
-              ◉
-            </div>
-
-            <strong>
-              ENERGY
-            </strong>
-
-            <p>
-              A live presence your audience remembers.
-            </p>
-
-          </div>
-
-
-          <div class="experience-item">
-
-            <span>04</span>
-
-            <div class="experience-icon">
-              R
-            </div>
-
-            <strong>
-              ROUSHAN
-            </strong>
-
-            <p>
-              A performance shaped around your event.
-            </p>
-
-          </div>
+          <span>
+            LIVE PERFORMANCE
+          </span>
 
         </div>
 
-      </section>
+      </div>
 
 
-      <!-- =========================
-           PROFILE
-      ========================== -->
+      <div class="video-bottom">
 
-      <section class="profile">
+        <div>
 
-        <div class="profile-image">
+          <div class="section-label">
+            LIVE MUSIC
+          </div>
+
+          <h3>
+            A performance is
+            <em>an experience.</em>
+          </h3>
+
+        </div>
+
+
+        <a
+          href="#contact"
+          class="text-link"
+        >
+          BOOK FOR YOUR EVENT
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         SERVICES
+    ======================================= -->
+
+    <section
+      class="section services reveal"
+      id="services"
+    >
+
+      <div class="section-label">
+        SERVICES
+      </div>
+
+
+      <h2 class="section-heading">
+
+        For Every
+        <span>Occasion</span>
+
+      </h2>
+
+
+      <div class="service-grid">
+
+
+        <article class="service">
+
+          <div class="service-icon">
+            ♡
+          </div>
+
+          <h3>
+            Weddings
+          </h3>
+
+          <p>
+            Romantic and soulful live music
+            for your special day.
+          </p>
+
+          <a
+            href="#contact"
+            class="service-link"
+          >
+            LEARN MORE →
+          </a>
+
+        </article>
+
+
+
+        <article class="service">
+
+          <div class="service-icon">
+            ♫
+          </div>
+
+          <h3>
+            Events
+          </h3>
+
+          <p>
+            Live performance for corporate,
+            social and private events.
+          </p>
+
+          <a
+            href="#contact"
+            class="service-link"
+          >
+            LEARN MORE →
+          </a>
+
+        </article>
+
+
+
+        <article class="service">
+
+          <div class="service-icon">
+            ♢
+          </div>
+
+          <h3>
+            Birthdays
+          </h3>
+
+          <p>
+            Make birthdays more joyful
+            with live music.
+          </p>
+
+          <a
+            href="#contact"
+            class="service-link"
+          >
+            LEARN MORE →
+          </a>
+
+        </article>
+
+
+
+        <article class="service">
+
+          <div class="service-icon">
+            R
+          </div>
+
+          <h3>
+            Corporate
+          </h3>
+
+          <p>
+            Professional and engaging music
+            for corporate events.
+          </p>
+
+          <a
+            href="#contact"
+            class="service-link"
+          >
+            LEARN MORE →
+          </a>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         GALLERY
+    ======================================= -->
+
+    <section
+      class="section gallery reveal"
+      id="gallery"
+    >
+
+      <div class="section-label">
+        GALLERY
+      </div>
+
+
+      <h2 class="section-heading">
+        Moments &
+        <em>Memories</em>
+      </h2>
+
+
+      <div class="gallery-grid">
+
+
+        <div class="gallery-item">
 
           <img
-            src="/images/roushan-portrait.jpg"
-            alt="Roushan"
+            src="https://singer.animeamar.workers.dev/hero_performing_mic.jpeg"
+            alt="Roushan performing"
           />
 
-          <span>
+          <span class="gallery-number">
+            01
+          </span>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+          <img
+            src="https://singer.animeamar.workers.dev/hero_event.jpeg"
+            alt="Roushan at live event"
+          />
+
+          <span class="gallery-number">
+            02
+          </span>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+          <img
+            src="https://singer.animeamar.workers.dev/hero_sitting_sofa.jpg"
+            alt="Roushan portrait"
+          />
+
+          <span class="gallery-number">
             03
           </span>
 
         </div>
 
 
-        <div class="profile-copy">
+        <div class="gallery-item">
 
-          <span class="section-label">
-            ABOUT ROUSHAN
+          <img
+            src="https://singer.animeamar.workers.dev/hero_suit.jpeg"
+            alt="Roushan portrait"
+          />
+
+          <span class="gallery-number">
+            04
           </span>
 
+        </div>
 
-          <h2>
-            The artist
-            <em>behind the voice.</em>
-          </h2>
 
+        <div class="gallery-item">
+
+          <img
+            src="https://singer.animeamar.workers.dev/hero_performer.jpeg"
+            alt="Roushan live performance"
+          />
+
+          <span class="gallery-number">
+            05
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="gallery-dots">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         REVIEWS
+    ======================================= -->
+
+    <section
+      class="section reviews reveal"
+      id="reviews"
+    >
+
+      <div class="section-label">
+        REVIEWS
+      </div>
+
+
+      <h2 class="section-heading">
+        What People Say
+      </h2>
+
+
+      <div class="review-grid">
+
+
+        <article class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
 
           <p>
-            Roushan performs across weddings,
-            birthdays, private celebrations,
-            corporate events and social gatherings.
+            “Roushan made our wedding evening
+            magical. The voice, the energy,
+            everything was absolutely perfect.”
           </p>
 
+          <strong>
+            Ankita & Rahul
+          </strong>
+
+          <small>
+            Wedding
+          </small>
+
+        </article>
+
+
+
+        <article class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
 
           <p>
-            The focus is simple — good music,
-            a strong live performance and an
-            atmosphere people enjoy being part of.
+            “Professional, punctual and very
+            engaging. Our corporate event was
+            a huge success because of him.”
           </p>
+
+          <strong>
+            Vikram Singh
+          </strong>
+
+          <small>
+            Corporate Event
+          </small>
+
+        </article>
+
+
+
+        <article class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Roushan has an amazing voice and
+            connects with the audience instantly.
+            Loved the whole experience.”
+          </p>
+
+          <strong>
+            Neha Sharma
+          </strong>
+
+          <small>
+            Private Party
+          </small>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         BOOKING
+    ======================================= -->
+
+    <section
+      class="section booking reveal"
+      id="contact"
+    >
+
+      <div class="booking-content">
+
+        <div class="section-label">
+          BOOKING
+        </div>
+
+
+        <h2>
+          Ready to make your event
+          <br>
+          <em>unforgettable?</em>
+        </h2>
+
+
+        <p>
+          Tell us about your event, date and
+          location and let's plan the right
+          performance.
+        </p>
+
+
+        <div class="booking-actions">
+
+          <a
+            href="tel:+91620447490"
+            class="button button-primary"
+          >
+            ☎ &nbsp; CALL NOW
+          </a>
 
 
           <a
-            href="#contact"
-            class="text-link"
+            href="https://wa.me/91620447490"
+            target="_blank"
+            rel="noopener"
+            class="button button-outline"
           >
-            GET IN TOUCH
-            <span>↗</span>
+            WHATSAPP
           </a>
 
         </div>
 
-      </section>
+      </div>
 
 
-      <!-- =========================
-           LIVE SERVICES
-      ========================== -->
+      <div class="booking-r">
+        R
+      </div>
 
-      <section
-        class="live"
-        id="live"
+
+      <div class="booking-note">
+        ♪
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
+
+  <footer>
+
+
+    <div class="footer-brand">
+
+      <div class="footer-logo">
+        R
+      </div>
+
+      <span>
+        ROUSHAN
+      </span>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <strong>
+        QUICK LINKS
+      </strong>
+
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <strong>
+        FOLLOW ME
+      </strong>
+
+      <a
+        href="#"
+        target="_blank"
       >
+        Instagram
+      </a>
 
-        <div class="live-heading">
-
-          <div>
-
-            <span class="section-label">
-              04 / LIVE
-            </span>
-
-            <h2>
-              Choose your
-              <em>occasion.</em>
-            </h2>
-
-          </div>
-
-
-          <p>
-            Live performances for moments
-            worth celebrating.
-          </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-          {services.map((service) => (
-
-            <article class="service-card">
-
-              <div class="service-top">
-
-                <span>
-                  {service.number}
-                </span>
-
-                <div class="service-logo">
-
-                  <span class="service-note">
-                    ♪
-                  </span>
-
-                  <span class="service-r">
-                    R
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              <div class="service-content">
-
-                <h3>
-                  {service.title}
-                </h3>
-
-                <p>
-                  {service.text}
-                </p>
-
-              </div>
-
-
-              <span class="service-arrow">
-                ↗
-              </span>
-
-            </article>
-
-          ))}
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           CALL TO ACTION
-      ========================== -->
-
-      <section
-        class="contact"
-        id="contact"
+      <a
+        href="https://www.youtube.com/"
+        target="_blank"
       >
+        YouTube
+      </a>
 
-        <div class="contact-content">
+      <a href="#">
+        Facebook
+      </a>
 
-          <span class="section-label">
-            05 / BOOKING
-          </span>
-
-
-          <h2>
-            Make your event
-            <br />
-            <em>sound special.</em>
-          </h2>
+    </div>
 
 
-          <p>
-            Tell us about your event, date and
-            location and let's plan the performance.
-          </p>
+    <div class="footer-column">
+
+      <strong>
+        CONTACT
+      </strong>
+
+      <a href="tel:+91620447490">
+        +91 62044 7490
+      </a>
+
+      <a href="mailto:bookroushanmusic@gmail.com">
+        bookroushanmusic@gmail.com
+      </a>
+
+      <p>
+        Patna, Bihar, India
+      </p>
+
+    </div>
 
 
-          <div class="contact-actions">
+    <div class="copyright">
 
-            <a
-              href="tel:+910000000000"
-              class="button button-primary"
-            >
-              CALL ROUSHAN
-              <span>↗</span>
-            </a>
+      © 2026 Roushan. All rights reserved.
+
+    </div>
+
+  </footer>
 
 
-            <a
-              href="https://wa.me/910000000000"
-              target="_blank"
-              rel="noopener"
-              class="button button-secondary"
-            >
-              WHATSAPP
-              <span>↗</span>
-            </a>
 
-          </div>
+  <!-- ======================================
+       JAVASCRIPT
+  ======================================= -->
 
-        </div>
+  <script>
 
+    /* Mobile navigation */
 
-        <div class="contact-graphic">
+    const menuButton =
+      document.querySelector(".menu-button");
 
-          <div class="big-r">
-            R
-          </div>
+    menuButton?.addEventListener(
+      "click",
+      () => {
 
-          <div class="contact-circle">
-            ♪
-          </div>
+        document.body.classList.toggle(
+          "menu-open"
+        );
 
-        </div>
-
-      </section>
-
-    </main>
+      }
+    );
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    document
+      .querySelectorAll(".mobile-menu a")
+      .forEach((link) => {
 
-    <footer>
+        link.addEventListener(
+          "click",
+          () => {
 
-      <div class="footer-brand">
+            document.body.classList.remove(
+              "menu-open"
+            );
 
-        <span class="logo-mark">
-          R
-        </span>
+          }
+        );
 
-        <span>
-          ROUSHAN
-        </span>
-
-      </div>
-
-
-      <div class="footer-nav">
-
-        <a href="#about">ABOUT</a>
-        <a href="#performance">PERFORMANCES</a>
-        <a href="#live">LIVE</a>
-        <a href="#contact">CONTACT</a>
-
-      </div>
+      });
 
 
-      <div class="social">
+    /* Scroll reveal */
 
-        <a href="#">
-          INSTAGRAM
-        </a>
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
 
-        <a href="#">
-          YOUTUBE
-        </a>
+          entries.forEach((entry) => {
 
-      </div>
+            if (entry.isIntersecting) {
 
+              entry.target.classList.add(
+                "visible"
+              );
 
-      <div class="copyright">
-        © 2026 ROUSHAN · ALL RIGHTS RESERVED
-      </div>
+            }
 
-    </footer>
+          });
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-      /* Mobile navigation */
-
-      const menuButton =
-        document.querySelector(".menu-toggle");
-
-      const mobileMenu =
-        document.querySelector(".mobile-menu");
-
-
-      menuButton?.addEventListener(
-        "click",
-        () => {
-
-          document.body.classList.toggle(
-            "menu-open"
-          );
-
+        },
+        {
+          threshold: 0.08
         }
       );
 
 
-      mobileMenu
-        ?.querySelectorAll("a")
-        .forEach((link) => {
+    document
+      .querySelectorAll(".reveal")
+      .forEach((element) => {
 
-          link.addEventListener(
-            "click",
-            () => {
+        observer.observe(element);
 
-              document.body.classList.remove(
-                "menu-open"
-              );
+      });
 
-            }
-          );
+  </script>
 
-        });
-
-
-      /* Scroll reveal */
-
-      const revealElements =
-        document.querySelectorAll(
-          ".intro, .performance, .experience, .profile, .live, .contact"
-        );
-
-
-      const observer =
-        new IntersectionObserver(
-          (entries) => {
-
-            entries.forEach((entry) => {
-
-              if (entry.isIntersecting) {
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-              }
-
-            });
-
-          },
-          {
-            threshold: 0.08
-          }
-        );
-
-
-      revealElements.forEach(
-        (element) =>
-          observer.observe(element)
-      );
-
-    </script>
-
-  </body>
+</body>
 </html>
-
-
-<style>
-
-  /* =====================================================
-     DESIGN
-  ===================================================== */
-
-  :root {
-
-    --paper: #eee7dc;
-    --paper-light: #f5f0e8;
-
-    --charcoal: #292521;
-    --charcoal-soft: #403a34;
-
-    --brown: #5a493a;
-
-    --gold: #b78d60;
-    --gold-light: #d0ad83;
-
-    --muted: #756d65;
-
-    --line:
-      rgba(52, 46, 40, 0.16);
-
-    --dark-line:
-      rgba(238, 231, 220, 0.15);
-
-    --serif:
-      "Playfair Display",
-      Georgia,
-      serif;
-
-    --sans:
-      "DM Sans",
-      Arial,
-      sans-serif;
-
-  }
-
-
-  /* =====================================================
-     RESET
-  ===================================================== */
-
-  * {
-    box-sizing: border-box;
-  }
-
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-
-  body {
-
-    margin: 0;
-
-    background:
-      var(--paper);
-
-    color:
-      var(--charcoal);
-
-    font-family:
-      var(--sans);
-
-    overflow-x: hidden;
-
-  }
-
-
-  ::selection {
-
-    background:
-      var(--gold);
-
-    color:
-      white;
-
-  }
-
-
-  a {
-
-    color: inherit;
-
-    text-decoration: none;
-
-  }
-
-
-  img,
-  iframe {
-
-    display: block;
-
-    max-width: 100%;
-
-  }
-
-
-  /* =====================================================
-     GRAIN
-  ===================================================== */
-
-  .grain {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 9999;
-
-    pointer-events: none;
-
-    opacity: .018;
-
-    background-image:
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-
-  }
-
-
-  /* =====================================================
-     HEADER
-  ===================================================== */
-
-  .header {
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-
-    height: 90px;
-
-    padding:
-      0 5vw;
-
-    display: flex;
-
-    align-items: center;
-
-    z-index: 100;
-
-  }
-
-
-  .logo {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-  }
-
-
-  .logo-mark {
-
-    width: 34px;
-    height: 34px;
-
-    display: grid;
-
-    place-items: center;
-
-    border:
-      1px solid
-      var(--gold);
-
-    color:
-      var(--gold);
-
-    font-family:
-      var(--serif);
-
-    font-size: 20px;
-
-  }
-
-
-  .logo-name {
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing:
-      .22em;
-
-  }
-
-
-  .desktop-nav {
-
-    margin-left: auto;
-
-    display: flex;
-
-    gap: 32px;
-
-    margin-right: 38px;
-
-  }
-
-
-  .desktop-nav a {
-
-    font-size: 9px;
-
-    font-weight: 600;
-
-    letter-spacing:
-      .14em;
-
-    color:
-      rgba(41, 37, 33, .72);
-
-    transition:
-      color .25s ease;
-
-  }
-
-
-  .desktop-nav a:hover {
-
-    color:
-      var(--gold);
-
-  }
-
-
-  .header-button {
-
-    padding:
-      12px 17px;
-
-    border:
-      1px solid
-      rgba(90, 73, 58, .45);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing:
-      .12em;
-
-    transition:
-      .3s ease;
-
-  }
-
-
-  .header-button:hover {
-
-    background:
-      var(--charcoal);
-
-    color:
-      var(--paper);
-
-  }
-
-
-  .menu-toggle {
-
-    display: none;
-
-    border: 0;
-
-    background: transparent;
-
-    cursor: pointer;
-
-  }
-
-
-  .menu-toggle span {
-
-    display: block;
-
-    width: 25px;
-
-    height: 1px;
-
-    margin: 6px;
-
-    background:
-      var(--charcoal);
-
-  }
-
-
-  /* =====================================================
-     MOBILE MENU
-  ===================================================== */
-
-  .mobile-menu {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 90;
-
-    display: none;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 28px;
-
-    background:
-      var(--paper);
-
-  }
-
-
-  .mobile-menu a {
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      36px;
-
-  }
-
-
-  body.menu-open .mobile-menu {
-
-    display: flex;
-
-  }
-
-
-  /* =====================================================
-     HERO
-  ===================================================== */
-
-  .hero {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    display: grid;
-
-    grid-template-columns:
-      51% 49%;
-
-    overflow: hidden;
-
-    background:
-      var(--paper);
-
-  }
-
-
-  .hero-copy {
-
-    position: relative;
-
-    z-index: 5;
-
-    align-self: center;
-
-    padding:
-      145px 3vw 90px 9vw;
-
-  }
-
-
-  .eyebrow {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color:
-      var(--gold);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing:
-      .17em;
-
-    margin-bottom:
-      30px;
-
-  }
-
-
-  .eyebrow span {
-
-    width: 32px;
-
-    height: 1px;
-
-    background:
-      var(--gold);
-
-  }
-
-
-  .hero h1 {
-
-    margin: 0;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(68px, 8vw, 120px);
-
-    line-height:
-      .88;
-
-    font-weight: 400;
-
-    letter-spacing:
-      -.06em;
-
-  }
-
-
-  .hero h1 em {
-
-    color:
-      var(--gold);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .hero-copy > p {
-
-    max-width: 430px;
-
-    margin:
-      38px 0 0;
-
-    color:
-      var(--muted);
-
-    font-size: 14px;
-
-    line-height:
-      1.85;
-
-  }
-
-
-  .hero-actions {
-
-    display: flex;
-
-    gap: 11px;
-
-    margin-top:
-      32px;
-
-  }
-
-
-  .button {
-
-    min-height:
-      47px;
-
-    padding:
-      0 20px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 11px;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing:
-      .11em;
-
-    transition:
-      all .3s ease;
-
-  }
-
-
-  .button-primary {
-
-    background:
-      var(--charcoal);
-
-    color:
-      var(--paper);
-
-  }
-
-
-  .button-primary:hover {
-
-    background:
-      var(--brown);
-
-  }
-
-
-  .button-secondary {
-
-    border:
-      1px solid
-      rgba(41, 37, 33, .3);
-
-  }
-
-
-  .button-secondary:hover {
-
-    border-color:
-      var(--gold);
-
-    color:
-      var(--gold);
-
-  }
-
-
-  .hero-location {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top:
-      45px;
-
-    color:
-      rgba(41, 37, 33, .48);
-
-    font-size: 9px;
-
-    letter-spacing:
-      .06em;
-
-  }
-
-
-  .hero-location span {
-
-    width: 5px;
-
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-      var(--gold);
-
-  }
-
-
-  /* =====================================================
-     HERO IMAGE
-  ===================================================== */
-
-  .hero-image {
-
-    position: relative;
-
-    height: 100vh;
-
-    overflow: hidden;
-
-    background:
-      #d6c5b3;
-
-  }
-
-
-  .hero-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position:
-      center center;
-
-    filter:
-      saturate(.78)
-      contrast(1.02);
-
-    transform:
-      scale(1.025);
-
-    animation:
-      heroMove
-      15s
-      ease-in-out
-      infinite
-      alternate;
-
-  }
-
-
-  @keyframes heroMove {
-
-    from {
-      transform:
-        scale(1.025);
-    }
-
-    to {
-      transform:
-        scale(1.055);
-    }
-
-  }
-
-
-  .hero-image-shade {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(41,37,33,.32),
-        transparent 35%
-      ),
-      linear-gradient(
-        0deg,
-        rgba(41,37,33,.38),
-        transparent 42%
-      );
-
-  }
-
-
-  .hero-image-info {
-
-    position: absolute;
-
-    left: 30px;
-
-    bottom: 35px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    color:
-      white;
-
-  }
-
-
-  .hero-image-info strong {
-
-    font-size: 10px;
-
-    letter-spacing:
-      .18em;
-
-  }
-
-
-  .hero-image-info span {
-
-    font-size: 7px;
-
-    letter-spacing:
-      .16em;
-
-    color:
-      #e4c8a5;
-
-  }
-
-
-  .hero-image-number {
-
-    position: absolute;
-
-    right: 27px;
-
-    bottom: 15px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      90px;
-
-    color:
-      rgba(255,255,255,.22);
-
-  }
-
-
-  /* =====================================================
-     HERO GRAPHIC
-  ===================================================== */
-
-  .hero-graphic {
-
-    position: absolute;
-
-    z-index: 10;
-
-    right: 40%;
-
-    bottom: 12%;
-
-    transform:
-      translateX(50%);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 10px;
-
-  }
-
-
-  .graphic-ring {
-
-    width: 90px;
-
-    height: 90px;
-
-    border:
-      1px solid
-      rgba(183,141,96,.75);
-
-    border-radius: 50%;
-
-    display: grid;
-
-    place-items: center;
-
-    position: relative;
-
-    background:
-      rgba(238,231,220,.75);
-
-    backdrop-filter:
-      blur(5px);
-
-  }
-
-
-  .graphic-r {
-
-    font-family:
-      var(--serif);
-
-    font-size: 47px;
-
-    color:
-      var(--brown);
-
-  }
-
-
-  .graphic-note {
-
-    position: absolute;
-
-    right: 17px;
-
-    top: 13px;
-
-    color:
-      var(--gold);
-
-    font-size: 18px;
-
-  }
-
-
-  .graphic-text {
-
-    font-size: 7px;
-
-    letter-spacing:
-      .16em;
-
-    color:
-      rgba(41,37,33,.58);
-
-    white-space:
-      nowrap;
-
-  }
-
-
-  /* =====================================================
-     INTRO
-  ===================================================== */
-
-  .intro {
-
-    min-height:
-      620px;
-
-    padding:
-      130px 9vw;
-
-    display: grid;
-
-    grid-template-columns:
-      18% 62% 20%;
-
-    align-items:
-      center;
-
-    border-top:
-      1px solid var(--line);
-
-    border-bottom:
-      1px solid var(--line);
-
-    opacity: 0;
-
-    transform:
-      translateY(30px);
-
-    transition:
-      1s ease;
-
-  }
-
-
-  .intro.visible {
-
-    opacity: 1;
-
-    transform:
-      none;
-
-  }
-
-
-  .section-number {
-
-    color:
-      var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing:
-      .14em;
-
-  }
-
-
-  .section-label {
-
-    color:
-      var(--gold);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing:
-      .17em;
-
-    text-transform:
-      uppercase;
-
-  }
-
-
-  .intro-content h2 {
-
-    margin:
-      20px 0 30px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(54px, 5.5vw, 88px);
-
-    line-height:
-      .96;
-
-    font-weight:
-      400;
-
-    letter-spacing:
-      -.05em;
-
-  }
-
-
-  .intro-content h2 em {
-
-    color:
-      var(--gold);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .intro-content p {
-
-    max-width:
-      530px;
-
-    margin: 0;
-
-    color:
-      var(--muted);
-
-    font-size:
-      15px;
-
-    line-height:
-      1.9;
-
-  }
-
-
-  .intro-symbol {
-
-    justify-self:
-      end;
-
-    width:
-      155px;
-
-    height:
-      155px;
-
-    border:
-      1px solid var(--line);
-
-    border-radius:
-      50%;
-
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    align-items:
-      center;
-
-    justify-content:
-      center;
-
-    gap:
-      8px;
-
-  }
-
-
-  .intro-symbol > span {
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      72px;
-
-    color:
-      var(--gold);
-
-    line-height:
-      .8;
-
-  }
-
-
-  .intro-symbol small {
-
-    color:
-      var(--muted);
-
-    font-size:
-      6px;
-
-    text-align:
-      center;
-
-    letter-spacing:
-      .15em;
-
-    line-height:
-      1.6;
-
-  }
-
-
-  /* =====================================================
-     PERFORMANCE
-  ===================================================== */
-
-  .performance {
-
-    padding:
-      140px 7vw;
-
-    opacity: 0;
-
-    transform:
-      translateY(30px);
-
-    transition:
-      1s ease;
-
-  }
-
-
-  .performance.visible {
-
-    opacity: 1;
-
-    transform:
-      none;
-
-  }
-
-
-  .performance-heading {
-
-    display:
-      grid;
-
-    grid-template-columns:
-      1fr .55fr;
-
-    gap:
-      80px;
-
-    align-items:
-      end;
-
-    margin-bottom:
-      50px;
-
-  }
-
-
-  .performance-heading h2 {
-
-    margin:
-      20px 0 0;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(54px, 5.5vw, 88px);
-
-    font-weight:
-      400;
-
-    line-height:
-      .94;
-
-    letter-spacing:
-      -.05em;
-
-  }
-
-
-  .performance-heading h2 em {
-
-    color:
-      var(--gold);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .performance-heading p {
-
-    max-width:
-      390px;
-
-    margin:
-      0;
-
-    color:
-      var(--muted);
-
-    font-size:
-      13px;
-
-    line-height:
-      1.85;
-
-  }
-
-
-  /* =====================================================
-     VIDEO
-  ===================================================== */
-
-  .video-frame {
-
-    position:
-      relative;
-
-    width:
-      100%;
-
-    aspect-ratio:
-      16 / 8.6;
-
-    overflow:
-      hidden;
-
-    background:
-      #1e1b18;
-
-    border:
-      1px solid
-      rgba(41,37,33,.14);
-
-  }
-
-
-  .video-frame iframe {
-
-    width:
-      100%;
-
-    height:
-      100%;
-
-    border:
-      0;
-
-  }
-
-
-  .video-label {
-
-    position:
-      absolute;
-
-    left:
-      22px;
-
-    right:
-      22px;
-
-    bottom:
-      17px;
-
-    display:
-      flex;
-
-    justify-content:
-      space-between;
-
-    pointer-events:
-      none;
-
-    color:
-      rgba(255,255,255,.72);
-
-    font-size:
-      7px;
-
-    letter-spacing:
-      .15em;
-
-  }
-
-
-  .video-caption {
-
-    padding-top:
-      26px;
-
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      space-between;
-
-  }
-
-
-  .video-caption h3 {
-
-    margin:
-      8px 0 0;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      27px;
-
-    font-weight:
-      400;
-
-  }
-
-
-  .video-caption h3 em {
-
-    color:
-      var(--gold);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .text-link {
-
-    display:
-      inline-flex;
-
-    align-items:
-      center;
-
-    gap:
-      14px;
-
-    color:
-      var(--gold);
-
-    font-size:
-      9px;
-
-    font-weight:
-      700;
-
-    letter-spacing:
-      .12em;
-
-  }
-
-
-  .text-link span {
-
-    transition:
-      transform .3s ease;
-
-  }
-
-
-  .text-link:hover span {
-
-    transform:
-      translate(4px,-4px);
-
-  }
-
-
-  /* =====================================================
-     EXPERIENCE
-  ===================================================== */
-
-  .experience {
-
-    padding:
-      140px 9vw;
-
-    background:
-      #e4dbcf;
-
-    border-top:
-      1px solid var(--line);
-
-    border-bottom:
-      1px solid var(--line);
-
-    opacity: 0;
-
-    transform:
-      translateY(30px);
-
-    transition:
-      1s ease;
-
-  }
-
-
-  .experience.visible {
-
-    opacity: 1;
-
-    transform:
-      none;
-
-  }
-
-
-  .experience-title {
-
-    text-align:
-      center;
-
-  }
-
-
-  .experience-title h2 {
-
-    max-width:
-      900px;
-
-    margin:
-      25px auto 80px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(48px, 6vw, 90px);
-
-    font-weight:
-      400;
-
-    line-height:
-      .95;
-
-    letter-spacing:
-      -.05em;
-
-  }
-
-
-  .experience-title h2 span {
-
-    color:
-      var(--muted);
-
-  }
-
-
-  .experience-grid {
-
-    display:
-      grid;
-
-    grid-template-columns:
-      repeat(4,1fr);
-
-    border-top:
-      1px solid var(--line);
-
-    border-left:
-      1px solid var(--line);
-
-  }
-
-
-  .experience-item {
-
-    min-height:
-      270px;
-
-    padding:
-      25px;
-
-    border-right:
-      1px solid var(--line);
-
-    border-bottom:
-      1px solid var(--line);
-
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    align-items:
-      flex-start;
-
-  }
-
-
-  .experience-item > span {
-
-    color:
-      var(--gold);
-
-    font-size:
-      9px;
-
-  }
-
-
-  .experience-icon {
-
-    width:
-      54px;
-
-    height:
-      54px;
-
-    margin:
-      25px 0 28px;
-
-    border:
-      1px solid
-      rgba(90,73,58,.25);
-
-    border-radius:
-      50%;
-
-    display:
-      grid;
-
-    place-items:
-      center;
-
-    color:
-      var(--gold);
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      25px;
-
-  }
-
-
-  .experience-item strong {
-
-    font-size:
-      10px;
-
-    letter-spacing:
-      .16em;
-
-  }
-
-
-  .experience-item p {
-
-    max-width:
-      190px;
-
-    color:
-      var(--muted);
-
-    font-size:
-      11px;
-
-    line-height:
-      1.65;
-
-  }
-
-
-  /* =====================================================
-     PROFILE
-  ===================================================== */
-
-  .profile {
-
-    padding:
-      150px 9vw;
-
-    display:
-      grid;
-
-    grid-template-columns:
-      .9fr 1fr;
-
-    gap:
-      10vw;
-
-    align-items:
-      center;
-
-    opacity: 0;
-
-    transform:
-      translateY(30px);
-
-    transition:
-      1s ease;
-
-  }
-
-
-  .profile.visible {
-
-    opacity: 1;
-
-    transform:
-      none;
-
-  }
-
-
-  .profile-image {
-
-    position:
-      relative;
-
-    aspect-ratio:
-      4 / 5;
-
-    overflow:
-      hidden;
-
-    background:
-      #cbb9a6;
-
-  }
-
-
-  .profile-image img {
-
-    width:
-      100%;
-
-    height:
-      100%;
-
-    object-fit:
-      cover;
-
-    filter:
-      saturate(.75);
-
-  }
-
-
-  .profile-image::after {
-
-    content:
-      "";
-
-    position:
-      absolute;
-
-    inset:
-      0;
-
-    background:
-      linear-gradient(
-        0deg,
-        rgba(30,25,21,.4),
-        transparent 55%
-      );
-
-  }
-
-
-  .profile-image > span {
-
-    position:
-      absolute;
-
-    right:
-      22px;
-
-    bottom:
-      10px;
-
-    z-index:
-      2;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      75px;
-
-    color:
-      rgba(255,255,255,.35);
-
-  }
-
-
-  .profile-copy h2 {
-
-    margin:
-      20px 0 32px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(50px,5vw,82px);
-
-    font-weight:
-      400;
-
-    line-height:
-      .96;
-
-    letter-spacing:
-      -.05em;
-
-  }
-
-
-  .profile-copy h2 em {
-
-    color:
-      var(--gold);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .profile-copy p {
-
-    max-width:
-      520px;
-
-    color:
-      var(--muted);
-
-    font-size:
-      13px;
-
-    line-height:
-      1.9;
-
-  }
-
-
-  .profile-copy .text-link {
-
-    margin-top:
-      20px;
-
-  }
-
-
-  /* =====================================================
-     LIVE SERVICES
-  ===================================================== */
-
-  .live {
-
-    padding:
-      140px 7vw;
-
-    border-top:
-      1px solid var(--line);
-
-    opacity:
-      0;
-
-    transform:
-      translateY(30px);
-
-    transition:
-      1s ease;
-
-  }
-
-
-  .live.visible {
-
-    opacity:
-      1;
-
-    transform:
-      none;
-
-  }
-
-
-  .live-heading {
-
-    display:
-      grid;
-
-    grid-template-columns:
-      1fr .55fr;
-
-    gap:
-      80px;
-
-    align-items:
-      end;
-
-    margin-bottom:
-      55px;
-
-  }
-
-
-  .live-heading h2 {
-
-    margin:
-      20px 0 0;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(52px,5.5vw,88px);
-
-    font-weight:
-      400;
-
-    line-height:
-      .94;
-
-    letter-spacing:
-      -.05em;
-
-  }
-
-
-  .live-heading h2 em {
-
-    color:
-      var(--gold);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .live-heading > p {
-
-    max-width:
-      390px;
-
-    margin:
-      0;
-
-    color:
-      var(--muted);
-
-    font-size:
-      13px;
-
-    line-height:
-      1.85;
-
-  }
-
-
-  .service-grid {
-
-    display:
-      grid;
-
-    grid-template-columns:
-      repeat(2,1fr);
-
-    border-top:
-      1px solid var(--line);
-
-    border-left:
-      1px solid var(--line);
-
-  }
-
-
-  .service-card {
-
-    position:
-      relative;
-
-    min-height:
-      310px;
-
-    padding:
-      28px;
-
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    justify-content:
-      space-between;
-
-    border-right:
-      1px solid var(--line);
-
-    border-bottom:
-      1px solid var(--line);
-
-    transition:
-      background .35s ease;
-
-  }
-
-
-  .service-card:hover {
-
-    background:
-      #e8e0d5;
-
-  }
-
-
-  .service-top {
-
-    display:
-      flex;
-
-    justify-content:
-      space-between;
-
-    align-items:
-      flex-start;
-
-  }
-
-
-  .service-top > span {
-
-    color:
-      var(--gold);
-
-    font-size:
-      9px;
-
-  }
-
-
-  .service-logo {
-
-    position:
-      relative;
-
-    width:
-      55px;
-
-    height:
-      55px;
-
-    border:
-      1px solid
-      rgba(183,141,96,.45);
-
-    border-radius:
-      50%;
-
-    display:
-      grid;
-
-    place-items:
-      center;
-
-  }
-
-
-  .service-r {
-
-    font-family:
-      var(--serif);
-
-    color:
-      var(--gold);
-
-    font-size:
-      27px;
-
-  }
-
-
-  .service-note {
-
-    position:
-      absolute;
-
-    top:
-      6px;
-
-    right:
-      10px;
-
-    color:
-      var(--brown);
-
-    font-size:
-      12px;
-
-  }
-
-
-  .service-content h3 {
-
-    margin:
-      0 0 13px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      41px;
-
-    font-weight:
-      400;
-
-  }
-
-
-  .service-content p {
-
-    max-width:
-      390px;
-
-    margin:
-      0;
-
-    color:
-      var(--muted);
-
-    font-size:
-      12px;
-
-    line-height:
-      1.7;
-
-  }
-
-
-  .service-arrow {
-
-    position:
-      absolute;
-
-    right:
-      28px;
-
-    bottom:
-      28px;
-
-    color:
-      var(--gold);
-
-    font-size:
-      19px;
-
-  }
-
-
-  /* =====================================================
-     CONTACT
-  ===================================================== */
-
-  .contact {
-
-    position:
-      relative;
-
-    min-height:
-      610px;
-
-    padding:
-      130px 9vw;
-
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    overflow:
-      hidden;
-
-    background:
-      var(--charcoal);
-
-    color:
-      var(--paper);
-
-    opacity:
-      0;
-
-    transform:
-      translateY(30px);
-
-    transition:
-      1s ease;
-
-  }
-
-
-  .contact.visible {
-
-    opacity:
-      1;
-
-    transform:
-      none;
-
-  }
-
-
-  .contact-content {
-
-    position:
-      relative;
-
-    z-index:
-      2;
-
-    max-width:
-      850px;
-
-  }
-
-
-  .contact .section-label {
-
-    color:
-      var(--gold-light);
-
-  }
-
-
-  .contact h2 {
-
-    margin:
-      22px 0 28px;
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      clamp(55px,6vw,94px);
-
-    font-weight:
-      400;
-
-    line-height:
-      .94;
-
-    letter-spacing:
-      -.05em;
-
-  }
-
-
-  .contact h2 em {
-
-    color:
-      var(--gold-light);
-
-    font-style:
-      italic;
-
-  }
-
-
-  .contact-content > p {
-
-    max-width:
-      480px;
-
-    color:
-      rgba(238,231,220,.6);
-
-    font-size:
-      13px;
-
-    line-height:
-      1.85;
-
-  }
-
-
-  .contact-actions {
-
-    display:
-      flex;
-
-    gap:
-      11px;
-
-    margin-top:
-      32px;
-
-  }
-
-
-  .contact .button-secondary {
-
-    border-color:
-      rgba(238,231,220,.3);
-
-    color:
-      var(--paper);
-
-  }
-
-
-  .contact .button-secondary:hover {
-
-    border-color:
-      var(--gold-light);
-
-    color:
-      var(--gold-light);
-
-  }
-
-
-  .contact-graphic {
-
-    position:
-      absolute;
-
-    right:
-      8vw;
-
-    bottom:
-      -30px;
-
-    width:
-      390px;
-
-    height:
-      390px;
-
-    display:
-      grid;
-
-    place-items:
-      center;
-
-  }
-
-
-  .big-r {
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      330px;
-
-    line-height:
-      1;
-
-    color:
-      rgba(201,164,119,.09);
-
-  }
-
-
-  .contact-circle {
-
-    position:
-      absolute;
-
-    width:
-      105px;
-
-    height:
-      105px;
-
-    border:
-      1px solid
-      rgba(201,164,119,.5);
-
-    border-radius:
-      50%;
-
-    display:
-      grid;
-
-    place-items:
-      center;
-
-    color:
-      var(--gold-light);
-
-    font-family:
-      var(--serif);
-
-    font-size:
-      31px;
-
-  }
-
-
-  /* =====================================================
-     FOOTER
-  ===================================================== */
-
-  footer {
-
-    padding:
-      30px 5vw;
-
-    display:
-      grid;
-
-    grid-template-columns:
-      1fr auto auto;
-
-    gap:
-      45px;
-
-    align-items:
-      center;
-
-    background:
-      var(--paper-light);
-
-    border-top:
-      1px solid var(--line);
-
-  }
-
-
-  .footer-brand {
-
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    gap:
-      10px;
-
-    font-size:
-      10px;
-
-    font-weight:
-      700;
-
-    letter-spacing:
-      .18em;
-
-  }
-
-
-  .footer-brand .logo-mark {
-
-    width:
-      28px;
-
-    height:
-      28px;
-
-    font-size:
-      16px;
-
-  }
-
-
-  .footer-nav {
-
-    display:
-      flex;
-
-    gap:
-      25px;
-
-  }
-
-
-  .footer-nav a,
-  .social a {
-
-    font-size:
-      8px;
-
-    color:
-      var(--muted);
-
-    letter-spacing:
-      .12em;
-
-  }
-
-
-  .social {
-
-    display:
-      flex;
-
-    gap:
-      18px;
-
-  }
-
-
-  .copyright {
-
-    grid-column:
-      1 / -1;
-
-    padding-top:
-      17px;
-
-    border-top:
-      1px solid var(--line);
-
-    color:
-      rgba(41,37,33,.35);
-
-    font-size:
-      7px;
-
-    letter-spacing:
-      .1em;
-
-  }
-
-
-  /* =====================================================
-     TABLET / MOBILE
-  ===================================================== */
-
-  @media (max-width: 900px) {
-
-    .header {
-
-      height:
-        76px;
-
-      padding:
-        0 6vw;
-
-    }
-
-
-    .desktop-nav,
-    .header-button {
-
-      display:
-        none;
-
-    }
-
-
-    .menu-toggle {
-
-      display:
-        block;
-
-      margin-left:
-        auto;
-
-    }
-
-
-    .hero {
-
-      display:
-        flex;
-
-      flex-direction:
-        column-reverse;
-
-    }
-
-
-    .hero-image {
-
-      height:
-        68vh;
-
-      min-height:
-        510px;
-
-    }
-
-
-    .hero-copy {
-
-      padding:
-        80px 7vw;
-
-    }
-
-
-    .hero h1 {
-
-      font-size:
-        clamp(60px,14vw,92px);
-
-    }
-
-
-    .hero-graphic {
-
-      right:
-        13%;
-
-      bottom:
-        7%;
-
-      transform:
-        none;
-
-    }
-
-
-    .hero-vertical {
-
-      display:
-        none;
-
-    }
-
-
-    .intro {
-
-      display:
-        block;
-
-      min-height:
-        auto;
-
-      padding:
-        100px 7vw;
-
-    }
-
-
-    .intro-content {
-
-      margin-top:
-        45px;
-
-    }
-
-
-    .intro-symbol {
-
-      margin-top:
-        55px;
-
-    }
-
-
-    .performance,
-    .live {
-
-      padding:
-        100px 6vw;
-
-    }
-
-
-    .performance-heading,
-    .live-heading {
-
-      display:
-        block;
-
-    }
-
-
-    .performance-heading p,
-    .live-heading > p {
-
-      margin-top:
-        30px;
-
-    }
-
-
-    .experience {
-
-      padding:
-        100px 7vw;
-
-    }
-
-
-    .experience-grid {
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-
-    .profile {
-
-      padding:
-        100px 7vw;
-
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      gap:
-        60px;
-
-    }
-
-
-    .profile-image {
-
-      width:
-        100%;
-
-    }
-
-
-    .service-grid {
-
-      grid-template-columns:
-        1fr;
-
-    }
-
-
-    .contact {
-
-      padding:
-        100px 7vw;
-
-      min-height:
-        570px;
-
-    }
-
-
-    .contact-graphic {
-
-      right:
-        -80px;
-
-      bottom:
-        -40px;
-
-      transform:
-        scale(.7);
-
-    }
-
-
-    footer {
-
-      grid-template-columns:
-        1fr auto;
-
-      padding:
-        30px 6vw;
-
-    }
-
-
-    .footer-nav {
-
-      display:
-        none;
-
-    }
-
-  }
-
-
-  @media (max-width: 520px) {
-
-    .hero-image {
-
-      height:
-        64vh;
-
-      min-height:
-        470px;
-
-    }
-
-
-    .hero-actions,
-    .contact-actions {
-
-      flex-direction:
-        column;
-
-    }
-
-
-    .button {
-
-      width:
-        100%;
-
-    }
-
-
-    .hero-graphic {
-
-      right:
-        7%;
-
-      bottom:
-        5%;
-
-      transform:
-        scale(.78);
-
-      transform-origin:
-        bottom right;
-
-    }
-
-
-    .intro-content h2,
-    .performance-heading h2,
-    .live-heading h2,
-    .profile-copy h2,
-    .contact h2 {
-
-      font-size:
-        51px;
-
-    }
-
-
-    .video-frame {
-
-      aspect-ratio:
-        16 / 10;
-
-    }
-
-
-    .video-caption {
-
-      display:
-        block;
-
-    }
-
-
-    .video-caption .text-link {
-
-      margin-top:
-        22px;
-
-    }
-
-
-    .experience-grid {
-
-      grid-template-columns:
-        1fr;
-
-    }
-
-
-    .experience-item {
-
-      min-height:
-        230px;
-
-    }
-
-
-    .service-card {
-
-      min-height:
-        280px;
-
-    }
-
-
-    .service-content h3 {
-
-      font-size:
-        37px;
-
-    }
-
-
-    .contact-graphic {
-
-      transform:
-        scale(.55);
-
-      transform-origin:
-        bottom right;
-
-    }
-
-  }
-
-</style>
