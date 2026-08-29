@@ -6,25 +6,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
 <head>
+
 	<BaseHead
 		title={SITE_TITLE}
 		description={SITE_DESCRIPTION}
 	/>
 
 	<style>
-		/* =========================================================
-		   ROOT / RESET
-		========================================================= */
+
+		/* =====================================================
+		   DESIGN SYSTEM
+		===================================================== */
 
 		:root {
 			--black: #080809;
-			--black-2: #0e0e10;
-			--black-3: #141416;
-			--white: #f4f1eb;
-			--muted: #999792;
+			--black-soft: #101012;
+			--black-card: #121214;
+			--white: #f5f2ec;
+			--muted: #999691;
 			--gold: #d6b477;
 			--line: rgba(255,255,255,.10);
 		}
+
+
+		/* =====================================================
+		   RESET
+		===================================================== */
 
 		*,
 		*::before,
@@ -75,9 +82,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   NAVIGATION
-		========================================================= */
+		===================================================== */
 
 		.site-nav {
 			position: absolute;
@@ -90,7 +97,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			background:
 				linear-gradient(
 					to bottom,
-					rgba(0,0,0,.55),
+					rgba(0,0,0,.58),
 					transparent
 				);
 
@@ -133,7 +140,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			font-weight: 700;
 			letter-spacing: .15em;
 
-			color: rgba(255,255,255,.75);
+			color: rgba(255,255,255,.76);
 
 			transition: color .25s ease;
 		}
@@ -156,14 +163,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   HERO
-		========================================================= */
+		===================================================== */
 
 		.hero {
 			position: relative;
 
 			width: 100%;
+
 			height: min(900px, 100vh);
 			min-height: 680px;
 
@@ -193,14 +201,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			background:
 				linear-gradient(
 					90deg,
-					rgba(0,0,0,.82) 0%,
-					rgba(0,0,0,.53) 40%,
-					rgba(0,0,0,.14) 100%
+					rgba(0,0,0,.84) 0%,
+					rgba(0,0,0,.52) 40%,
+					rgba(0,0,0,.12) 100%
 				),
 				linear-gradient(
 					0deg,
-					rgba(0,0,0,.72) 0%,
-					rgba(0,0,0,.05) 65%
+					rgba(0,0,0,.76) 0%,
+					rgba(0,0,0,.04) 68%
 				);
 		}
 
@@ -210,7 +218,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			width: min(1380px, calc(100% - 70px));
 
-			margin: -65px auto 0;
+			margin: -75px auto 0;
 		}
 
 		.eyebrow,
@@ -292,11 +300,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.button-outline:hover {
 			background: white;
 			color: #111;
+
 			transform: translateY(-2px);
 		}
 
 		.hero-location {
 			position: absolute;
+
 			right: 35px;
 			bottom: 32px;
 
@@ -310,24 +320,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
-		   VIDEO
-		========================================================= */
+		/* =====================================================
+		   VIDEO SECTION
+		===================================================== */
 
 		.video-section {
 			width: min(1380px, calc(100% - 70px));
 
 			margin: auto;
 
-			padding: 100px 0 125px;
+			padding: 105px 0 125px;
 		}
 
 		.video-heading {
 			display: flex;
+
 			align-items: flex-end;
 			justify-content: space-between;
 
-			gap: 50px;
+			gap: 60px;
 
 			margin-bottom: 45px;
 		}
@@ -335,18 +346,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.video-heading h2 {
 			margin: 15px 0 0;
 
-			font-size: clamp(40px, 5vw, 68px);
+			font-size: clamp(42px, 5vw, 68px);
 			line-height: .98;
 
 			letter-spacing: -.045em;
 		}
 
 		.video-heading p {
-			max-width: 350px;
+			max-width: 390px;
+
 			margin: 0;
 
 			font-size: 14px;
-			line-height: 1.7;
+			line-height: 1.75;
 
 			color: var(--muted);
 		}
@@ -355,6 +367,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			position: relative;
 
 			width: 100%;
+
 			aspect-ratio: 16 / 9;
 
 			overflow: hidden;
@@ -384,8 +397,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			background:
 				linear-gradient(
 					0deg,
-					rgba(0,0,0,.60),
-					transparent 60%
+					rgba(0,0,0,.65),
+					transparent 65%
 				);
 		}
 
@@ -409,17 +422,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			border: 1px solid rgba(255,255,255,.85);
 			border-radius: 50%;
 
+			color: white;
+
 			font-size: 18px;
 
 			padding-left: 4px;
 
-			color: white;
-
-			backdrop-filter: blur(4px);
+			backdrop-filter: blur(5px);
 		}
 
 		.video-duration {
 			position: absolute;
+
 			right: 25px;
 			bottom: 22px;
 
@@ -431,9 +445,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   COMMON SECTION
-		========================================================= */
+		===================================================== */
 
 		.section {
 			width: min(1380px, calc(100% - 70px));
@@ -454,34 +468,96 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
-		   PERFORMANCES
-		========================================================= */
+		/* =====================================================
+		   ARTIST INTRO
+		===================================================== */
 
-		.services-header {
+		.artist-intro {
+			display: grid;
+
+			grid-template-columns: 1fr 1fr;
+
+			gap: 110px;
+		}
+
+		.artist-intro-text {
+			max-width: 570px;
+
+			margin: 35px 0 0;
+
+			font-size: 19px;
+			line-height: 1.8;
+
+			color: var(--muted);
+		}
+
+
+		/* =====================================================
+		   PERFORMANCE INTRO
+		===================================================== */
+
+		.performance-header {
+			text-align: center;
+
+			max-width: 800px;
+
+			margin: 0 auto 65px;
+		}
+
+		.performance-mark {
+			width: 62px;
+			height: 62px;
+
+			margin: 0 auto 24px;
+
 			display: flex;
-			align-items: flex-end;
-			justify-content: space-between;
+			align-items: center;
+			justify-content: center;
 
-			gap: 70px;
+			border: 1px solid rgba(214,180,119,.65);
+			border-radius: 50%;
 
-			margin-bottom: 58px;
+			color: var(--gold);
+
+			font-size: 21px;
 		}
 
-		.services-header > div {
-			max-width: 720px;
+		.performance-brand {
+			margin: 0 0 12px;
+
+			font-size: 10px;
+			font-weight: 800;
+
+			letter-spacing: .28em;
+
+			color: var(--gold);
 		}
 
-		.services-note {
-			max-width: 410px;
-
+		.performance-heading {
 			margin: 0;
 
-			font-size: 15px;
+			font-size: clamp(45px, 6vw, 78px);
+			line-height: .95;
+
+			letter-spacing: -.05em;
+			font-weight: 750;
+		}
+
+		.performance-description {
+			max-width: 510px;
+
+			margin: 23px auto 0;
+
+			font-size: 16px;
 			line-height: 1.75;
 
 			color: var(--muted);
 		}
+
+
+		/* =====================================================
+		   PERFORMANCE CARDS
+		===================================================== */
 
 		.service-grid {
 			display: grid;
@@ -494,31 +570,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.service-card {
 			position: relative;
 
-			min-height: 440px;
-
 			display: grid;
-			grid-template-columns: 43% 57%;
+
+			grid-template-columns: 44% 56%;
+
+			min-height: 440px;
 
 			overflow: hidden;
 
-			background: var(--black-2);
+			background: var(--black-card);
 
 			border: 1px solid var(--line);
 
 			text-decoration: none;
 
 			transition:
-				border-color .35s ease,
-				transform .35s ease;
+				transform .35s ease,
+				border-color .35s ease;
 		}
 
 		.service-card:hover {
-			border-color: rgba(214,180,119,.45);
-			transform: translateY(-3px);
+			transform: translateY(-4px);
+
+			border-color:
+				rgba(214,180,119,.48);
 		}
 
 
-		/* IMAGE SIDE */
+		/* IMAGE */
 
 		.service-image {
 			position: relative;
@@ -535,7 +614,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			object-fit: cover;
 
-			transition: transform .8s cubic-bezier(.2,.7,.2,1);
+			transition:
+				transform .8s cubic-bezier(.2,.7,.2,1);
 		}
 
 		.service-card:hover .service-image img {
@@ -551,18 +631,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			background:
 				linear-gradient(
 					90deg,
-					transparent 55%,
-					rgba(8,8,9,.65)
+					transparent 50%,
+					rgba(8,8,9,.70)
 				);
 		}
 
 
-		/* TEXT SIDE */
+		/* CARD CONTENT */
 
 		.service-info {
 			position: relative;
 
-			padding: 38px 34px;
+			padding: 40px 34px;
 
 			display: flex;
 			flex-direction: column;
@@ -577,14 +657,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			font-size: 10px;
 			font-weight: 700;
+
 			letter-spacing: .20em;
 
 			color: var(--gold);
 		}
 
 		.service-icon {
-			width: 42px;
-			height: 42px;
+			width: 43px;
+			height: 43px;
 
 			display: flex;
 			align-items: center;
@@ -598,12 +679,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			color: var(--gold);
 
 			font-size: 17px;
+
+			transition:
+				background .3s ease,
+				color .3s ease;
+		}
+
+		.service-card:hover .service-icon {
+			background: var(--gold);
+			color: #111;
 		}
 
 		.service-info h3 {
 			margin: 0 0 15px;
 
-			font-size: clamp(30px, 3vw, 43px);
+			font-size: clamp(31px, 3vw, 44px);
+
 			line-height: 1;
 
 			letter-spacing: -.04em;
@@ -623,33 +714,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.service-link {
 			font-size: 9px;
 			font-weight: 800;
+
 			letter-spacing: .17em;
 
 			color: var(--gold);
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   FEATURE
-		========================================================= */
+		===================================================== */
 
 		.feature {
 			width: 100%;
 
 			display: grid;
+
 			grid-template-columns: 1.15fr .85fr;
 
-			background: var(--black-2);
+			background: var(--black-soft);
 		}
 
 		.feature-image {
 			min-height: 700px;
+
 			overflow: hidden;
 		}
 
 		.feature-image img {
 			width: 100%;
 			height: 100%;
+
 			min-height: 700px;
 
 			object-fit: cover;
@@ -688,6 +783,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			font-size: 9px;
 			font-weight: 800;
+
 			letter-spacing: .18em;
 
 			color: var(--gold);
@@ -696,9 +792,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   GALLERY
-		========================================================= */
+		===================================================== */
 
 		.gallery-heading {
 			margin-bottom: 55px;
@@ -707,15 +803,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.gallery-grid {
 			display: grid;
 
-			grid-template-columns: 1.35fr .8fr .8fr;
+			grid-template-columns:
+				1.35fr
+				.8fr
+				.8fr;
 
-			grid-template-rows: 300px 300px;
+			grid-template-rows:
+				300px
+				300px;
 
 			gap: 12px;
 		}
 
 		.gallery-item {
 			overflow: hidden;
+
 			background: #111;
 		}
 
@@ -737,9 +839,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   BOOKING
-		========================================================= */
+		===================================================== */
 
 		.booking {
 			text-align: center;
@@ -761,17 +863,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		.booking-actions {
 			display: flex;
+
 			justify-content: center;
+
 			gap: 12px;
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   FOOTER
-		========================================================= */
+		===================================================== */
 
 		.site-footer {
 			border-top: 1px solid var(--line);
+
 			background: #070708;
 		}
 
@@ -783,14 +888,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			margin: auto;
 
 			display: flex;
+
 			align-items: center;
 			justify-content: space-between;
+
 			gap: 25px;
 		}
 
 		.footer-brand {
 			font-size: 18px;
 			font-weight: 800;
+
 			letter-spacing: .09em;
 		}
 
@@ -804,9 +912,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   TABLET
-		========================================================= */
+		===================================================== */
 
 		@media (max-width: 950px) {
 
@@ -827,19 +935,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			}
 
 			.hero-content {
-				margin-top: -35px;
+				margin-top: -40px;
 			}
 
-			.intro {
+			.artist-intro {
 				grid-template-columns: 1fr;
+				gap: 25px;
 			}
 
-			.services-header {
+			.artist-intro-text {
+				margin-top: 0;
+			}
+
+			.video-heading {
 				display: block;
 			}
 
-			.services-note {
-				margin-top: 25px;
+			.video-heading p {
+				margin-top: 20px;
 			}
 
 			.service-grid {
@@ -861,9 +974,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 
-		/* =========================================================
+		/* =====================================================
 		   MOBILE
-		========================================================= */
+		===================================================== */
 
 		@media (max-width: 600px) {
 
@@ -920,20 +1033,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.video-section {
 				padding-top: 80px;
-				padding-bottom: 85px;
+				padding-bottom: 90px;
 			}
 
-			.video-heading {
-				display: block;
+			.video-heading h2 {
+				font-size: 43px;
 			}
 
-			.video-heading p {
-				margin-top: 20px;
+			.cinematic-video {
+				aspect-ratio: 16 / 10;
 			}
 
 			.play-button {
 				width: 65px;
 				height: 65px;
+			}
+
+			.performance-header {
+				margin-bottom: 45px;
+			}
+
+			.performance-heading {
+				font-size: 45px;
+			}
+
+			.performance-description {
+				font-size: 15px;
 			}
 
 			.section {
@@ -946,6 +1071,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.service-card {
 				grid-template-columns: 1fr;
+
 				min-height: auto;
 			}
 
@@ -955,8 +1081,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			}
 
 			.service-info {
-				min-height: 280px;
-				padding: 32px 25px;
+				min-height: 285px;
+
+				padding: 35px 25px;
 			}
 
 			.service-number {
@@ -979,7 +1106,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.gallery-grid {
 				grid-template-columns: 1fr 1fr;
-				grid-template-rows: 250px 250px 250px;
+
+				grid-template-rows:
+					250px
+					250px
+					250px;
 			}
 
 			.gallery-item:first-child {
@@ -997,6 +1128,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			.booking-actions {
 				flex-direction: column;
+
 				align-items: center;
 			}
 
@@ -1004,16 +1136,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				min-height: 160px;
 
 				flex-direction: column;
+
 				justify-content: center;
 
 				text-align: center;
 			}
 		}
+
 	</style>
 </head>
 
 
 <body>
+
 
 	<!-- =====================================================
 	     NAVIGATION
@@ -1041,7 +1176,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					VIDEO
 				</a>
 
-				<a href="#booking" class="nav-book">
+				<a
+					href="#booking"
+					class="nav-book"
+				>
 					BOOK NOW
 				</a>
 
@@ -1145,11 +1283,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
 			<!--
-				VIDEO PLACEHOLDER
+				Temporary video placeholder.
 
-				Replace this block with the YouTube
-				video once the final 10-second clip
-				is available.
+				Replace with the final 10-second
+				YouTube/video embed later.
 			-->
 
 			<div class="cinematic-video">
@@ -1180,7 +1317,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
 		<!-- =====================================================
-		     PERFORMANCES
+		     ARTIST INTRO
+		===================================================== -->
+
+		<section
+			class="section artist-intro"
+			id="about"
+		>
+
+			<div>
+
+				<p class="section-label">
+					THE ARTIST
+				</p>
+
+				<h2 class="section-title">
+					Music that makes the moment.
+				</h2>
+
+			</div>
+
+			<p class="artist-intro-text">
+				Roushan is a singer and live performer based in Patna,
+				bringing music, energy and a personal touch to weddings,
+				events, birthdays, celebrations and private occasions.
+			</p>
+
+		</section>
+
+
+		<!-- =====================================================
+		     PERFORMANCE INTRO
 		===================================================== -->
 
 		<section
@@ -1188,35 +1355,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			id="experience"
 		>
 
-			<div class="services-header">
+			<div class="performance-header">
 
-				<div>
-
-					<p class="section-label">
-						PERFORMANCES
-					</p>
-
-					<h2 class="section-title">
-						Available for your special moments.
-					</h2>
-
+				<div class="performance-mark">
+					✦
 				</div>
 
-				<p class="services-note">
-					Choose the kind of occasion and we'll
-					shape the performance around the
+				<p class="performance-brand">
+					ROUSHAN LIVE
+				</p>
+
+				<h2 class="performance-heading">
+					Music for every moment.
+				</h2>
+
+				<p class="performance-description">
+					Live performance, shaped around the
 					atmosphere you want.
 				</p>
 
 			</div>
 
 
+			<!-- =================================================
+			     PERFORMANCE CARDS
+			================================================= -->
+
 			<div class="service-grid">
 
 
-				<!-- =================================================
-				     WEDDINGS
-				================================================= -->
+				<!-- WEDDINGS -->
 
 				<a
 					href="#booking"
@@ -1261,9 +1429,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</a>
 
 
-				<!-- =================================================
-				     EVENTS
-				================================================= -->
+				<!-- EVENTS -->
 
 				<a
 					href="#booking"
@@ -1308,9 +1474,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</a>
 
 
-				<!-- =================================================
-				     BIRTHDAYS
-				================================================= -->
+				<!-- BIRTHDAYS -->
 
 				<a
 					href="#booking"
@@ -1355,9 +1519,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</a>
 
 
-				<!-- =================================================
-				     CORPORATE
-				================================================= -->
+				<!-- CORPORATE -->
 
 				<a
 					href="#booking"
@@ -1429,7 +1591,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</p>
 
 				<h2>
-					Every event deserves its own soundtrack.
+					Every event deserves
+					its own soundtrack.
 				</h2>
 
 				<p>
@@ -1488,7 +1651,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 					<img
 						src="/hero_event_standing.jpeg"
-						alt="Roushan live performance"
+						alt="Roushan performing live"
 						loading="lazy"
 					/>
 
