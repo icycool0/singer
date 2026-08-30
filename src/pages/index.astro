@@ -8,28 +8,32 @@ import BaseHead from '../components/BaseHead.astro';
 
 	<BaseHead
 		title="Roushan | Singer & Live Performer in Patna"
-		description="Roushan is a singer and live performer in Patna, available for weddings, events, birthdays, corporate occasions and private celebrations."
+		description="Roushan is a singer and live performer in Patna, available for weddings, celebrations, private events and special occasions."
 	/>
 
 	<style>
 
 		/* =====================================================
-		   DESIGN SYSTEM
+		   ROUSHAN — EDITORIAL ARTIST DESIGN
+		   Warm ivory / charcoal / champagne
 		===================================================== */
 
 		:root {
-			--bg: #08090b;
-			--surface: #101114;
-			--surface-light: #15161a;
+			--ivory: #f4f0e8;
+			--ivory-2: #ebe5da;
+			--white: #fffdf9;
 
-			--white: #f5f2eb;
-			--muted: #b8b5ae;
-			--muted-bright: #d0cdc5;
+			--charcoal: #191919;
+			--charcoal-2: #242321;
 
-			--gold: #d5b16f;
-			--gold-light: #e5ca91;
+			--text: #20201e;
+			--muted: #66635d;
+			--muted-light: #89857d;
 
-			--line: rgba(255,255,255,.11);
+			--champagne: #a88b5c;
+			--champagne-light: #c7ad7d;
+
+			--line: rgba(25,25,25,.14);
 
 			--max: 1280px;
 		}
@@ -50,8 +54,10 @@ import BaseHead from '../components/BaseHead.astro';
 		body {
 			margin: 0;
 			padding: 0;
-			background: var(--bg);
-			color: var(--white);
+
+			background: var(--ivory);
+
+			color: var(--text);
 
 			font-family:
 				Inter,
@@ -60,6 +66,8 @@ import BaseHead from '../components/BaseHead.astro';
 				sans-serif;
 
 			-webkit-font-smoothing: antialiased;
+
+			overflow-x: hidden;
 		}
 
 		a {
@@ -71,6 +79,18 @@ import BaseHead from '../components/BaseHead.astro';
 			max-width: 100%;
 		}
 
+		button,
+		input,
+		select,
+		textarea {
+			font-family: inherit;
+		}
+
+		em {
+			font-family: Georgia, "Times New Roman", serif;
+			font-weight: 400;
+		}
+
 
 		/* =====================================================
 		   NAVIGATION
@@ -78,7 +98,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 		.nav {
 			position: absolute;
-			z-index: 50;
+			z-index: 100;
 
 			top: 0;
 			left: 0;
@@ -86,6 +106,8 @@ import BaseHead from '../components/BaseHead.astro';
 			width: 100%;
 
 			padding: 28px 5vw;
+
+			color: white;
 		}
 
 		.nav-inner {
@@ -100,19 +122,20 @@ import BaseHead from '../components/BaseHead.astro';
 		.logo {
 			text-decoration: none;
 
-			font-size: 19px;
+			font-size: 18px;
 			font-weight: 800;
 
-			letter-spacing: .15em;
+			letter-spacing: .17em;
 		}
 
 		.logo span {
-			color: var(--gold);
+			color: var(--champagne-light);
 		}
 
 		.nav-links {
 			display: flex;
 			align-items: center;
+
 			gap: 30px;
 		}
 
@@ -122,21 +145,21 @@ import BaseHead from '../components/BaseHead.astro';
 			font-size: 11px;
 			font-weight: 700;
 
-			letter-spacing: .14em;
+			letter-spacing: .13em;
 
-			color: rgba(255,255,255,.86);
+			color: rgba(255,255,255,.9);
 
 			transition: opacity .25s ease;
 		}
 
 		.nav-links a:hover {
-			opacity: .55;
+			opacity: .6;
 		}
 
 		.nav-book {
-			padding: 12px 18px;
+			padding: 11px 17px;
 
-			border: 1px solid rgba(255,255,255,.4);
+			border: 1px solid rgba(255,255,255,.55);
 		}
 
 
@@ -147,13 +170,13 @@ import BaseHead from '../components/BaseHead.astro';
 		.hero {
 			position: relative;
 
-			height: 90vh;
-			min-height: 680px;
+			min-height: 760px;
+			height: 92vh;
 
 			overflow: hidden;
 
 			display: flex;
-			align-items: center;
+			align-items: flex-end;
 		}
 
 		.hero-image {
@@ -166,9 +189,9 @@ import BaseHead from '../components/BaseHead.astro';
 
 			object-fit: cover;
 
-			object-position: center 30%;
+			object-position: center 28%;
 
-			transform: scale(1.015);
+			transform: scale(1.01);
 		}
 
 		.hero-overlay {
@@ -179,59 +202,64 @@ import BaseHead from '../components/BaseHead.astro';
 			background:
 				linear-gradient(
 					90deg,
-					rgba(4,5,7,.94) 0%,
-					rgba(4,5,7,.72) 35%,
-					rgba(4,5,7,.30) 72%,
-					rgba(4,5,7,.34) 100%
+					rgba(12,12,11,.76) 0%,
+					rgba(12,12,11,.38) 42%,
+					rgba(12,12,11,.08) 75%
 				),
 
 				linear-gradient(
 					0deg,
-					rgba(4,5,7,.88),
-					transparent 62%
+					rgba(12,12,11,.72) 0%,
+					rgba(12,12,11,.05) 60%
 				);
 		}
 
 		.hero-content {
 			position: relative;
-			z-index: 5;
+			z-index: 3;
 
 			width: min(var(--max), 90%);
 
-			margin: 20px auto 0;
+			margin: 0 auto;
+
+			padding-bottom: 95px;
+
+			color: white;
 		}
 
 		.eyebrow {
-			margin: 0 0 21px;
+			margin: 0 0 20px;
 
-			color: var(--gold);
+			color: #dbc79f;
 
 			font-size: 11px;
 			font-weight: 800;
 
-			letter-spacing: .25em;
+			letter-spacing: .24em;
 		}
 
 		.hero h1 {
 			margin: 0;
 
-			max-width: 800px;
-
-			font-size: clamp(78px, 12vw, 175px);
+			font-size: clamp(86px, 13vw, 175px);
 
 			line-height: .78;
 
 			letter-spacing: -.075em;
 
-			font-weight: 850;
+			font-weight: 800;
+		}
+
+		.hero h1 em {
+			color: #eee6d8;
 		}
 
 		.hero-subtitle {
-			max-width: 600px;
+			max-width: 610px;
 
-			margin: 38px 0 0;
+			margin: 35px 0 0;
 
-			color: var(--muted-bright);
+			color: rgba(255,255,255,.9);
 
 			font-size: clamp(19px, 2vw, 25px);
 
@@ -243,7 +271,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 			gap: 12px;
 
-			margin-top: 32px;
+			margin-top: 31px;
 		}
 
 		.button {
@@ -261,7 +289,7 @@ import BaseHead from '../components/BaseHead.astro';
 			font-size: 11px;
 			font-weight: 800;
 
-			letter-spacing: .15em;
+			letter-spacing: .13em;
 
 			transition:
 				transform .25s ease,
@@ -274,44 +302,45 @@ import BaseHead from '../components/BaseHead.astro';
 		}
 
 		.button-primary {
-			background: var(--gold);
+			background: var(--champagne);
 
-			color: #111;
+			color: white;
 		}
 
 		.button-primary:hover {
-			background: var(--gold-light);
+			background: var(--champagne-light);
 		}
 
 		.button-outline {
-			border: 1px solid rgba(255,255,255,.55);
+			border: 1px solid rgba(255,255,255,.65);
 
 			color: white;
 		}
 
 		.button-outline:hover {
 			background: white;
-			color: #111;
+
+			color: var(--charcoal);
 		}
 
 		.hero-location {
 			position: absolute;
 
+			z-index: 5;
+
 			right: 5vw;
 			bottom: 28px;
 
-			z-index: 5;
-
-			color: rgba(255,255,255,.58);
+			color: rgba(255,255,255,.68);
 
 			font-size: 10px;
 
-			letter-spacing: .2em;
+			letter-spacing: .18em;
 		}
 
 
 		/* =====================================================
-		   COMMON
+		   COMMON SECTIONS
 		===================================================== */
 
 		.section {
@@ -319,18 +348,18 @@ import BaseHead from '../components/BaseHead.astro';
 
 			margin: auto;
 
-			padding: 125px 0;
+			padding: 135px 0;
 		}
 
 		.label {
-			margin: 0 0 17px;
+			margin: 0 0 18px;
 
-			color: var(--gold);
+			color: var(--champagne);
 
 			font-size: 10px;
 			font-weight: 800;
 
-			letter-spacing: .25em;
+			letter-spacing: .22em;
 
 			text-transform: uppercase;
 		}
@@ -340,13 +369,19 @@ import BaseHead from '../components/BaseHead.astro';
 
 			max-width: 900px;
 
-			font-size: clamp(44px, 6vw, 78px);
+			color: var(--text);
 
-			line-height: .95;
+			font-size: clamp(48px, 6vw, 78px);
+
+			line-height: .94;
 
 			letter-spacing: -.055em;
 
 			font-weight: 750;
+		}
+
+		.section-title em {
+			color: #625b50;
 		}
 
 
@@ -354,41 +389,44 @@ import BaseHead from '../components/BaseHead.astro';
 		   VIDEO
 		===================================================== */
 
-		.cinematic {
-			width: min(1180px, 90%);
+		.video-section {
+			background: var(--ivory);
+		}
+
+		.video-header {
+			width: min(var(--max), 90%);
 
 			margin: auto;
 
-			padding: 105px 0 125px;
+			padding: 110px 0 45px;
+
+			display: grid;
+
+			grid-template-columns: 1.1fr .9fr;
+
+			gap: 80px;
+
+			align-items: end;
 		}
 
-		.cinematic-header {
-			display: flex;
-
-			align-items: flex-end;
-			justify-content: space-between;
-
-			gap: 50px;
-
-			margin-bottom: 35px;
-		}
-
-		.cinematic-note {
-			max-width: 380px;
+		.video-note {
+			max-width: 420px;
 
 			margin: 0;
 
 			color: var(--muted);
 
-			font-size: 17px;
+			font-size: 18px;
 
-			line-height: 1.75;
+			line-height: 1.8;
 		}
 
 		.youtube-frame {
 			position: relative;
 
-			width: 100%;
+			width: min(1180px, 90%);
+
+			margin: auto;
 
 			aspect-ratio: 16 / 9;
 
@@ -397,7 +435,7 @@ import BaseHead from '../components/BaseHead.astro';
 			background: #000;
 
 			box-shadow:
-				0 30px 90px rgba(0,0,0,.4);
+				0 25px 70px rgba(0,0,0,.16);
 		}
 
 		.youtube-frame iframe {
@@ -411,9 +449,23 @@ import BaseHead from '../components/BaseHead.astro';
 			border: 0;
 		}
 
+		.video-caption {
+			width: min(1180px, 90%);
+
+			margin: 18px auto 0;
+
+			padding-bottom: 110px;
+
+			color: var(--muted-light);
+
+			font-size: 11px;
+
+			letter-spacing: .08em;
+		}
+
 
 		/* =====================================================
-		   ARTIST
+		   ARTIST INTRO
 		===================================================== */
 
 		.artist {
@@ -421,7 +473,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 			grid-template-columns: 1fr 1fr;
 
-			gap: 100px;
+			gap: 120px;
 
 			align-items: start;
 		}
@@ -429,9 +481,7 @@ import BaseHead from '../components/BaseHead.astro';
 		.artist-copy {
 			max-width: 600px;
 
-			margin-left: auto;
-
-			padding-top: 15px;
+			padding-top: 10px;
 		}
 
 		.artist-copy p {
@@ -439,68 +489,73 @@ import BaseHead from '../components/BaseHead.astro';
 
 			color: var(--muted);
 
-			font-size: 19px;
+			font-size: 20px;
 
 			line-height: 1.85;
 		}
 
 		.artist-line {
 			width: 75px;
+
 			height: 1px;
 
-			margin: 32px 0;
+			margin: 35px 0;
 
-			background: var(--gold);
+			background: var(--champagne);
 		}
 
 
 		/* =====================================================
-		   EXPERIENCE / OCCASIONS
+		   OCCASIONS
 		===================================================== */
 
-		.experience-intro {
+		.occasions-section {
+			padding-top: 120px;
+		}
+
+		.occasions-intro {
 			display: grid;
 
-			grid-template-columns: 1.3fr .7fr;
+			grid-template-columns: 1.2fr .8fr;
 
-			gap: 80px;
+			gap: 100px;
 
 			align-items: end;
 
-			margin-bottom: 58px;
+			margin-bottom: 55px;
 		}
 
-		.experience-note {
+		.occasions-note {
+			max-width: 410px;
+
 			margin: 0;
 
 			color: var(--muted);
 
-			font-size: 17px;
+			font-size: 18px;
 
-			line-height: 1.75;
+			line-height: 1.8;
 		}
 
-		.performance-grid {
+		.occasion-grid {
 			display: grid;
 
 			grid-template-columns: 1fr 1fr;
 
-			gap: 2px;
-
-			background: var(--line);
+			gap: 18px;
 		}
 
-		.performance-card {
+		.occasion-card {
 			position: relative;
 
-			min-height: 400px;
+			min-height: 470px;
 
 			overflow: hidden;
 
-			background: var(--surface);
+			background: var(--white);
 		}
 
-		.performance-card img {
+		.occasion-card img {
 			position: absolute;
 
 			inset: 0;
@@ -510,20 +565,15 @@ import BaseHead from '../components/BaseHead.astro';
 
 			object-fit: cover;
 
-			opacity: .62;
-
 			transition:
-				transform .8s ease,
-				opacity .6s ease;
+				transform .9s ease;
 		}
 
-		.performance-card:hover img {
+		.occasion-card:hover img {
 			transform: scale(1.045);
-
-			opacity: .73;
 		}
 
-		.performance-card::after {
+		.occasion-card::after {
 			content: "";
 
 			position: absolute;
@@ -533,80 +583,61 @@ import BaseHead from '../components/BaseHead.astro';
 			background:
 				linear-gradient(
 					0deg,
-					rgba(5,5,6,.96),
-					rgba(5,5,6,.08) 75%
+					rgba(10,10,9,.82),
+					rgba(10,10,9,.04) 70%
 				);
 		}
 
-		.performance-content {
+		.occasion-content {
 			position: absolute;
 
 			z-index: 3;
 
-			left: 32px;
-			right: 32px;
-			bottom: 30px;
+			left: 34px;
+			right: 34px;
+			bottom: 32px;
+
+			color: white;
 		}
 
-		.performance-number {
+		.occasion-number {
 			display: block;
 
-			margin-bottom: 15px;
+			margin-bottom: 13px;
 
-			color: var(--gold);
+			color: #ddc99e;
 
-			font-size: 11px;
+			font-size: 10px;
 			font-weight: 800;
 
 			letter-spacing: .2em;
 		}
 
-		.performance-icon {
-			position: absolute;
+		.occasion-card h3 {
+			margin: 0 0 9px;
 
-			z-index: 4;
+			font-size: 34px;
 
-			top: 25px;
-			right: 27px;
+			line-height: 1;
 
-			width: 46px;
-			height: 46px;
-
-			border: 1px solid rgba(255,255,255,.35);
-
-			border-radius: 50%;
-
-			display: grid;
-			place-items: center;
-
-			color: white;
-
-			font-size: 18px;
+			letter-spacing: -.04em;
 		}
 
-		.performance-card h3 {
-			margin: 0 0 10px;
-
-			font-size: 32px;
-
-			letter-spacing: -.035em;
-		}
-
-		.performance-card p {
-			max-width: 430px;
+		.occasion-card p {
+			max-width: 440px;
 
 			margin: 0;
 
-			color: rgba(255,255,255,.76);
+			color: rgba(255,255,255,.82);
 
 			font-size: 16px;
 
-			line-height: 1.7;
+			line-height: 1.65;
 		}
 
 
 		/* =====================================================
-		   LIVE EXPERIENCE
+		   FEATURE
 		===================================================== */
 
 		.feature {
@@ -614,14 +645,18 @@ import BaseHead from '../components/BaseHead.astro';
 
 			grid-template-columns: 1.2fr .8fr;
 
-			min-height: 680px;
+			min-height: 700px;
+
+			background: var(--charcoal);
+
+			color: white;
 		}
 
 		.feature-image {
 			width: 100%;
 			height: 100%;
 
-			min-height: 620px;
+			min-height: 650px;
 
 			object-fit: cover;
 		}
@@ -633,25 +668,35 @@ import BaseHead from '../components/BaseHead.astro';
 
 			justify-content: center;
 
-			padding: 80px;
-			
-			background: var(--surface-light);
+			padding: 90px;
+		}
+
+		.feature-copy .label {
+			color: var(--champagne-light);
 		}
 
 		.feature-copy h2 {
 			margin: 0 0 30px;
 
-			font-size: clamp(44px, 5vw, 68px);
+			color: white;
+
+			font-size: clamp(46px, 5vw, 70px);
 
 			line-height: .95;
 
 			letter-spacing: -.055em;
 		}
 
+		.feature-copy h2 em {
+			color: #ddd3c4;
+		}
+
 		.feature-copy p {
+			max-width: 520px;
+
 			margin: 0;
 
-			color: var(--muted);
+			color: #bcb9b2;
 
 			font-size: 18px;
 
@@ -661,12 +706,12 @@ import BaseHead from '../components/BaseHead.astro';
 		.feature-link {
 			margin-top: 32px;
 
-			color: var(--gold);
+			color: var(--champagne-light);
 
 			font-size: 11px;
 			font-weight: 800;
 
-			letter-spacing: .12em;
+			letter-spacing: .13em;
 
 			text-decoration: none;
 		}
@@ -677,23 +722,23 @@ import BaseHead from '../components/BaseHead.astro';
 		===================================================== */
 
 		.gallery-heading {
-			margin-bottom: 48px;
+			margin-bottom: 55px;
 		}
 
 		.gallery-grid {
 			display: grid;
 
-			grid-template-columns: 1.5fr 1fr 1fr;
+			grid-template-columns: 1.45fr 1fr 1fr;
 
-			grid-template-rows: 310px 310px;
+			grid-template-rows: 330px 330px;
 
-			gap: 10px;
+			gap: 12px;
 		}
 
 		.gallery-item {
 			overflow: hidden;
 
-			background: var(--surface);
+			background: var(--ivory-2);
 		}
 
 		.gallery-item:first-child {
@@ -710,7 +755,7 @@ import BaseHead from '../components/BaseHead.astro';
 		}
 
 		.gallery-item:hover img {
-			transform: scale(1.04);
+			transform: scale(1.035);
 		}
 
 
@@ -719,26 +764,45 @@ import BaseHead from '../components/BaseHead.astro';
 		===================================================== */
 
 		.music-section {
-			border-top: 1px solid var(--line);
-			border-bottom: 1px solid var(--line);
+			background: var(--charcoal);
+
+			color: white;
 		}
 
 		.music-wrap {
+			width: min(var(--max), 90%);
+
+			margin: auto;
+
+			padding: 125px 0;
+
 			display: grid;
 
 			grid-template-columns: 1fr 1fr;
 
-			gap: 100px;
+			gap: 110px;
 
 			align-items: center;
 		}
 
+		.music-copy .label {
+			color: var(--champagne-light);
+		}
+
+		.music-copy .section-title {
+			color: white;
+		}
+
+		.music-copy .section-title em {
+			color: #d8d0c3;
+		}
+
 		.music-copy p {
-			max-width: 560px;
+			max-width: 570px;
 
 			margin: 30px 0 0;
 
-			color: var(--muted);
+			color: #b8b5ae;
 
 			font-size: 18px;
 
@@ -749,34 +813,40 @@ import BaseHead from '../components/BaseHead.astro';
 			display: grid;
 
 			grid-template-columns: 1fr 1fr;
-
-			border-top: 1px solid var(--line);
 		}
 
 		.genre {
-			padding: 25px 0;
+			padding: 26px 0;
 
-			border-bottom: 1px solid var(--line);
+			border-bottom: 1px solid rgba(255,255,255,.14);
 
-			color: var(--muted-bright);
+			color: #e1ddd4;
 
-			font-size: 13px;
+			font-size: 14px;
 			font-weight: 700;
 
 			letter-spacing: .13em;
 		}
 
+		.genre::before {
+			content: "—";
+
+			margin-right: 12px;
+
+			color: var(--champagne-light);
+		}
+
 
 		/* =====================================================
-		   ABOUT PROFILE
+		   PROFILE
 		===================================================== */
 
 		.profile {
 			display: grid;
 
-			grid-template-columns: .85fr 1fr;
+			grid-template-columns: .8fr 1fr;
 
-			gap: 100px;
+			gap: 110px;
 
 			align-items: center;
 		}
@@ -784,7 +854,7 @@ import BaseHead from '../components/BaseHead.astro';
 		.profile-photo {
 			overflow: hidden;
 
-			background: var(--surface);
+			background: var(--ivory-2);
 		}
 
 		.profile-photo img {
@@ -795,7 +865,7 @@ import BaseHead from '../components/BaseHead.astro';
 			object-fit: cover;
 		}
 
-		.profile-copy p {
+		.profile-copy p:not(.label) {
 			max-width: 620px;
 
 			margin: 28px 0 0;
@@ -812,10 +882,18 @@ import BaseHead from '../components/BaseHead.astro';
 		   BOOKING
 		===================================================== */
 
-		.booking {
-			padding: 145px 0 165px;
+		.booking-section {
+			background: var(--white);
 
 			border-top: 1px solid var(--line);
+		}
+
+		.booking {
+			width: min(var(--max), 90%);
+
+			margin: auto;
+
+			padding: 135px 0 155px;
 		}
 
 		.booking-grid {
@@ -831,15 +909,21 @@ import BaseHead from '../components/BaseHead.astro';
 		.booking-copy h2 {
 			margin: 0;
 
-			font-size: clamp(46px, 5.5vw, 74px);
+			color: var(--text);
+
+			font-size: clamp(48px, 5.5vw, 74px);
 
 			line-height: .95;
 
 			letter-spacing: -.055em;
 		}
 
+		.booking-copy h2 em {
+			color: #625b50;
+		}
+
 		.booking-copy > p {
-			max-width: 530px;
+			max-width: 540px;
 
 			margin: 30px 0 0;
 
@@ -858,26 +942,38 @@ import BaseHead from '../components/BaseHead.astro';
 			margin-top: 35px;
 		}
 
+		.booking-actions .button-outline {
+			border-color: #8e887d;
+
+			color: var(--text);
+		}
+
+		.booking-actions .button-outline:hover {
+			background: var(--charcoal);
+
+			color: white;
+		}
+
 
 		/* =====================================================
 		   FORM
 		===================================================== */
 
 		.form {
-			padding: 38px;
+			padding: 42px;
 
-			background: var(--surface);
+			background: var(--ivory);
 
 			border: 1px solid var(--line);
 		}
 
 		.form-title {
-			margin-bottom: 28px;
+			margin-bottom: 30px;
 
 			font-size: 11px;
 			font-weight: 800;
 
-			letter-spacing: .16em;
+			letter-spacing: .15em;
 		}
 
 		.form-grid {
@@ -885,7 +981,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 			grid-template-columns: 1fr 1fr;
 
-			gap: 22px;
+			gap: 24px;
 		}
 
 		.field {
@@ -893,7 +989,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 			flex-direction: column;
 
-			gap: 9px;
+			gap: 8px;
 		}
 
 		.field.full {
@@ -901,12 +997,12 @@ import BaseHead from '../components/BaseHead.astro';
 		}
 
 		.field label {
-			color: #85858a;
+			color: #77736c;
 
 			font-size: 10px;
 			font-weight: 800;
 
-			letter-spacing: .13em;
+			letter-spacing: .12em;
 		}
 
 		.field input,
@@ -914,43 +1010,43 @@ import BaseHead from '../components/BaseHead.astro';
 		.field textarea {
 			width: 100%;
 
-			padding: 14px 0;
+			padding: 13px 0;
 
 			background: transparent;
 
 			border: 0;
-			border-bottom: 1px solid rgba(255,255,255,.17);
+
+			border-bottom: 1px solid rgba(25,25,25,.2);
 
 			outline: none;
 
-			color: white;
-
-			font-family: inherit;
+			color: var(--text);
 
 			font-size: 16px;
 		}
 
-		.field select {
-			color: white;
-		}
-
-		.field select option {
-			background: #111;
-			color: white;
-		}
-
 		.field textarea {
-			min-height: 100px;
+			min-height: 105px;
 
 			resize: vertical;
 		}
 
 		.form > .button {
-			margin-top: 28px;
+			margin-top: 30px;
 
 			border: 0;
 
 			cursor: pointer;
+		}
+
+		.form-status {
+			display: none;
+
+			margin-top: 15px;
+
+			color: var(--champagne);
+
+			font-size: 13px;
 		}
 
 
@@ -959,6 +1055,8 @@ import BaseHead from '../components/BaseHead.astro';
 		===================================================== */
 
 		.footer {
+			background: var(--ivory);
+
 			border-top: 1px solid var(--line);
 
 			padding: 32px 5vw;
@@ -976,7 +1074,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 			gap: 25px;
 
-			color: #707176;
+			color: #858078;
 
 			font-size: 10px;
 
@@ -984,7 +1082,7 @@ import BaseHead from '../components/BaseHead.astro';
 		}
 
 		.footer-brand {
-			color: white;
+			color: var(--text);
 
 			font-size: 14px;
 			font-weight: 800;
@@ -994,10 +1092,53 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 		/* =====================================================
+		   TABLET
+		===================================================== */
+
+		@media (max-width: 900px) {
+
+			.video-header,
+			.artist,
+			.occasions-intro,
+			.music-wrap,
+			.profile,
+			.booking-grid {
+				grid-template-columns: 1fr;
+
+				gap: 45px;
+			}
+
+			.video-header {
+				padding-bottom: 35px;
+			}
+
+			.artist-copy {
+				max-width: 700px;
+			}
+
+			.feature {
+				grid-template-columns: 1fr;
+			}
+
+			.feature-image {
+				min-height: 550px;
+			}
+
+			.feature-copy {
+				padding: 75px 8%;
+			}
+
+			.booking-grid {
+				gap: 60px;
+			}
+		}
+
+
+		/* =====================================================
 		   MOBILE
 		===================================================== */
 
-		@media (max-width: 800px) {
+		@media (max-width: 650px) {
 
 			.nav {
 				padding: 20px 22px;
@@ -1008,105 +1149,110 @@ import BaseHead from '../components/BaseHead.astro';
 			}
 
 			.hero {
-				height: 87vh;
+				height: 88vh;
+
 				min-height: 650px;
+			}
+
+			.hero-image {
+				object-position: 62% center;
+			}
+
+			.hero-overlay {
+				background:
+					linear-gradient(
+						90deg,
+						rgba(12,12,11,.72),
+						rgba(12,12,11,.25)
+					),
+
+					linear-gradient(
+						0deg,
+						rgba(12,12,11,.75),
+						transparent 65%
+					);
 			}
 
 			.hero-content {
 				width: calc(100% - 44px);
+
+				padding-bottom: 72px;
 			}
 
 			.hero h1 {
-				font-size: clamp(72px, 21vw, 120px);
+				font-size: clamp(70px, 21vw, 115px);
 			}
 
 			.hero-subtitle {
-				margin-top: 28px;
-
 				font-size: 18px;
+
+				margin-top: 27px;
+			}
+
+			.hero-buttons {
+				flex-direction: column;
+
+				align-items: stretch;
+
+				max-width: 250px;
 			}
 
 			.hero-location {
 				right: 22px;
-				bottom: 20px;
+
+				bottom: 19px;
+
+				font-size: 8px;
 			}
 
 			.section {
 				width: calc(100% - 44px);
 
-				padding: 88px 0;
+				padding: 90px 0;
 			}
 
-			.cinematic {
+			.video-header {
 				width: calc(100% - 44px);
 
-				padding: 75px 0 90px;
-			}
-
-			.cinematic-header {
-				display: block;
-			}
-
-			.cinematic-note {
-				margin-top: 20px;
-
-				font-size: 17px;
+				padding: 80px 0 35px;
 			}
 
 			.youtube-frame {
-				aspect-ratio: 16 / 9;
+				width: calc(100% - 44px);
 			}
 
-			.artist {
-				grid-template-columns: 1fr;
+			.video-caption {
+				width: calc(100% - 44px);
 
-				gap: 35px;
-			}
-
-			.artist-copy {
-				margin: 0;
+				padding-bottom: 75px;
 			}
 
 			.artist-copy p {
 				font-size: 18px;
 			}
 
-			.experience-intro {
-				grid-template-columns: 1fr;
-
-				gap: 25px;
+			.occasions-intro {
+				margin-bottom: 35px;
 			}
 
-			.experience-note {
+			.occasions-note {
 				font-size: 17px;
 			}
 
-			.performance-grid {
+			.occasion-grid {
 				grid-template-columns: 1fr;
 			}
 
-			.performance-card {
-				min-height: 350px;
+			.occasion-card {
+				min-height: 390px;
 			}
 
-			.performance-card p {
-				font-size: 16px;
+			.occasion-card h3 {
+				font-size: 31px;
 			}
 
-			.feature {
-				grid-template-columns: 1fr;
-			}
-
-			.feature-image {
-				min-height: 480px;
-			}
-
-			.feature-copy {
-				padding: 65px 25px;
-			}
-
-			.feature-copy p {
-				font-size: 17px;
+			.occasion-card p {
+				font-size: 15px;
 			}
 
 			.gallery-grid {
@@ -1123,29 +1269,31 @@ import BaseHead from '../components/BaseHead.astro';
 			}
 
 			.music-wrap {
-				grid-template-columns: 1fr;
+				width: calc(100% - 44px);
 
-				gap: 55px;
+				padding: 85px 0;
+			}
+
+			.genres {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.genre {
+				font-size: 12px;
 			}
 
 			.profile {
-				grid-template-columns: 1fr;
-
-				gap: 45px;
+				gap: 40px;
 			}
 
-			.profile-copy p {
+			.profile-copy p:not(.label) {
 				font-size: 17px;
 			}
 
 			.booking {
-				padding: 100px 22px 120px;
-			}
+				width: calc(100% - 44px);
 
-			.booking-grid {
-				grid-template-columns: 1fr;
-
-				gap: 55px;
+				padding: 90px 0 110px;
 			}
 
 			.booking-copy > p {
@@ -1160,16 +1308,18 @@ import BaseHead from '../components/BaseHead.astro';
 				max-width: 270px;
 			}
 
+			.form {
+				padding: 28px 22px;
+			}
+
 			.form-grid {
 				grid-template-columns: 1fr;
+
+				gap: 20px;
 			}
 
 			.field.full {
 				grid-column: auto;
-			}
-
-			.form {
-				padding: 27px 22px;
 			}
 
 			.footer-inner {
@@ -1186,29 +1336,21 @@ import BaseHead from '../components/BaseHead.astro';
 		   SMALL MOBILE
 		===================================================== */
 
-		@media (max-width: 500px) {
-
-			.hero-buttons {
-				flex-direction: column;
-
-				align-items: stretch;
-
-				max-width: 235px;
-			}
-
-			.button {
-				width: 100%;
-			}
-
-			.performance-card {
-				min-height: 330px;
-			}
+		@media (max-width: 450px) {
 
 			.gallery-grid {
 				grid-template-columns: 1fr;
 
 				grid-template-rows:
 					repeat(5, 320px);
+			}
+
+			.genres {
+				grid-template-columns: 1fr;
+			}
+
+			.hero h1 {
+				font-size: 74px;
 			}
 
 		}
@@ -1303,7 +1445,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 				<p class="hero-subtitle">
 					Live music for weddings, celebrations,
-					private events and special occasions.
+					private events and unforgettable occasions.
 				</p>
 
 
@@ -1313,7 +1455,7 @@ import BaseHead from '../components/BaseHead.astro';
 						href="#performance"
 						class="button button-primary"
 					>
-						▶ &nbsp; WATCH LIVE
+						▶ &nbsp; WATCH ROUSHAN LIVE
 					</a>
 
 					<a
@@ -1337,35 +1479,35 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 		<!-- =================================================
-		     YOUTUBE PERFORMANCE
+		     VIDEO
 		================================================= -->
 
 		<section
-			class="cinematic"
+			class="video-section"
 			id="performance"
 		>
 
-			<div class="cinematic-header">
+			<div class="video-header">
 
 				<div>
 
 					<p class="label">
-						01 / FEATURED PERFORMANCE
+						LIVE PERFORMANCE
 					</p>
 
 					<h2 class="section-title">
-						See Roushan
+						Hear the artist.
 						<br />
-						<em>Live.</em>
+						<em>Feel the room.</em>
 					</h2>
 
 				</div>
 
 
-				<p class="cinematic-note">
-					One performance says more than a hundred
-					words. Watch Roushan live and experience
-					the voice, presence and atmosphere for yourself.
+				<p class="video-note">
+					One performance tells you more than a
+					hundred words. Experience Roushan live
+					and hear the voice behind the artist.
 				</p>
 
 			</div>
@@ -1381,6 +1523,11 @@ import BaseHead from '../components/BaseHead.astro';
 					allowfullscreen
 				></iframe>
 
+			</div>
+
+
+			<div class="video-caption">
+				ROUSHAN · LIVE PERFORMANCE · PATNA
 			</div>
 
 		</section>
@@ -1405,7 +1552,7 @@ import BaseHead from '../components/BaseHead.astro';
 				<h2 class="section-title">
 					Music that makes
 					<br />
-					the moment.
+					<em>the moment.</em>
 				</h2>
 
 			</div>
@@ -1437,46 +1584,43 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 		<!-- =================================================
-		     OCCASIONS / PERFORMANCE TYPES
+		     OCCASIONS
 		================================================= -->
 
-		<section
-			class="section"
-			id="live"
-		>
+		<section class="section occasions-section">
 
-			<div class="experience-intro">
+			<div class="occasions-intro">
 
 				<div>
 
 					<p class="label">
-						02 / OCCASIONS
+						OCCASIONS
 					</p>
 
 					<h2 class="section-title">
-						Available for
+						Made for your
 						<br />
-						your special moments.
+						<em>kind of celebration.</em>
 					</h2>
 
 				</div>
 
 
-				<p class="experience-note">
-					Choose the kind of occasion and we'll
-					shape the performance around the atmosphere
-					you want.
+				<p class="occasions-note">
+					Choose the occasion and we'll shape
+					the performance around the atmosphere,
+					audience and energy you want.
 				</p>
 
 			</div>
 
 
-			<div class="performance-grid">
+			<div class="occasion-grid">
 
 
 				<!-- WEDDINGS -->
 
-				<article class="performance-card">
+				<article class="occasion-card">
 
 					<img
 						src="/hero_casula_standing.jpg"
@@ -1484,13 +1628,9 @@ import BaseHead from '../components/BaseHead.astro';
 						loading="lazy"
 					/>
 
-					<div class="performance-icon">
-						♡
-					</div>
+					<div class="occasion-content">
 
-					<div class="performance-content">
-
-						<span class="performance-number">
+						<span class="occasion-number">
 							01
 						</span>
 
@@ -1500,7 +1640,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 						<p>
 							Live music for wedding celebrations,
-							sangeet and memorable moments.
+							sangeet and unforgettable moments.
 						</p>
 
 					</div>
@@ -1509,23 +1649,19 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 
-				<!-- EVENTS -->
+				<!-- PRIVATE EVENTS -->
 
-				<article class="performance-card">
+				<article class="occasion-card">
 
 					<img
 						src="/hero_event.jpeg"
-						alt="Roushan performing at an event"
+						alt="Roushan performing at a private event"
 						loading="lazy"
 					/>
 
-					<div class="performance-icon">
-						♪
-					</div>
+					<div class="occasion-content">
 
-					<div class="performance-content">
-
-						<span class="performance-number">
+						<span class="occasion-number">
 							02
 						</span>
 
@@ -1546,7 +1682,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 				<!-- BIRTHDAYS -->
 
-				<article class="performance-card">
+				<article class="occasion-card">
 
 					<img
 						src="/hero_sitting_sofa.jpg"
@@ -1554,13 +1690,9 @@ import BaseHead from '../components/BaseHead.astro';
 						loading="lazy"
 					/>
 
-					<div class="performance-icon">
-						✦
-					</div>
+					<div class="occasion-content">
 
-					<div class="performance-content">
-
-						<span class="performance-number">
+						<span class="occasion-number">
 							03
 						</span>
 
@@ -1581,7 +1713,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 				<!-- CORPORATE -->
 
-				<article class="performance-card">
+				<article class="occasion-card">
 
 					<img
 						src="/hero_standinf_close.jpg"
@@ -1589,13 +1721,9 @@ import BaseHead from '../components/BaseHead.astro';
 						loading="lazy"
 					/>
 
-					<div class="performance-icon">
-						◇
-					</div>
+					<div class="occasion-content">
 
-					<div class="performance-content">
-
-						<span class="performance-number">
+						<span class="occasion-number">
 							04
 						</span>
 
@@ -1620,7 +1748,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 		<!-- =================================================
-		     LIVE EXPERIENCE
+		     FEATURE
 		================================================= -->
 
 		<section class="feature">
@@ -1640,12 +1768,13 @@ import BaseHead from '../components/BaseHead.astro';
 			<div class="feature-copy">
 
 				<p class="label">
-					03 / LIVE EXPERIENCE
+					LIVE EXPERIENCE
 				</p>
 
 				<h2>
 					Every event deserves
-					its own soundtrack.
+					<br />
+					<em>its own soundtrack.</em>
 				</h2>
 
 				<p>
@@ -1679,13 +1808,13 @@ import BaseHead from '../components/BaseHead.astro';
 			<div class="gallery-heading">
 
 				<p class="label">
-					04 / LIVE MOMENTS
+					LIVE MOMENTS
 				</p>
 
 				<h2 class="section-title">
 					Moments on stage
 					<br />
-					& beyond.
+					<em>& beyond.</em>
 				</h2>
 
 			</div>
@@ -1709,7 +1838,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 					<img
 						src="/hero_live2.jpg"
-						alt="Roushan at a wedding event"
+						alt="Roushan performing at an event"
 						loading="lazy"
 					/>
 
@@ -1720,7 +1849,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 					<img
 						src="/hero_event.jpeg"
-						alt="Roushan performing at an event"
+						alt="Roushan live performance"
 						loading="lazy"
 					/>
 
@@ -1760,7 +1889,7 @@ import BaseHead from '../components/BaseHead.astro';
 		================================================= -->
 
 		<section
-			class="section music-section"
+			class="music-section"
 			id="music"
 		>
 
@@ -1769,7 +1898,7 @@ import BaseHead from '../components/BaseHead.astro';
 				<div class="music-copy">
 
 					<p class="label">
-						05 / MUSIC
+						MUSIC
 					</p>
 
 					<h2 class="section-title">
@@ -1841,7 +1970,7 @@ import BaseHead from '../components/BaseHead.astro';
 			<div class="profile-copy">
 
 				<p class="label">
-					06 / ABOUT ROUSHAN
+					ABOUT ROUSHAN
 				</p>
 
 				<h2 class="section-title">
@@ -1874,221 +2003,225 @@ import BaseHead from '../components/BaseHead.astro';
 		================================================= -->
 
 		<section
-			class="section booking"
+			class="booking-section"
 			id="contact"
 		>
 
-			<div class="booking-grid">
+			<div class="booking">
+
+				<div class="booking-grid">
 
 
-				<div class="booking-copy">
+					<div class="booking-copy">
 
-					<p class="label">
-						07 / BOOKING
-					</p>
+						<p class="label">
+							BOOKING
+						</p>
 
-					<h2>
-						Planning an event?
-						<br />
-						<em>Let's talk music.</em>
-					</h2>
+						<h2>
+							Planning an event?
+							<br />
+							<em>Let's talk music.</em>
+						</h2>
 
-					<p>
-						Tell us your event date, location
-						and occasion. Send an enquiry and
-						we'll get back to you.
-					</p>
+						<p>
+							Tell us your event date, location
+							and occasion. Send an enquiry and
+							we'll get back to you.
+						</p>
 
 
-					<div class="booking-actions">
+						<div class="booking-actions">
 
-						<a
-							href="https://wa.me/91955275669"
-							target="_blank"
-							rel="noopener"
-							class="button button-primary"
-						>
-							WHATSAPP
-						</a>
+							<a
+								href="https://wa.me/91955275669"
+								target="_blank"
+								rel="noopener"
+								class="button button-primary"
+							>
+								WHATSAPP
+							</a>
 
-						<a
-							href="tel:+91955275669"
-							class="button button-outline"
-						>
-							CALL NOW
-						</a>
+							<a
+								href="tel:+91955275669"
+								class="button button-outline"
+							>
+								CALL NOW
+							</a>
+
+						</div>
 
 					</div>
+
+
+
+					<!-- BOOKING FORM -->
+
+					<form
+						class="form"
+						id="bookingForm"
+					>
+
+						<div class="form-title">
+							TELL US ABOUT YOUR EVENT
+						</div>
+
+
+						<div class="form-grid">
+
+
+							<div class="field">
+
+								<label for="name">
+									NAME
+								</label>
+
+								<input
+									id="name"
+									name="name"
+									required
+								/>
+
+							</div>
+
+
+							<div class="field">
+
+								<label for="phone">
+									PHONE / WHATSAPP
+								</label>
+
+								<input
+									id="phone"
+									name="phone"
+									type="tel"
+									required
+								/>
+
+							</div>
+
+
+							<div class="field">
+
+								<label for="type">
+									EVENT TYPE
+								</label>
+
+								<select
+									id="type"
+									name="type"
+									required
+								>
+
+									<option value="">
+										Select
+									</option>
+
+									<option>
+										Wedding
+									</option>
+
+									<option>
+										Private Event
+									</option>
+
+									<option>
+										Birthday
+									</option>
+
+									<option>
+										Corporate
+									</option>
+
+									<option>
+										Special Event
+									</option>
+
+								</select>
+
+							</div>
+
+
+							<div class="field">
+
+								<label for="date">
+									EVENT DATE
+								</label>
+
+								<input
+									id="date"
+									name="date"
+									type="date"
+								/>
+
+							</div>
+
+
+							<div class="field">
+
+								<label for="location">
+									LOCATION
+								</label>
+
+								<input
+									id="location"
+									name="location"
+									placeholder="City / Venue"
+								/>
+
+							</div>
+
+
+							<div class="field">
+
+								<label for="guests">
+									EXPECTED GUESTS
+								</label>
+
+								<input
+									id="guests"
+									name="guests"
+									type="number"
+									min="1"
+								/>
+
+							</div>
+
+
+							<div class="field full">
+
+								<label for="message">
+									MESSAGE
+								</label>
+
+								<textarea
+									id="message"
+									name="message"
+									placeholder="Tell us about your event."
+								></textarea>
+
+							</div>
+
+
+						</div>
+
+
+						<button
+							class="button button-primary"
+							type="submit"
+						>
+							SEND ENQUIRY VIA WHATSAPP ↗
+						</button>
+
+
+						<div
+							class="form-status"
+							id="formStatus"
+						></div>
+
+					</form>
 
 				</div>
-
-
-
-				<!-- BOOKING FORM -->
-
-				<form
-					class="form"
-					id="bookingForm"
-				>
-
-					<div class="form-title">
-						TELL US ABOUT YOUR EVENT
-					</div>
-
-
-					<div class="form-grid">
-
-
-						<div class="field">
-
-							<label for="name">
-								NAME
-							</label>
-
-							<input
-								id="name"
-								name="name"
-								required
-							/>
-
-						</div>
-
-
-						<div class="field">
-
-							<label for="phone">
-								PHONE / WHATSAPP
-							</label>
-
-							<input
-								id="phone"
-								name="phone"
-								type="tel"
-								required
-							/>
-
-						</div>
-
-
-						<div class="field">
-
-							<label for="type">
-								EVENT TYPE
-							</label>
-
-							<select
-								id="type"
-								name="type"
-								required
-							>
-
-								<option value="">
-									Select
-								</option>
-
-								<option>
-									Wedding
-								</option>
-
-								<option>
-									Private Event
-								</option>
-
-								<option>
-									Birthday
-								</option>
-
-								<option>
-									Corporate
-								</option>
-
-								<option>
-									Special Event
-								</option>
-
-							</select>
-
-						</div>
-
-
-						<div class="field">
-
-							<label for="date">
-								EVENT DATE
-							</label>
-
-							<input
-								id="date"
-								name="date"
-								type="date"
-							/>
-
-						</div>
-
-
-						<div class="field">
-
-							<label for="location">
-								LOCATION
-							</label>
-
-							<input
-								id="location"
-								name="location"
-								placeholder="City / Venue"
-							/>
-
-						</div>
-
-
-						<div class="field">
-
-							<label for="guests">
-								EXPECTED GUESTS
-							</label>
-
-							<input
-								id="guests"
-								name="guests"
-								type="number"
-								min="1"
-							/>
-
-						</div>
-
-
-						<div class="field full">
-
-							<label for="message">
-								MESSAGE
-							</label>
-
-							<textarea
-								id="message"
-								name="message"
-								placeholder="Tell us anything useful about the event."
-							></textarea>
-
-						</div>
-
-
-					</div>
-
-
-					<button
-						class="button button-primary"
-						type="submit"
-					>
-						SEND ENQUIRY VIA WHATSAPP ↗
-					</button>
-
-
-					<div
-						class="form-status"
-						id="formStatus"
-					></div>
-
-				</form>
 
 			</div>
 
@@ -2128,7 +2261,7 @@ import BaseHead from '../components/BaseHead.astro';
 	<script>
 
 		/* =================================================
-		   WHATSAPP BOOKING FORM
+		   WHATSAPP BOOKING
 		================================================= */
 
 		const bookingForm =
