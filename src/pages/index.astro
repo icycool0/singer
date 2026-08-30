@@ -421,14 +421,16 @@ import BaseHead from '../components/BaseHead.astro';
 			line-height: 1.8;
 		}
 
+		/* Vertical YouTube Short */
+
 		.youtube-frame {
 			position: relative;
 
-			width: min(1180px, 90%);
+			width: min(430px, 90%);
 
 			margin: auto;
 
-			aspect-ratio: 16 / 9;
+			aspect-ratio: 9 / 16;
 
 			overflow: hidden;
 
@@ -450,7 +452,7 @@ import BaseHead from '../components/BaseHead.astro';
 		}
 
 		.video-caption {
-			width: min(1180px, 90%);
+			width: min(430px, 90%);
 
 			margin: 18px auto 0;
 
@@ -461,6 +463,8 @@ import BaseHead from '../components/BaseHead.astro';
 			font-size: 11px;
 
 			letter-spacing: .08em;
+
+			text-align: center;
 		}
 
 
@@ -696,7 +700,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 			margin: 0;
 
-			color: #bcb9b2;
+			color: #b8b5ae;
 
 			font-size: 18px;
 
@@ -1218,11 +1222,11 @@ import BaseHead from '../components/BaseHead.astro';
 			}
 
 			.youtube-frame {
-				width: calc(100% - 44px);
+				width: min(430px, calc(100% - 44px));
 			}
 
 			.video-caption {
-				width: calc(100% - 44px);
+				width: min(430px, calc(100% - 44px));
 
 				padding-bottom: 75px;
 			}
@@ -1253,6 +1257,10 @@ import BaseHead from '../components/BaseHead.astro';
 
 			.occasion-card p {
 				font-size: 15px;
+			}
+
+			.feature-copy {
+				padding: 65px 22px;
 			}
 
 			.gallery-grid {
@@ -1479,7 +1487,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 		<!-- =================================================
-		     VIDEO
+		     VERTICAL YOUTUBE SHORT
 		================================================= -->
 
 		<section
@@ -1516,7 +1524,7 @@ import BaseHead from '../components/BaseHead.astro';
 			<div class="youtube-frame">
 
 				<iframe
-					src="https://www.youtube-nocookie.com/embed/RrjtsRxXmGI?rel=0"
+					src="https://www.youtube-nocookie.com/embed/VweCAaReLpo?rel=0"
 					title="Roushan Live Performance"
 					loading="lazy"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1618,8 +1626,6 @@ import BaseHead from '../components/BaseHead.astro';
 			<div class="occasion-grid">
 
 
-				<!-- WEDDINGS -->
-
 				<article class="occasion-card">
 
 					<img
@@ -1648,8 +1654,6 @@ import BaseHead from '../components/BaseHead.astro';
 				</article>
 
 
-
-				<!-- PRIVATE EVENTS -->
 
 				<article class="occasion-card">
 
@@ -1680,8 +1684,6 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 
-				<!-- BIRTHDAYS -->
-
 				<article class="occasion-card">
 
 					<img
@@ -1710,8 +1712,6 @@ import BaseHead from '../components/BaseHead.astro';
 				</article>
 
 
-
-				<!-- CORPORATE -->
 
 				<article class="occasion-card">
 
@@ -1951,7 +1951,7 @@ import BaseHead from '../components/BaseHead.astro';
 
 
 		<!-- =================================================
-		     ABOUT PROFILE
+		     ABOUT ROUSHAN
 		================================================= -->
 
 		<section class="section profile">
@@ -2054,8 +2054,6 @@ import BaseHead from '../components/BaseHead.astro';
 					</div>
 
 
-
-					<!-- BOOKING FORM -->
 
 					<form
 						class="form"
