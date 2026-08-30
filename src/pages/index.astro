@@ -144,11 +144,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			color: var(--text);
 		}
 
-		/*
-			Main photograph.
-			The image occupies the right side.
-		*/
-
 		.hero-image {
 			position: absolute;
 			z-index: 1;
@@ -164,11 +159,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			transform: scale(1.01);
 		}
-
-		/*
-			Soft cream transition.
-			This keeps the left text area clean.
-		*/
 
 		.hero-overlay {
 			position: absolute;
@@ -326,49 +316,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			letter-spacing: .18em;
 		}
 
-		/*
-			Small overlapping image.
-			This creates the editorial / magazine feel.
-		*/
-
-		.hero-detail {
-			position: absolute;
-			z-index: 7;
-
-			right: 7%;
-			bottom: 50px;
-
-			width: 220px;
-
-			background: var(--charcoal);
-
-			border: 5px solid var(--ivory);
-
-			box-shadow:
-				0 25px 65px rgba(0,0,0,.23);
-
-			overflow: hidden;
-		}
-
-		.hero-detail img {
-			width: 100%;
-			height: 280px;
-
-			object-fit: cover;
-			object-position: center;
-		}
-
-		.hero-detail-label {
-			padding: 11px 12px;
-
-			color: white;
-
-			font-size: 8px;
-			font-weight: 800;
-
-			letter-spacing: .15em;
-		}
-
 
 		/* =====================================================
 		   VIDEO
@@ -430,11 +377,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 			line-height: 1.8;
 		}
-
-		/*
-			Vertical YouTube Short.
-			9:16 keeps the original video format.
-		*/
 
 		.youtube-frame {
 			position: relative;
@@ -1128,10 +1070,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				width: 100%;
 			}
 
-			.hero-detail {
-				display: none;
-			}
-
 			.service-grid {
 				grid-template-columns: 1fr 1fr;
 			}
@@ -1439,7 +1377,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
 		<!-- =================================================
-		     HERO — ONLY THIS SECTION IS NEW
+		     HERO
 		================================================= -->
 
 		<section class="hero">
@@ -1497,23 +1435,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						PATNA, BIHAR • AVAILABLE FOR EVENTS
 					</p>
 
-				</div>
-
-			</div>
-
-
-			<!-- Overlapping artist image -->
-
-			<div class="hero-detail">
-
-				<img
-					src="/hero_holding_mic.png"
-					alt="Roushan singing live"
-					loading="eager"
-				/>
-
-				<div class="hero-detail-label">
-					LIVE PERFORMANCE • ROUSHAN
 				</div>
 
 			</div>
@@ -1662,8 +1583,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<div class="service-grid">
 
 
-				<!-- 01 -->
-
 				<div class="service-card">
 
 					<div class="service-number">
@@ -1685,8 +1604,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 				</div>
 
-
-				<!-- 02 -->
 
 				<div class="service-card">
 
@@ -1710,8 +1627,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 
 
-				<!-- 03 -->
-
 				<div class="service-card">
 
 					<div class="service-number">
@@ -1733,8 +1648,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 				</div>
 
-
-				<!-- 04 -->
 
 				<div class="service-card">
 
@@ -2067,12 +1980,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</main>
 
 
-	<!-- =====================================================
-	     FOOTER
-	===================================================== -->
-
 	<Footer />
-
 
 </body>
 </html>
